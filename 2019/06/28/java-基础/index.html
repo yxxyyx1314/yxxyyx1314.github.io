@@ -3,4 +3,91 @@
 <li>面向对象：是以“对象”为中心的编程思想。</li>
 <li>面向对象三大特性：封装、继承、多态。因为一切皆对象，所以一切都需要“封装”成类。“继承”让我们设计相似的东西的时候更方便，而“多态”让我们使用类似的东西的时候可以不用去思考它们微弱的不同。我们关心的不是过程，而是接口，而接口来自对象，故名为面向对象。</li>
 </ol>
-<h3 id="封装、继承、多态"><a href="#封装、继承、多态" class="headerlink" title="封装、继承、多态"></a>封装、继承、多态</h3><h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3><h3 id="final和static"><a href="#final和static" class="headerlink" title="final和static"></a>final和static</h3><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h3 id="数组和链表"><a href="#数组和链表" class="headerlink" title="数组和链表"></a>数组和链表</h3><h3 id="访问控制符"><a href="#访问控制符" class="headerlink" title="访问控制符"></a>访问控制符</h3><h3 id="接口与抽象类"><a href="#接口与抽象类" class="headerlink" title="接口与抽象类"></a>接口与抽象类</h3><h3 id="equal与"><a href="#equal与" class="headerlink" title="equal与=="></a>equal与==</h3><h3 id="装箱及拆箱"><a href="#装箱及拆箱" class="headerlink" title="装箱及拆箱"></a>装箱及拆箱</h3></div><div class="post-copyright"><blockquote><p>原文作者: Yang Peng</p><p>原文链接: <a href="http://ylovex.cn/2019/06/28/java-基础/">http://ylovex.cn/2019/06/28/java-基础/</a></p><p>版权声明: 转载请注明出处(必须保留作者署名及链接)</p></blockquote></div><div class="tags"><a href="/tags/Java/">Java</a></div><div class="post-share"><div class="social-share"><span>分享到:</span></div></div><div class="post-nav"><a href="/2019/06/28/java-set面经/" class="pre">Java Set面经</a><a href="/2019/06/28/my-first-blog/" class="next">my first blog</a></div><div id="comments"></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#面向对象和面向过程"><span class="toc-text">面向对象和面向过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#封装、继承、多态"><span class="toc-text">封装、继承、多态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#集合"><span class="toc-text">集合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#final和static"><span class="toc-text">final和static</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据类型"><span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组和链表"><span class="toc-text">数组和链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#访问控制符"><span class="toc-text">访问控制符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口与抽象类"><span class="toc-text">接口与抽象类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#equal与"><span class="toc-text">equal与==</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#装箱及拆箱"><span class="toc-text">装箱及拆箱</span></a></li></ol></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/06/28/java-map面经/">Java Map面经</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/28/java-list面经/">Java List面经</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/28/java-set面经/">Java Set面经</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/28/java-基础/">Java 基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/28/my-first-blog/">my first blog</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/28/hello-world/">Hello World</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/Map/" style="font-size: 15px;">Map</a> <a href="/tags/List/" style="font-size: 15px;">List</a> <a href="/tags/Set/" style="font-size: 15px;">Set</a> <a href="/tags/Life/" style="font-size: 15px;">Life</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="https://github.com/yxxyyx1314" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">网站地图</a> |  <a href="/atom.xml">订阅本站</a> |  <a href="/about/">联系博主</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次，本站总访客数:<i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>人</p><p><span> Copyright &copy;<a href="/." rel="nofollow">Yang Peng.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/js/search.json.js?v=2.0.3"></script><script type="text/javascript" src="/js/toctotop.js?v=2.0.3" async></script><link rel="stylesheet" type="text/css" href="/share/css/share.css"><script type="text/javascript" src="/share/js/social-share.js" charset="utf-8"></script><script type="text/javascript" src="/share/js/qrcode.js" charset="utf-8"></script></body></html>
+<h3 id="封装、继承、多态"><a href="#封装、继承、多态" class="headerlink" title="封装、继承、多态"></a>封装、继承、多态</h3><ol>
+<li>封装：通过隐藏类的内部实现机制，对外界提供已经定义好的接口进行访问。对外界而言它的内部细节是隐藏的，暴露给外界的只是它的访问方法。</li>
+<li>继承：是从已有的类得到继承信息创建新的类的过程，继承可以表示为is-a关系，让我们设计相似的东西的时候更加的方便。</li>
+<li>多态：可以分为方法重载和方法重写两种方式，方法重载是在编译时的多态性（也就是前绑定），方法可以根据不同参数类型进行不同的调用，方法名字一致；方法重写是运行时多态（也称为后绑定），实现方法重写：1.方法重写，子类继承父类并重写父类方法；2.用父类型引用来引用子类型对象，实现调用同样的方法会根据子类对象的不同表示出不一样的行为。</li>
+</ol>
+<h3 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h3><ol>
+<li><p>Java的反射机制允许我们动态的调用某个对象的方法、构造函数、获取某个对象的属性等；</p>
+</li>
+<li><p>无需在编码的时候确定调用的对象</p>
+</li>
+<li><p>实现方式：</p>
+<ol>
+<li><p>先获取这个类的class实例，比如:Class&lt;?&gt; myClass =Class.<strong>forName</strong>(“myClassName”);</p>
+</li>
+<li><p>然后通过这个类实例获得一个类对象，比如：Object myClassObject = myClass.newInstance();</p>
+</li>
+<li><p>然后调用Class类的对象的<strong>getMethod</strong>获取method对象;</p>
+</li>
+<li><p>获取method对象后调用method.<strong>invoke</strong>方法获取这个类的field、method、construct等，在这一步中，JVM默认如果调用次数小于15次，会调用native方法实现反射，累积调用大于15次之后，会由java代码创建出字节码来实现反射。</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3><h5 id="实现了Collection接口的集合类："><a href="#实现了Collection接口的集合类：" class="headerlink" title="实现了Collection接口的集合类："></a>实现了Collection接口的集合类：</h5><ol>
+<li><p>Collection&lt;–List&lt;–Vector</p>
+</li>
+<li><p>Collection&lt;–List&lt;–ArrayList</p>
+</li>
+<li><p>Collection&lt;–List&lt;–LinkedList</p>
+</li>
+<li><p>Collection&lt;–Set&lt;–HashSet </p>
+</li>
+<li><p>Collection&lt;–Set&lt;–HashSet&lt;–LinkedHashSet</p>
+</li>
+<li><p>Collection&lt;–Set&lt;–SortedSet&lt;–TreeSet</p>
+</li>
+</ol>
+<h5 id="实现了Map接口，和Collection接口没关系，但都属于集合类的一部分："><a href="#实现了Map接口，和Collection接口没关系，但都属于集合类的一部分：" class="headerlink" title="实现了Map接口，和Collection接口没关系，但都属于集合类的一部分："></a>实现了Map接口，和Collection接口没关系，但都属于集合类的一部分：</h5><ol>
+<li><p>HashMap</p>
+</li>
+<li><p>HashTable</p>
+</li>
+<li><p>LinkedHashMap</p>
+</li>
+<li><p>TreeMap</p>
+</li>
+<li><p>SynchronizedMap</p>
+</li>
+<li><p>ConcurrentHashMap</p>
+</li>
+<li></li>
+</ol>
+<h3 id="final和static"><a href="#final和static" class="headerlink" title="final和static"></a>final和static</h3><h5 id="被final声明的对象即表示“我不想这个对象再被改变”，因此："><a href="#被final声明的对象即表示“我不想这个对象再被改变”，因此：" class="headerlink" title="被final声明的对象即表示“我不想这个对象再被改变”，因此："></a>被final声明的对象即表示“我不想这个对象再被改变”，因此：</h5><ol>
+<li>被final声明的方法：这个方法不可以被子类重写</li>
+<li>被final声明的类：这个类不能被继承</li>
+<li>被final声明的变量：引用不能改变，常和static关键字一起使用作为常量<br>final关键字的好处：</li>
+<li>final关键字提高了性能。JVM和Java应用都会缓存final变量。</li>
+<li>final变量可以安全的在多线程环境下进行共享，而不需要额外的同步开销。</li>
+<li>使用final关键字，JVM会对方法、变量及类进行优化。</li>
+</ol>
+<h5 id="static关键字"><a href="#static关键字" class="headerlink" title="static关键字"></a>static关键字</h5><ol>
+<li>final关键字提高了性能。JVM和Java应用都会缓存final变量。</li>
+<li>final变量可以安全的在多线程环境下进行共享，而不需要额外的同步开销。</li>
+<li>使用final关键字，JVM会对方法、变量及类进行优化。</li>
+</ol>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><ol>
+<li><p>boolean byte char ：都是一个字节</p>
+</li>
+<li><p>short int long float double ：int是4个字节，负2的31次方到正2的31次方减1</p>
+</li>
+<li><p>String Enum Array</p>
+</li>
+<li><p>Object</p>
+<p>ps：负数使用补码表示</p>
+<p><img src="/2019/06/28/java-基础/2019629002.png" alt="primitive type"></p>
+<p><img src="/2019/06/28/java-基础/2019629003.png" alt="primitive"></p>
+<p><img src="/2019/06/28/java-基础/2019629004.png" alt="Object"></p>
+</li>
+</ol>
+<h3 id="数组和链表"><a href="#数组和链表" class="headerlink" title="数组和链表"></a>数组和链表</h3><h3 id="访问控制符"><a href="#访问控制符" class="headerlink" title="访问控制符"></a>访问控制符</h3><h3 id="接口与抽象类"><a href="#接口与抽象类" class="headerlink" title="接口与抽象类"></a>接口与抽象类</h3><h3 id="equal与"><a href="#equal与" class="headerlink" title="equal与=="></a>equal与==</h3><h3 id="装箱及拆箱"><a href="#装箱及拆箱" class="headerlink" title="装箱及拆箱"></a>装箱及拆箱</h3><h3 id="hashCode方法及作用"><a href="#hashCode方法及作用" class="headerlink" title="hashCode方法及作用"></a>hashCode方法及作用</h3><h3 id="Java8新特性"><a href="#Java8新特性" class="headerlink" title="Java8新特性"></a>Java8新特性</h3><h3 id="Java-NIO框架对比"><a href="#Java-NIO框架对比" class="headerlink" title="Java NIO框架对比"></a>Java NIO框架对比</h3></div><div class="post-copyright"><blockquote><p>原文作者: Yang Peng</p><p>原文链接: <a href="http://ylovex.cn/2019/06/28/java-基础/">http://ylovex.cn/2019/06/28/java-基础/</a></p><p>版权声明: 转载请注明出处(必须保留作者署名及链接)</p></blockquote></div><div class="tags"><a href="/tags/Java/">Java</a></div><div class="post-share"><div class="social-share"><span>分享到:</span></div></div><div class="post-nav"><a href="/2019/06/28/java-set面经/" class="pre">Java Set面经</a><a href="/2019/06/28/my-first-blog/" class="next">my first blog</a></div><div id="comments"><div id="lv-container" data-id="city" data-uid="MTAyMC80NDk3OC8yMTQ5OA=="></div></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#面向对象和面向过程"><span class="toc-text">面向对象和面向过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#封装、继承、多态"><span class="toc-text">封装、继承、多态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#反射"><span class="toc-text">反射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#集合"><span class="toc-text">集合</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#实现了Collection接口的集合类："><span class="toc-text">实现了Collection接口的集合类：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#实现了Map接口，和Collection接口没关系，但都属于集合类的一部分："><span class="toc-text">实现了Map接口，和Collection接口没关系，但都属于集合类的一部分：</span></a></li></ol></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#final和static"><span class="toc-text">final和static</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#被final声明的对象即表示“我不想这个对象再被改变”，因此："><span class="toc-text">被final声明的对象即表示“我不想这个对象再被改变”，因此：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#static关键字"><span class="toc-text">static关键字</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据类型"><span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组和链表"><span class="toc-text">数组和链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#访问控制符"><span class="toc-text">访问控制符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口与抽象类"><span class="toc-text">接口与抽象类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#equal与"><span class="toc-text">equal与==</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#装箱及拆箱"><span class="toc-text">装箱及拆箱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hashCode方法及作用"><span class="toc-text">hashCode方法及作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java8新特性"><span class="toc-text">Java8新特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-NIO框架对比"><span class="toc-text">Java NIO框架对比</span></a></li></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/06/29/LMS算法/">LMS算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/28/java-list面经/">Java List面经</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/28/java-map面经/">Java Map面经</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/28/java-set面经/">Java Set面经</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/28/java-基础/">Java 基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/28/my-first-blog/">my first blog</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/28/hello-world/">Hello World</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信号处理/">信号处理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="/tags/lms/" style="font-size: 15px;">lms</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/List/" style="font-size: 15px;">List</a> <a href="/tags/Map/" style="font-size: 15px;">Map</a> <a href="/tags/Set/" style="font-size: 15px;">Set</a> <a href="/tags/Life/" style="font-size: 15px;">Life</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="https://github.com/yxxyyx1314" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">网站地图</a> |  <a href="/atom.xml">订阅本站</a> |  <a href="/about/">联系博主</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次，本站总访客数:<i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>人</p><p><span> Copyright &copy;<a href="/." rel="nofollow">Yang Peng.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/js/search.json.js?v=2.0.3"></script><script type="text/javascript" src="/js/toctotop.js?v=2.0.3" async></script><link rel="stylesheet" type="text/css" href="/share/css/share.css"><script type="text/javascript" src="/share/js/social-share.js" charset="utf-8"></script><script type="text/javascript" src="/share/js/qrcode.js" charset="utf-8"></script><script>(function(d, s) {
+  var j, e = d.getElementsByTagName('body')[0];
+  if (typeof LivereTower === 'function') { return; }
+  j = d.createElement(s);
+  j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+  j.async = true;
+  e.appendChild(j);
+})(document, 'script');
+</script></body></html>
