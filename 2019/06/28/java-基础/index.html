@@ -77,12 +77,91 @@
 </li>
 <li><p>Object</p>
 <p>ps：负数使用补码表示</p>
-<p><img src="/2019/06/28/java-基础/2019629002.png" alt="primitive type"></p>
-<p><img src="/2019/06/28/java-基础/2019629003.png" alt="primitive"></p>
-<p><img src="/2019/06/28/java-基础/2019629004.png" alt="Object"></p>
+<p>Primitive type:  int,long,float…</p>
+<p>Object: Integer,Long,Float,String…</p>
+<p>Primitive type:</p>
+<ol>
+<li>值类型</li>
+<li>用a==b判断相等</li>
+</ol>
+<p>Object：</p>
+<ol>
+<li>引用类型</li>
+<li>用a==b判断是否为同一个Object</li>
+<li>用a.equals(b),或者Obeject.equals(a,b)判断是否相等</li>
+<li>两个Object如果不是同一个Object，即使值相等用==判断也是false</li>
+</ol>
 </li>
 </ol>
-<h3 id="数组和链表"><a href="#数组和链表" class="headerlink" title="数组和链表"></a>数组和链表</h3><h3 id="访问控制符"><a href="#访问控制符" class="headerlink" title="访问控制符"></a>访问控制符</h3><h3 id="接口与抽象类"><a href="#接口与抽象类" class="headerlink" title="接口与抽象类"></a>接口与抽象类</h3><h3 id="equal与"><a href="#equal与" class="headerlink" title="equal与=="></a>equal与==</h3><h3 id="装箱及拆箱"><a href="#装箱及拆箱" class="headerlink" title="装箱及拆箱"></a>装箱及拆箱</h3><h3 id="hashCode方法及作用"><a href="#hashCode方法及作用" class="headerlink" title="hashCode方法及作用"></a>hashCode方法及作用</h3><h3 id="Java8新特性"><a href="#Java8新特性" class="headerlink" title="Java8新特性"></a>Java8新特性</h3><h3 id="Java-NIO框架对比"><a href="#Java-NIO框架对比" class="headerlink" title="Java NIO框架对比"></a>Java NIO框架对比</h3></div><div class="post-copyright"><blockquote><p>原文作者: Yang Peng</p><p>原文链接: <a href="http://ylovex.cn/2019/06/28/java-基础/">http://ylovex.cn/2019/06/28/java-基础/</a></p><p>版权声明: 转载请注明出处(必须保留作者署名及链接)</p></blockquote></div><div class="tags"><a href="/tags/Java/">Java</a></div><div class="post-share"><div class="social-share"><span>分享到:</span></div></div><div class="post-nav"><a href="/2019/06/28/java-set面经/" class="pre">Java Set面经</a><a href="/2019/06/28/my-first-blog/" class="next">my first blog</a></div><div id="comments"><div id="lv-container" data-id="city" data-uid="MTAyMC80NDk3OC8yMTQ5OA=="></div></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#面向对象和面向过程"><span class="toc-text">面向对象和面向过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#封装、继承、多态"><span class="toc-text">封装、继承、多态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#反射"><span class="toc-text">反射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#集合"><span class="toc-text">集合</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#实现了Collection接口的集合类："><span class="toc-text">实现了Collection接口的集合类：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#实现了Map接口，和Collection接口没关系，但都属于集合类的一部分："><span class="toc-text">实现了Map接口，和Collection接口没关系，但都属于集合类的一部分：</span></a></li></ol></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#final和static"><span class="toc-text">final和static</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#被final声明的对象即表示“我不想这个对象再被改变”，因此："><span class="toc-text">被final声明的对象即表示“我不想这个对象再被改变”，因此：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#static关键字"><span class="toc-text">static关键字</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据类型"><span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组和链表"><span class="toc-text">数组和链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#访问控制符"><span class="toc-text">访问控制符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口与抽象类"><span class="toc-text">接口与抽象类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#equal与"><span class="toc-text">equal与==</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#装箱及拆箱"><span class="toc-text">装箱及拆箱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hashCode方法及作用"><span class="toc-text">hashCode方法及作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java8新特性"><span class="toc-text">Java8新特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-NIO框架对比"><span class="toc-text">Java NIO框架对比</span></a></li></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/06/29/LMS算法/">LMS算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/28/java-list面经/">Java List面经</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/28/java-map面经/">Java Map面经</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/28/java-set面经/">Java Set面经</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/28/java-基础/">Java 基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/28/my-first-blog/">my first blog</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/28/hello-world/">Hello World</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信号处理/">信号处理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="/tags/lms/" style="font-size: 15px;">lms</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/List/" style="font-size: 15px;">List</a> <a href="/tags/Map/" style="font-size: 15px;">Map</a> <a href="/tags/Set/" style="font-size: 15px;">Set</a> <a href="/tags/Life/" style="font-size: 15px;">Life</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="https://github.com/yxxyyx1314" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">网站地图</a> |  <a href="/atom.xml">订阅本站</a> |  <a href="/about/">联系博主</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次，本站总访客数:<i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>人</p><p><span> Copyright &copy;<a href="/." rel="nofollow">Yang Peng.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/js/search.json.js?v=2.0.3"></script><script type="text/javascript" src="/js/toctotop.js?v=2.0.3" async></script><link rel="stylesheet" type="text/css" href="/share/css/share.css"><script type="text/javascript" src="/share/js/social-share.js" charset="utf-8"></script><script type="text/javascript" src="/share/js/qrcode.js" charset="utf-8"></script><script>(function(d, s) {
+<h3 id="数组和链表"><a href="#数组和链表" class="headerlink" title="数组和链表"></a>数组和链表</h3><h6 id="基于空间的考虑："><a href="#基于空间的考虑：" class="headerlink" title="基于空间的考虑："></a>基于空间的考虑：</h6><ol>
+<li>数组的存储空间是静态，连续分布的，初始化的过大造成空间浪费，过小又将使空间溢出机会增多。而链表的存储空间是动态分布的，只要内存空间尚有空闲，就不会产生溢出；链表中每个节点出了数据域外，还有链域（指向下一个节点），这样空间利用率就会变高。</li>
+<li>数组从栈中分配空间，对于程序员方便快速，但是自由度小。链表从堆中分配空间，自由度大但是申请管理比较麻烦。</li>
+<li>数组中的数据在内存中按顺序存储的，而链表是随机存储的。</li>
+</ol>
+<h6 id="基于时间的考虑："><a href="#基于时间的考虑：" class="headerlink" title="基于时间的考虑："></a>基于时间的考虑：</h6><ol>
+<li>数组查询快，插入与删除慢，单链表查询慢，插入与删除快。细说的话：数组中任意节点都可以在O（1）内直接存储访问，而链表中的节点，需从头指针顺着链表扫描才能获取到；而链表任意位置进行插入和删除，都只需要修改指针，而数组中插入删除节点，平均要移动一半的节点。</li>
+</ol>
+<h3 id="访问控制符"><a href="#访问控制符" class="headerlink" title="访问控制符"></a>访问控制符</h3><table>
+<thead>
+<tr>
+<th></th>
+<th>public</th>
+<th>protected</th>
+<th>defailt</th>
+<th>private</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>同一个类</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr>
+<td>同一个包</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>子父类</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>不同包</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+</tbody></table>
+<h3 id="接口与抽象类"><a href="#接口与抽象类" class="headerlink" title="接口与抽象类"></a>接口与抽象类</h3><p>抽象类就是比普通类多了一些抽象方法而已，其他部分和普通类完全一样；而接口是特殊的抽象类。<br>作用上看：</p>
+<ol>
+<li><p>接口与抽象类结构有点像，但功能完全不同</p>
+</li>
+<li><p>接口是强调合约、约束关系，即你要与我合作，必须实现我的功能；抽象类没这个功能</p>
+</li>
+</ol>
+<p>语法上看：</p>
+<ol>
+<li>都不能被实例化</li>
+<li>接口是特殊的抽象类</li>
+<li>接口不能有实现，Java8中可以有添加default关键字的默认实现和静态方法实现。</li>
+<li>接口中的成员变量必须是public static final修饰（编译器默认会添加上），因此是常量</li>
+<li>一个类可以实现多个接口但只能继承一个抽象类</li>
+</ol>
+<p>什么是接口？</p>
+<ol>
+<li>从表现来说：定义了很多函数，但是这些函数都没有实现，这就是接口。从作用来说：起到一个合约规范的作用。我要告诉你和我打交道的东西有什么约束</li>
+<li>接口中的方法只能用public和abstract修饰或者不修饰</li>
+<li>接口中的属性默认都是public static final，因此是常量</li>
+</ol>
+<h3 id="equal与"><a href="#equal与" class="headerlink" title="equal与=="></a>equal与==</h3><h3 id="装箱及拆箱"><a href="#装箱及拆箱" class="headerlink" title="装箱及拆箱"></a>装箱及拆箱</h3><h3 id="hashCode方法及作用"><a href="#hashCode方法及作用" class="headerlink" title="hashCode方法及作用"></a>hashCode方法及作用</h3><h3 id="Java8新特性"><a href="#Java8新特性" class="headerlink" title="Java8新特性"></a>Java8新特性</h3><h3 id="Java-NIO框架对比"><a href="#Java-NIO框架对比" class="headerlink" title="Java NIO框架对比"></a>Java NIO框架对比</h3></div><div class="post-copyright"><blockquote><p>原文作者: Yang Peng</p><p>原文链接: <a href="http://ylovex.cn/2019/06/28/java-基础/">http://ylovex.cn/2019/06/28/java-基础/</a></p><p>版权声明: 转载请注明出处(必须保留作者署名及链接)</p></blockquote></div><div class="tags"><a href="/tags/Java/">Java</a></div><div class="post-share"><div class="social-share"><span>分享到:</span></div></div><div class="post-nav"><a href="/2019/06/28/java-set面经/" class="pre">Java Set面经</a><a href="/2019/06/28/my-first-blog/" class="next">my first blog</a></div><div id="comments"><div id="lv-container" data-id="city" data-uid="MTAyMC80NDk3OC8yMTQ5OA=="></div></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#面向对象和面向过程"><span class="toc-text">面向对象和面向过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#封装、继承、多态"><span class="toc-text">封装、继承、多态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#反射"><span class="toc-text">反射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#集合"><span class="toc-text">集合</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#实现了Collection接口的集合类："><span class="toc-text">实现了Collection接口的集合类：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#实现了Map接口，和Collection接口没关系，但都属于集合类的一部分："><span class="toc-text">实现了Map接口，和Collection接口没关系，但都属于集合类的一部分：</span></a></li></ol></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#final和static"><span class="toc-text">final和static</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#被final声明的对象即表示“我不想这个对象再被改变”，因此："><span class="toc-text">被final声明的对象即表示“我不想这个对象再被改变”，因此：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#static关键字"><span class="toc-text">static关键字</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据类型"><span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组和链表"><span class="toc-text">数组和链表</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#基于空间的考虑："><span class="toc-text">基于空间的考虑：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#基于时间的考虑："><span class="toc-text">基于时间的考虑：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#访问控制符"><span class="toc-text">访问控制符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口与抽象类"><span class="toc-text">接口与抽象类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#equal与"><span class="toc-text">equal与==</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#装箱及拆箱"><span class="toc-text">装箱及拆箱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hashCode方法及作用"><span class="toc-text">hashCode方法及作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java8新特性"><span class="toc-text">Java8新特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-NIO框架对比"><span class="toc-text">Java NIO框架对比</span></a></li></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/06/29/LMS算法/">LMS算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/28/java-list面经/">Java List面经</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/28/java-map面经/">Java Map面经</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/28/java-set面经/">Java Set面经</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/28/java-基础/">Java 基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/28/my-first-blog/">my first blog</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/28/hello-world/">Hello World</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信号处理/">信号处理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="/tags/lms/" style="font-size: 15px;">lms</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/List/" style="font-size: 15px;">List</a> <a href="/tags/Map/" style="font-size: 15px;">Map</a> <a href="/tags/Set/" style="font-size: 15px;">Set</a> <a href="/tags/Life/" style="font-size: 15px;">Life</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="https://github.com/yxxyyx1314" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">网站地图</a> |  <a href="/atom.xml">订阅本站</a> |  <a href="/about/">联系博主</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次，本站总访客数:<i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>人</p><p><span> Copyright &copy;<a href="/." rel="nofollow">Yang Peng.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/js/search.json.js?v=2.0.3"></script><script type="text/javascript" src="/js/toctotop.js?v=2.0.3" async></script><link rel="stylesheet" type="text/css" href="/share/css/share.css"><script type="text/javascript" src="/share/js/social-share.js" charset="utf-8"></script><script type="text/javascript" src="/share/js/qrcode.js" charset="utf-8"></script><script>(function(d, s) {
   var j, e = d.getElementsByTagName('body')[0];
   if (typeof LivereTower === 'function') { return; }
   j = d.createElement(s);
