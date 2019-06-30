@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://ylovex.cn/2019/06/28/java-map%E9%9D%A2%E7%BB%8F/</loc>
+    
+    <lastmod>2019-06-30T09:04:29.908Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://ylovex.cn/2019/06/28/java-set%E9%9D%A2%E7%BB%8F/</loc>
+    
+    <lastmod>2019-06-30T03:59:59.928Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://ylovex.cn/2019/06/28/java-list%E9%9D%A2%E7%BB%8F/</loc>
+    
+    <lastmod>2019-06-30T03:42:56.160Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://ylovex.cn/2019/06/29/LMS%E7%AE%97%E6%B3%95/</loc>
     
     <lastmod>2019-06-30T01:42:36.666Z</lastmod>
@@ -19,27 +40,6 @@
     <loc>http://ylovex.cn/2019/06/28/java-%E5%9F%BA%E7%A1%80/</loc>
     
     <lastmod>2019-06-29T14:40:40.335Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://ylovex.cn/2019/06/28/java-list%E9%9D%A2%E7%BB%8F/</loc>
-    
-    <lastmod>2019-06-29T14:19:10.807Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://ylovex.cn/2019/06/28/java-set%E9%9D%A2%E7%BB%8F/</loc>
-    
-    <lastmod>2019-06-29T14:17:09.757Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://ylovex.cn/2019/06/28/java-map%E9%9D%A2%E7%BB%8F/</loc>
-    
-    <lastmod>2019-06-29T12:03:20.075Z</lastmod>
     
   </url>
   
