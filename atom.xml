@@ -42,6 +42,31 @@
   </entry>
   
   <entry>
+    <title>LeetCode-二叉树的序列化与反序列化</title>
+    <link href="http://ylovex.cn/2019/07/27/LeetCode-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8E%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"/>
+    <id>http://ylovex.cn/2019/07/27/LeetCode-二叉树的序列化与反序列化/</id>
+    <published>2019-07-26T23:43:07.000Z</published>
+    <updated>2019-07-30T23:59:19.661Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h3><p><a href="https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/</a></p><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>序列化是将一个数据结构或者对象转换为连续的比特位的操作，进而可以将转换后的数据存储在一个文件或者内存中，同时也可以通过网络传输到另一个计算机环境，采取相反方式重构得到原数据。</p><p>请设计一个算法来实现二叉树的序列化与反序列化。这里不限定你的序列 / 反序列化算法执行逻辑，你只需要保证一个二叉树可以被序列化为一个字符串并且将这个字符串反序列化为原始的树结构。</p><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>根据前序遍历的顺序来序列化二叉树，因为前序遍历是从根节点开始的，在遍历到null节点的时候，可以将null节点序列化为字符串”null“，反序列化也是按照前序遍历递归的重建二叉树。</p><h3 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">package le;</span><br><span class="line"></span><br><span class="line">import java.util.ArrayDeque;</span><br><span class="line">import java.util.Arrays;</span><br><span class="line">import java.util.Queue;</span><br><span class="line"></span><br><span class="line">public class le_297 &#123;</span><br><span class="line">    class TreeNode&#123;</span><br><span class="line">        int val;</span><br><span class="line">        TreeNode left;</span><br><span class="line">        TreeNode right;</span><br><span class="line">        TreeNode(int x)&#123;val=x;&#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String serialize(TreeNode root)&#123;</span><br><span class="line">        if(root==null)&#123;</span><br><span class="line">            return &quot;null,&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        StringBuilder stringBuilder = new StringBuilder();</span><br><span class="line">        stringBuilder.append(root.val + &quot;,&quot;);</span><br><span class="line">        stringBuilder.append(serialize(root.left));</span><br><span class="line">        stringBuilder.append(serialize(root.right));</span><br><span class="line">        return stringBuilder.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public TreeNode deserialize(String data)&#123;</span><br><span class="line">        String[] strings = data.split(&quot;,&quot;);</span><br><span class="line">        Queue&lt;String&gt; queue = new ArrayDeque&lt;&gt;(Arrays.asList(strings));</span><br><span class="line">        return func(queue);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private TreeNode func(Queue&lt;String&gt; queue) &#123;</span><br><span class="line">        String string = queue.remove();</span><br><span class="line">        if(&quot;null&quot;.equals(string))&#123;</span><br><span class="line">            return null;</span><br><span class="line">        &#125;</span><br><span class="line">        TreeNode node = new TreeNode(Integer.parseInt(string));</span><br><span class="line">        node.left = func(queue);</span><br><span class="line">        node.right = func(queue);</span><br><span class="line">        return node;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;题目来源&quot;&gt;&lt;a href=&quot;#题目来源&quot; class=&quot;headerlink&quot; title=&quot;题目来源&quot;&gt;&lt;/a&gt;题目来源&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/serialize-and-deseri
+      
+    
+    </summary>
+    
+      <category term="leetcode" scheme="http://ylovex.cn/categories/leetcode/"/>
+    
+    
+      <category term="code" scheme="http://ylovex.cn/tags/code/"/>
+    
+  </entry>
+  
+  <entry>
     <title>java基础面试题总结</title>
     <link href="http://ylovex.cn/2019/07/25/java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/"/>
     <id>http://ylovex.cn/2019/07/25/java基础面试题总结/</id>
@@ -505,33 +530,6 @@
       <category term="code" scheme="http://ylovex.cn/tags/code/"/>
     
       <category term="遍历" scheme="http://ylovex.cn/tags/%E9%81%8D%E5%8E%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>nowcoder-括号匹配问题</title>
-    <link href="http://ylovex.cn/2019/06/07/nowcoder-%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D%E9%97%AE%E9%A2%98/"/>
-    <id>http://ylovex.cn/2019/06/07/nowcoder-括号匹配问题/</id>
-    <published>2019-06-06T23:44:08.000Z</published>
-    <updated>2019-07-10T23:47:31.367Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="题目来源："><a href="#题目来源：" class="headerlink" title="题目来源："></a>题目来源：</h3><p><a href="https://www.nowcoder.com/practice/380380e6c6b444888ae145593ccbbbca?tpId=90&amp;tqId=30840&amp;tPage=4&amp;rp=4&amp;ru=/ta/2018test&amp;qru=/ta/2018test/question-ranking" target="_blank" rel="noopener">https://www.nowcoder.com/practice/380380e6c6b444888ae145593ccbbbca?tpId=90&amp;tqId=30840&amp;tPage=4&amp;rp=4&amp;ru=/ta/2018test&amp;qru=/ta/2018test/question-ranking</a></p><h3 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h3><p>合法的括号匹配序列被定义为:</p><ol><li>空串””是合法的括号序列</li><li>如果”X”和”Y”是合法的序列,那么”XY”也是一个合法的括号序列</li><li>如果”X”是一个合法的序列,那么”(X)”也是一个合法的括号序列</li><li>每个合法的括号序列都可以由上面的规则生成<br>例如””, “()”, “()()()”, “(()())”, “(((())))”都是合法的。 东东现在有一个合法的括号序列s,一次移除</li></ol><p>操作分为两步:</p><ol><li>移除序列s中第一个左括号</li><li>移除序列s中任意一个右括号.保证操作之后s还是一个合法的括号序列<br>东东现在想知道使用上述的移除操作有多少种方案可以把序列s变为空<br>如果两个方案中有一次移除操作移除的是不同的右括号就认为是不同的方案。<br>例如: s = “()()()()()”,输出1, 因为每次都只能选择被移除的左括号所相邻的右括号.<br>s = “(((())))”,输出24, 第一次有4种情况, 第二次有3种情况, … ,依次类推, 4 * 3 * 2 * 1 = 24</li></ol><h3 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h3><p>反向遍历，用count记录”)“数量，用res记录结果，每次遍历到”)“则count加一，遍历到”(“则结果乘以count，表示该”(“可以匹配的”)”选择为count数，之后count减一继续遍历，遍历完序列后的res即为方案数量。</p><h3 id="参考代码："><a href="#参考代码：" class="headerlink" title="参考代码："></a>参考代码：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Now_64</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException</span>&#123;</span><br><span class="line">        BufferedReader bf = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(System.in));</span><br><span class="line">        String input = bf.readLine();</span><br><span class="line">        <span class="keyword">int</span> len=input.length();</span><br><span class="line">        <span class="keyword">int</span> res=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> count=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=len-<span class="number">1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(input.charAt(i)==<span class="string">')'</span>)&#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                res*=count;</span><br><span class="line">                count--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(res);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;题目来源：&quot;&gt;&lt;a href=&quot;#题目来源：&quot; class=&quot;headerlink&quot; title=&quot;题目来源：&quot;&gt;&lt;/a&gt;题目来源：&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://www.nowcoder.com/practice/380380e6c6b4448
-      
-    
-    </summary>
-    
-      <category term="nowcoder" scheme="http://ylovex.cn/categories/nowcoder/"/>
-    
-    
-      <category term="code" scheme="http://ylovex.cn/tags/code/"/>
-    
-      <category term="Stack" scheme="http://ylovex.cn/tags/Stack/"/>
     
   </entry>
   
