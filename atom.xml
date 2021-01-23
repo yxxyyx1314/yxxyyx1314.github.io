@@ -5,9 +5,9 @@
   <subtitle>Desire is the starting point of all achievement</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://ylovex.cn/"/>
+  <link href="http://www.ylovex.cn/"/>
   <updated>2021-01-23T02:00:43.283Z</updated>
-  <id>http://ylovex.cn/</id>
+  <id>http://www.ylovex.cn/</id>
   
   <author>
     <name>Yang Peng</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>2021年-新的起点</title>
-    <link href="http://ylovex.cn/2021/01/23/2021%E5%B9%B4-%E6%96%B0%E7%9A%84%E8%B5%B7%E7%82%B9/"/>
-    <id>http://ylovex.cn/2021/01/23/2021年-新的起点/</id>
+    <link href="http://www.ylovex.cn/2021/01/23/2021%E5%B9%B4-%E6%96%B0%E7%9A%84%E8%B5%B7%E7%82%B9/"/>
+    <id>http://www.ylovex.cn/2021/01/23/2021年-新的起点/</id>
     <published>2021-01-23T01:54:15.000Z</published>
     <updated>2021-01-23T02:00:43.283Z</updated>
     
@@ -35,17 +35,17 @@
     
     </summary>
     
-      <category term="生活" scheme="http://ylovex.cn/categories/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="http://www.ylovex.cn/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-      <category term="Life" scheme="http://ylovex.cn/tags/Life/"/>
+      <category term="Life" scheme="http://www.ylovex.cn/tags/Life/"/>
     
   </entry>
   
   <entry>
     <title>LeetCode-钥匙和房间</title>
-    <link href="http://ylovex.cn/2019/08/13/LeetCode-%E9%92%A5%E5%8C%99%E5%92%8C%E6%88%BF%E9%97%B4/"/>
-    <id>http://ylovex.cn/2019/08/13/LeetCode-钥匙和房间/</id>
+    <link href="http://www.ylovex.cn/2019/08/13/LeetCode-%E9%92%A5%E5%8C%99%E5%92%8C%E6%88%BF%E9%97%B4/"/>
+    <id>http://www.ylovex.cn/2019/08/13/LeetCode-钥匙和房间/</id>
     <published>2019-08-13T11:24:33.000Z</published>
     <updated>2019-08-13T11:26:32.405Z</updated>
     
@@ -60,17 +60,17 @@
     
     </summary>
     
-      <category term="leetcode" scheme="http://ylovex.cn/categories/leetcode/"/>
+      <category term="leetcode" scheme="http://www.ylovex.cn/categories/leetcode/"/>
     
     
-      <category term="code" scheme="http://ylovex.cn/tags/code/"/>
+      <category term="code" scheme="http://www.ylovex.cn/tags/code/"/>
     
   </entry>
   
   <entry>
     <title>nowcoder-进制转换</title>
-    <link href="http://ylovex.cn/2019/08/05/nowcoder-%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/"/>
-    <id>http://ylovex.cn/2019/08/05/nowcoder-进制转换/</id>
+    <link href="http://www.ylovex.cn/2019/08/05/nowcoder-%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/"/>
+    <id>http://www.ylovex.cn/2019/08/05/nowcoder-进制转换/</id>
     <published>2019-08-05T11:24:00.000Z</published>
     <updated>2019-08-13T11:25:52.363Z</updated>
     
@@ -85,17 +85,17 @@
     
     </summary>
     
-      <category term="nowcoder" scheme="http://ylovex.cn/categories/nowcoder/"/>
+      <category term="nowcoder" scheme="http://www.ylovex.cn/categories/nowcoder/"/>
     
     
-      <category term="code" scheme="http://ylovex.cn/tags/code/"/>
+      <category term="code" scheme="http://www.ylovex.cn/tags/code/"/>
     
   </entry>
   
   <entry>
     <title>Redis设计与实现笔记八</title>
-    <link href="http://ylovex.cn/2019/07/30/Redis%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E7%AC%94%E8%AE%B0%E5%85%AB/"/>
-    <id>http://ylovex.cn/2019/07/30/Redis设计与实现笔记八/</id>
+    <link href="http://www.ylovex.cn/2019/07/30/Redis%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E7%AC%94%E8%AE%B0%E5%85%AB/"/>
+    <id>http://www.ylovex.cn/2019/07/30/Redis设计与实现笔记八/</id>
     <published>2019-07-30T13:06:26.000Z</published>
     <updated>2019-07-30T14:54:34.943Z</updated>
     
@@ -110,17 +110,17 @@
     
     </summary>
     
-      <category term="Redis" scheme="http://ylovex.cn/categories/Redis/"/>
+      <category term="Redis" scheme="http://www.ylovex.cn/categories/Redis/"/>
     
     
-      <category term="Redis" scheme="http://ylovex.cn/tags/Redis/"/>
+      <category term="Redis" scheme="http://www.ylovex.cn/tags/Redis/"/>
     
   </entry>
   
   <entry>
     <title>LeetCode-二叉树的序列化与反序列化</title>
-    <link href="http://ylovex.cn/2019/07/27/LeetCode-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8E%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"/>
-    <id>http://ylovex.cn/2019/07/27/LeetCode-二叉树的序列化与反序列化/</id>
+    <link href="http://www.ylovex.cn/2019/07/27/LeetCode-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8E%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"/>
+    <id>http://www.ylovex.cn/2019/07/27/LeetCode-二叉树的序列化与反序列化/</id>
     <published>2019-07-26T23:43:07.000Z</published>
     <updated>2019-07-30T23:59:19.661Z</updated>
     
@@ -135,17 +135,17 @@
     
     </summary>
     
-      <category term="leetcode" scheme="http://ylovex.cn/categories/leetcode/"/>
+      <category term="leetcode" scheme="http://www.ylovex.cn/categories/leetcode/"/>
     
     
-      <category term="code" scheme="http://ylovex.cn/tags/code/"/>
+      <category term="code" scheme="http://www.ylovex.cn/tags/code/"/>
     
   </entry>
   
   <entry>
     <title>java基础面试题总结</title>
-    <link href="http://ylovex.cn/2019/07/25/java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/"/>
-    <id>http://ylovex.cn/2019/07/25/java基础面试题总结/</id>
+    <link href="http://www.ylovex.cn/2019/07/25/java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/"/>
+    <id>http://www.ylovex.cn/2019/07/25/java基础面试题总结/</id>
     <published>2019-07-25T13:06:02.000Z</published>
     <updated>2019-07-30T13:09:56.368Z</updated>
     
@@ -160,17 +160,17 @@
     
     </summary>
     
-      <category term="Java" scheme="http://ylovex.cn/categories/Java/"/>
+      <category term="Java" scheme="http://www.ylovex.cn/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://ylovex.cn/tags/Java/"/>
+      <category term="Java" scheme="http://www.ylovex.cn/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>操作系统基础</title>
-    <link href="http://ylovex.cn/2019/07/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/"/>
-    <id>http://ylovex.cn/2019/07/21/操作系统基础/</id>
+    <link href="http://www.ylovex.cn/2019/07/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/"/>
+    <id>http://www.ylovex.cn/2019/07/21/操作系统基础/</id>
     <published>2019-07-21T00:03:18.000Z</published>
     <updated>2019-07-28T04:25:51.673Z</updated>
     
@@ -187,17 +187,17 @@
     
     </summary>
     
-      <category term="操作系统" scheme="http://ylovex.cn/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+      <category term="操作系统" scheme="http://www.ylovex.cn/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
     
-      <category term="操作系统" scheme="http://ylovex.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+      <category term="操作系统" scheme="http://www.ylovex.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>java多线程基础</title>
-    <link href="http://ylovex.cn/2019/07/16/java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80/"/>
-    <id>http://ylovex.cn/2019/07/16/java多线程基础/</id>
+    <link href="http://www.ylovex.cn/2019/07/16/java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80/"/>
+    <id>http://www.ylovex.cn/2019/07/16/java多线程基础/</id>
     <published>2019-07-16T13:55:11.000Z</published>
     <updated>2019-07-18T13:59:30.839Z</updated>
     
@@ -212,17 +212,17 @@
     
     </summary>
     
-      <category term="Java" scheme="http://ylovex.cn/categories/Java/"/>
+      <category term="Java" scheme="http://www.ylovex.cn/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://ylovex.cn/tags/Java/"/>
+      <category term="Java" scheme="http://www.ylovex.cn/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Redis设计与实现笔记七</title>
-    <link href="http://ylovex.cn/2019/07/13/Redis%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E7%AC%94%E8%AE%B0%E4%B8%83/"/>
-    <id>http://ylovex.cn/2019/07/13/Redis设计与实现笔记七/</id>
+    <link href="http://www.ylovex.cn/2019/07/13/Redis%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E7%AC%94%E8%AE%B0%E4%B8%83/"/>
+    <id>http://www.ylovex.cn/2019/07/13/Redis设计与实现笔记七/</id>
     <published>2019-07-13T03:37:37.000Z</published>
     <updated>2019-07-14T03:45:31.182Z</updated>
     
@@ -238,17 +238,17 @@
     
     </summary>
     
-      <category term="Redis" scheme="http://ylovex.cn/categories/Redis/"/>
+      <category term="Redis" scheme="http://www.ylovex.cn/categories/Redis/"/>
     
     
-      <category term="Redis" scheme="http://ylovex.cn/tags/Redis/"/>
+      <category term="Redis" scheme="http://www.ylovex.cn/tags/Redis/"/>
     
   </entry>
   
   <entry>
     <title>Redis设计与实现笔记六</title>
-    <link href="http://ylovex.cn/2019/07/10/Redis%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E7%AC%94%E8%AE%B0%E5%85%AD/"/>
-    <id>http://ylovex.cn/2019/07/10/Redis设计与实现笔记六/</id>
+    <link href="http://www.ylovex.cn/2019/07/10/Redis%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E7%AC%94%E8%AE%B0%E5%85%AD/"/>
+    <id>http://www.ylovex.cn/2019/07/10/Redis设计与实现笔记六/</id>
     <published>2019-07-10T03:37:28.000Z</published>
     <updated>2019-07-14T03:43:38.196Z</updated>
     
@@ -264,17 +264,17 @@
     
     </summary>
     
-      <category term="Redis" scheme="http://ylovex.cn/categories/Redis/"/>
+      <category term="Redis" scheme="http://www.ylovex.cn/categories/Redis/"/>
     
     
-      <category term="Redis" scheme="http://ylovex.cn/tags/Redis/"/>
+      <category term="Redis" scheme="http://www.ylovex.cn/tags/Redis/"/>
     
   </entry>
   
   <entry>
     <title>jvm虚拟机执行子系统</title>
-    <link href="http://ylovex.cn/2019/07/09/jvm%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%89%A7%E8%A1%8C%E5%AD%90%E7%B3%BB%E7%BB%9F/"/>
-    <id>http://ylovex.cn/2019/07/09/jvm虚拟机执行子系统/</id>
+    <link href="http://www.ylovex.cn/2019/07/09/jvm%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%89%A7%E8%A1%8C%E5%AD%90%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://www.ylovex.cn/2019/07/09/jvm虚拟机执行子系统/</id>
     <published>2019-07-09T12:26:37.000Z</published>
     <updated>2019-07-11T12:33:18.278Z</updated>
     
@@ -289,19 +289,19 @@
     
     </summary>
     
-      <category term="jvm" scheme="http://ylovex.cn/categories/jvm/"/>
+      <category term="jvm" scheme="http://www.ylovex.cn/categories/jvm/"/>
     
     
-      <category term="java" scheme="http://ylovex.cn/tags/java/"/>
+      <category term="java" scheme="http://www.ylovex.cn/tags/java/"/>
     
-      <category term="jvm" scheme="http://ylovex.cn/tags/jvm/"/>
+      <category term="jvm" scheme="http://www.ylovex.cn/tags/jvm/"/>
     
   </entry>
   
   <entry>
     <title>Redis设计与实现笔记五</title>
-    <link href="http://ylovex.cn/2019/07/08/Redis%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E7%AC%94%E8%AE%B0%E4%BA%94/"/>
-    <id>http://ylovex.cn/2019/07/08/Redis设计与实现笔记五/</id>
+    <link href="http://www.ylovex.cn/2019/07/08/Redis%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E7%AC%94%E8%AE%B0%E4%BA%94/"/>
+    <id>http://www.ylovex.cn/2019/07/08/Redis设计与实现笔记五/</id>
     <published>2019-07-08T03:37:21.000Z</published>
     <updated>2019-07-14T03:41:48.350Z</updated>
     
@@ -316,17 +316,17 @@
     
     </summary>
     
-      <category term="Redis" scheme="http://ylovex.cn/categories/Redis/"/>
+      <category term="Redis" scheme="http://www.ylovex.cn/categories/Redis/"/>
     
     
-      <category term="Redis" scheme="http://ylovex.cn/tags/Redis/"/>
+      <category term="Redis" scheme="http://www.ylovex.cn/tags/Redis/"/>
     
   </entry>
   
   <entry>
     <title>nowcoder-病毒传播</title>
-    <link href="http://ylovex.cn/2019/07/07/nowcoder-%E7%97%85%E6%AF%92%E4%BC%A0%E6%92%AD/"/>
-    <id>http://ylovex.cn/2019/07/07/nowcoder-病毒传播/</id>
+    <link href="http://www.ylovex.cn/2019/07/07/nowcoder-%E7%97%85%E6%AF%92%E4%BC%A0%E6%92%AD/"/>
+    <id>http://www.ylovex.cn/2019/07/07/nowcoder-病毒传播/</id>
     <published>2019-07-06T23:37:20.000Z</published>
     <updated>2019-07-10T23:57:56.384Z</updated>
     
@@ -341,19 +341,19 @@
     
     </summary>
     
-      <category term="nowcoder" scheme="http://ylovex.cn/categories/nowcoder/"/>
+      <category term="nowcoder" scheme="http://www.ylovex.cn/categories/nowcoder/"/>
     
     
-      <category term="code" scheme="http://ylovex.cn/tags/code/"/>
+      <category term="code" scheme="http://www.ylovex.cn/tags/code/"/>
     
-      <category term="bfs" scheme="http://ylovex.cn/tags/bfs/"/>
+      <category term="bfs" scheme="http://www.ylovex.cn/tags/bfs/"/>
     
   </entry>
   
   <entry>
     <title>Redis设计与实现笔记四</title>
-    <link href="http://ylovex.cn/2019/07/06/Redis%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E7%AC%94%E8%AE%B0%E5%9B%9B/"/>
-    <id>http://ylovex.cn/2019/07/06/Redis设计与实现笔记四/</id>
+    <link href="http://www.ylovex.cn/2019/07/06/Redis%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E7%AC%94%E8%AE%B0%E5%9B%9B/"/>
+    <id>http://www.ylovex.cn/2019/07/06/Redis设计与实现笔记四/</id>
     <published>2019-07-06T03:37:07.000Z</published>
     <updated>2019-07-14T03:39:43.999Z</updated>
     
@@ -369,17 +369,17 @@
     
     </summary>
     
-      <category term="Redis" scheme="http://ylovex.cn/categories/Redis/"/>
+      <category term="Redis" scheme="http://www.ylovex.cn/categories/Redis/"/>
     
     
-      <category term="Redis" scheme="http://ylovex.cn/tags/Redis/"/>
+      <category term="Redis" scheme="http://www.ylovex.cn/tags/Redis/"/>
     
   </entry>
   
   <entry>
     <title>Redis设计与实现笔记三</title>
-    <link href="http://ylovex.cn/2019/07/05/Redis%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E7%AC%94%E8%AE%B0%E4%B8%89/"/>
-    <id>http://ylovex.cn/2019/07/05/Redis设计与实现笔记三/</id>
+    <link href="http://www.ylovex.cn/2019/07/05/Redis%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E7%AC%94%E8%AE%B0%E4%B8%89/"/>
+    <id>http://www.ylovex.cn/2019/07/05/Redis设计与实现笔记三/</id>
     <published>2019-07-04T22:55:12.000Z</published>
     <updated>2019-07-11T00:22:48.289Z</updated>
     
@@ -395,17 +395,17 @@
     
     </summary>
     
-      <category term="Redis" scheme="http://ylovex.cn/categories/Redis/"/>
+      <category term="Redis" scheme="http://www.ylovex.cn/categories/Redis/"/>
     
     
-      <category term="Redis" scheme="http://ylovex.cn/tags/Redis/"/>
+      <category term="Redis" scheme="http://www.ylovex.cn/tags/Redis/"/>
     
   </entry>
   
   <entry>
     <title>Redis设计与实现笔记二</title>
-    <link href="http://ylovex.cn/2019/07/03/Redis%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E7%AC%94%E8%AE%B0%E4%BA%8C/"/>
-    <id>http://ylovex.cn/2019/07/03/Redis设计与实现笔记二/</id>
+    <link href="http://www.ylovex.cn/2019/07/03/Redis%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E7%AC%94%E8%AE%B0%E4%BA%8C/"/>
+    <id>http://www.ylovex.cn/2019/07/03/Redis设计与实现笔记二/</id>
     <published>2019-07-03T04:52:07.000Z</published>
     <updated>2019-07-11T00:22:29.026Z</updated>
     
@@ -420,17 +420,17 @@
     
     </summary>
     
-      <category term="Redis" scheme="http://ylovex.cn/categories/Redis/"/>
+      <category term="Redis" scheme="http://www.ylovex.cn/categories/Redis/"/>
     
     
-      <category term="Redis" scheme="http://ylovex.cn/tags/Redis/"/>
+      <category term="Redis" scheme="http://www.ylovex.cn/tags/Redis/"/>
     
   </entry>
   
   <entry>
     <title>nowcoder-骰子游戏</title>
-    <link href="http://ylovex.cn/2019/07/02/nowcoder-%E9%AA%B0%E5%AD%90%E6%B8%B8%E6%88%8F/"/>
-    <id>http://ylovex.cn/2019/07/02/nowcoder-骰子游戏/</id>
+    <link href="http://www.ylovex.cn/2019/07/02/nowcoder-%E9%AA%B0%E5%AD%90%E6%B8%B8%E6%88%8F/"/>
+    <id>http://www.ylovex.cn/2019/07/02/nowcoder-骰子游戏/</id>
     <published>2019-07-01T23:37:01.000Z</published>
     <updated>2019-07-10T23:57:09.536Z</updated>
     
@@ -445,19 +445,19 @@
     
     </summary>
     
-      <category term="nowcoder" scheme="http://ylovex.cn/categories/nowcoder/"/>
+      <category term="nowcoder" scheme="http://www.ylovex.cn/categories/nowcoder/"/>
     
     
-      <category term="code" scheme="http://ylovex.cn/tags/code/"/>
+      <category term="code" scheme="http://www.ylovex.cn/tags/code/"/>
     
-      <category term="dp" scheme="http://ylovex.cn/tags/dp/"/>
+      <category term="dp" scheme="http://www.ylovex.cn/tags/dp/"/>
     
   </entry>
   
   <entry>
     <title>Redis设计与实现笔记一</title>
-    <link href="http://ylovex.cn/2019/07/01/Redis%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E7%AC%94%E8%AE%B0%E4%B8%80/"/>
-    <id>http://ylovex.cn/2019/07/01/Redis设计与实现笔记一/</id>
+    <link href="http://www.ylovex.cn/2019/07/01/Redis%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E7%AC%94%E8%AE%B0%E4%B8%80/"/>
+    <id>http://www.ylovex.cn/2019/07/01/Redis设计与实现笔记一/</id>
     <published>2019-07-01T13:33:42.000Z</published>
     <updated>2019-07-11T00:23:04.211Z</updated>
     
@@ -472,17 +472,17 @@
     
     </summary>
     
-      <category term="Redis" scheme="http://ylovex.cn/categories/Redis/"/>
+      <category term="Redis" scheme="http://www.ylovex.cn/categories/Redis/"/>
     
     
-      <category term="Redis" scheme="http://ylovex.cn/tags/Redis/"/>
+      <category term="Redis" scheme="http://www.ylovex.cn/tags/Redis/"/>
     
   </entry>
   
   <entry>
     <title>jvm自动内存管理机制</title>
-    <link href="http://ylovex.cn/2019/06/28/jvm%E8%87%AA%E5%8A%A8%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/"/>
-    <id>http://ylovex.cn/2019/06/28/jvm自动内存管理机制/</id>
+    <link href="http://www.ylovex.cn/2019/06/28/jvm%E8%87%AA%E5%8A%A8%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/"/>
+    <id>http://www.ylovex.cn/2019/06/28/jvm自动内存管理机制/</id>
     <published>2019-06-28T00:11:47.000Z</published>
     <updated>2019-07-11T00:24:12.390Z</updated>
     
@@ -498,19 +498,19 @@
     
     </summary>
     
-      <category term="jvm" scheme="http://ylovex.cn/categories/jvm/"/>
+      <category term="jvm" scheme="http://www.ylovex.cn/categories/jvm/"/>
     
     
-      <category term="java" scheme="http://ylovex.cn/tags/java/"/>
+      <category term="java" scheme="http://www.ylovex.cn/tags/java/"/>
     
-      <category term="jvm" scheme="http://ylovex.cn/tags/jvm/"/>
+      <category term="jvm" scheme="http://www.ylovex.cn/tags/jvm/"/>
     
   </entry>
   
   <entry>
     <title>计算机网络基础</title>
-    <link href="http://ylovex.cn/2019/06/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
-    <id>http://ylovex.cn/2019/06/25/计算机网络基础/</id>
+    <link href="http://www.ylovex.cn/2019/06/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
+    <id>http://www.ylovex.cn/2019/06/25/计算机网络基础/</id>
     <published>2019-06-25T11:42:18.000Z</published>
     <updated>2019-07-22T11:51:22.591Z</updated>
     
@@ -525,10 +525,10 @@
     
     </summary>
     
-      <category term="计算机网络" scheme="http://ylovex.cn/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+      <category term="计算机网络" scheme="http://www.ylovex.cn/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
     
     
-      <category term="网络" scheme="http://ylovex.cn/tags/%E7%BD%91%E7%BB%9C/"/>
+      <category term="网络" scheme="http://www.ylovex.cn/tags/%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
