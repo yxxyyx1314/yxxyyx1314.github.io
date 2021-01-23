@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ylovex.cn/"/>
-  <updated>2019-08-13T11:26:32.405Z</updated>
+  <updated>2021-01-23T02:00:43.283Z</updated>
   <id>http://ylovex.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2021年-新的起点</title>
+    <link href="http://ylovex.cn/2021/01/23/2021%E5%B9%B4-%E6%96%B0%E7%9A%84%E8%B5%B7%E7%82%B9/"/>
+    <id>http://ylovex.cn/2021/01/23/2021年-新的起点/</id>
+    <published>2021-01-23T01:54:15.000Z</published>
+    <updated>2021-01-23T02:00:43.283Z</updated>
+    
+    <content type="html"><![CDATA[<p>2021，重拾博客，开启新的旅途。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;2021，重拾博客，开启新的旅途。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="生活" scheme="http://ylovex.cn/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="Life" scheme="http://ylovex.cn/tags/Life/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode-钥匙和房间</title>
@@ -503,31 +529,6 @@
     
     
       <category term="网络" scheme="http://ylovex.cn/tags/%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>nowcoder-数位重排</title>
-    <link href="http://ylovex.cn/2019/06/18/nowcoder-%E6%95%B0%E4%BD%8D%E9%87%8D%E6%8E%92/"/>
-    <id>http://ylovex.cn/2019/06/18/nowcoder-数位重排/</id>
-    <published>2019-06-18T12:32:06.000Z</published>
-    <updated>2019-07-10T23:49:12.651Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="题目来源："><a href="#题目来源：" class="headerlink" title="题目来源："></a>题目来源：</h3><p><a href="https://www.nowcoder.com/practice/f970201e9f7e4040ab25a40918e27d15?tpId=90&amp;tqId=30847&amp;tPage=4&amp;rp=4&amp;ru=/ta/2018test&amp;qru=/ta/2018test/question-ranking" target="_blank" rel="noopener">https://www.nowcoder.com/practice/f970201e9f7e4040ab25a40918e27d15?tpId=90&amp;tqId=30847&amp;tPage=4&amp;rp=4&amp;ru=/ta/2018test&amp;qru=/ta/2018test/question-ranking</a></p><h3 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h3><p>牛牛有一个正整数x,牛牛需要把数字x中的数位进行重排得到一个新数(不同于x的数),牛牛想知道这个新数是否可能是原x的倍数。请你来帮他解决这个问题。</p><h3 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h3><p>题目要求将x中的数位重排得到的新数是否可能是原x的倍数；只需判断x的2到9的倍数中是否存在由x重排后得到的数。</p><h3 id="参考代码："><a href="#参考代码：" class="headerlink" title="参考代码："></a>参考代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">public class Now_71&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Scanner sc = new Scanner(System.in);</span><br><span class="line">        int n = sc.nextInt();</span><br><span class="line">        boolean[] booleans = new boolean[n];</span><br><span class="line">        for(int i=0;i&lt;n;i++)&#123;</span><br><span class="line">            booleans[i] = isCheck(sc.nextInt());</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i=0;i&lt;n;i++)&#123;</span><br><span class="line">            if(booleans[i])&#123;</span><br><span class="line">                System.out.println(&quot;Possible&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">            else &#123;</span><br><span class="line">                System.out.println(&quot;Impossible&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private static boolean isCheck(int num) &#123;</span><br><span class="line">        for(int i=2;i&lt;=9;i++)&#123;</span><br><span class="line">            String s1 = String.valueOf(num*i);</span><br><span class="line">            String s2 = String.valueOf(num);</span><br><span class="line">            char[] c1 = s1.toCharArray();</span><br><span class="line">            char[] c2 = s2.toCharArray();</span><br><span class="line">            if(c1.length != c2.length) continue;</span><br><span class="line">            Arrays.sort(c1);</span><br><span class="line">            Arrays.sort(c2);</span><br><span class="line">            String s3 = String.valueOf(c1);</span><br><span class="line">            String s4 = String.valueOf(c2);</span><br><span class="line">            if(s3.equals(s4))&#123;</span><br><span class="line">                return true;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;题目来源：&quot;&gt;&lt;a href=&quot;#题目来源：&quot; class=&quot;headerlink&quot; title=&quot;题目来源：&quot;&gt;&lt;/a&gt;题目来源：&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://www.nowcoder.com/practice/f970201e9f7e404
-      
-    
-    </summary>
-    
-      <category term="nowcoder" scheme="http://ylovex.cn/categories/nowcoder/"/>
-    
-    
-      <category term="code" scheme="http://ylovex.cn/tags/code/"/>
     
   </entry>
   
