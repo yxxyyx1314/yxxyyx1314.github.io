@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="My Personal Time">
 <meta property="og:description" content="Yang Peng&apos;s blogs">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2022-11-26T08:35:16.195Z">
+<meta property="og:updated_time" content="2022-11-26T08:57:51.195Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="标签">
 <meta name="twitter:description" content="Yang Peng&apos;s blogs">
@@ -214,7 +214,15 @@
       
       
       <div class="post-body">
-          
+          <div class="tag-cloud">
+            <div class="tag-cloud-title">
+              目前共计 22 个标签
+            </div>
+            <div class="tag-cloud-tags">
+              <a href="/tags/Java/" style="font-size: 21px; color: #6f6f6f">Java</a> <a href="/tags/Life/" style="font-size: 16.5px; color: #9d9d9d">Life</a> <a href="/tags/List/" style="font-size: 12px; color: #ccc">List</a> <a href="/tags/Map/" style="font-size: 12px; color: #ccc">Map</a> <a href="/tags/MySQL/" style="font-size: 12px; color: #ccc">MySQL</a> <a href="/tags/Redis/" style="font-size: 25.5px; color: #404040">Redis</a> <a href="/tags/Set/" style="font-size: 12px; color: #ccc">Set</a> <a href="/tags/Stack/" style="font-size: 12px; color: #ccc">Stack</a> <a href="/tags/bfs/" style="font-size: 12px; color: #ccc">bfs</a> <a href="/tags/code/" style="font-size: 30px; color: #111">code</a> <a href="/tags/dp/" style="font-size: 12px; color: #ccc">dp</a> <a href="/tags/http/" style="font-size: 12px; color: #ccc">http</a> <a href="/tags/java/" style="font-size: 16.5px; color: #9d9d9d">java</a> <a href="/tags/jvm/" style="font-size: 16.5px; color: #9d9d9d">jvm</a> <a href="/tags/lms/" style="font-size: 12px; color: #ccc">lms</a> <a href="/tags/web/" style="font-size: 12px; color: #ccc">web</a> <a href="/tags/动态规划/" style="font-size: 12px; color: #ccc">动态规划</a> <a href="/tags/单例模式/" style="font-size: 12px; color: #ccc">单例模式</a> <a href="/tags/排序/" style="font-size: 12px; color: #ccc">排序</a> <a href="/tags/操作系统/" style="font-size: 12px; color: #ccc">操作系统</a> <a href="/tags/网络/" style="font-size: 12px; color: #ccc">网络</a> <a href="/tags/遍历/" style="font-size: 12px; color: #ccc">遍历</a>
+            </div>
+          </div>
+        
       </div>
       
       
@@ -229,6 +237,11 @@
 
           </div>
           
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80NDk3OC8yMTQ5OA=="></div>
+  </div>
+  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -293,12 +306,16 @@
         </a>
       </div>
       <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
         <span class="site-state-item-count">12</span>
-        <span class="site-state-item-name">分类</span>
+        <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
         <span class="site-state-item-count">22</span>
-        <span class="site-state-item-name">标签</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -377,6 +394,22 @@
   
 
   
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
 
 </body>
 </html>
