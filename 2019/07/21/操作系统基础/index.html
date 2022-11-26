@@ -1,0 +1,871 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="Yang Peng's blogs"><meta name="keywords" content="cs,java,go"><title>操作系统基础 | My Personal Time</title><link rel="stylesheet" type="text/css" href="//fonts.loli.net/css?family=Source+Code+Pro"><link rel="stylesheet" type="text/css" href="/css/donate.css"><link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.3"><link rel="stylesheet" type="text/css" href="/css/highlight.css?v=2.0.3"><link rel="Shortcut Icon" href="/favicon.ico"><link rel="bookmark" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">操作系统基础</h1><a id="logo" href="/.">My Personal Time</a><p class="description">Desire is the starting point of all achievement</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="搜索"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="title">{title}</div><div class="time">{date}</div><div class="tags">{tags}</div></a></div></template></div></div></div><div id="layout" class="layout-g"><div class="layout-l"><div class="content_container"><div class="post"><h1 class="post-title">操作系统基础</h1><div class="post-meta"><a href="/2019/07/21/操作系统基础/#comments" class="comment-count"></a><p><span class="date">Jul 21, 2019</span><span><a href="/categories/操作系统/" class="category">操作系统</a></span><span><i id="busuanzi_container_page_pv"><i id="busuanzi_value_page_pv"></i><i>点击</i></i></span></p></div><div class="post-content"><h2 id="操作系统基础"><a href="#操作系统基础" class="headerlink" title="操作系统基础"></a>操作系统基础</h2><p>操作系统是计算机系统中的一个系统软件，是一些程序模块的集合</p>
+<ol>
+<li>对于使用者：提供了一个计算机用户与计算机硬件系统之间的接口，使计算机系统更易于使用</li>
+<li>对于资源管理者：有效地控制和管理计算机系统中的各种硬件和软件资源，使之得到更加有效的利用</li>
+<li>合理地组织计算机系统的工作流程，以改善系统性能（响应时间、系统吞吐量等）</li>
+</ol>
+<h5 id="计算机系统组成"><a href="#计算机系统组成" class="headerlink" title="计算机系统组成"></a>计算机系统组成</h5><ol>
+<li>硬件（CPU、内存、IO设备）提供基本的运算资源</li>
+<li>系统软件：操作系统、编译系统</li>
+<li>应用程序（字处理、电子表格、浏览器）</li>
+<li>用户（操作员、其他计算机）使用计算机解决问题</li>
+</ol>
+<h5 id="基本功能"><a href="#基本功能" class="headerlink" title="基本功能"></a>基本功能</h5><p>处理机管理</p>
+<ol>
+<li>进程（线程）控制</li>
+<li>进程（线程）同步</li>
+<li>进程通信</li>
+<li>进程（线程）调度</li>
+</ol>
+<p>存储器管理</p>
+<ol>
+<li>任务<ol>
+<li>为多道程序的并发提供良好的环境 </li>
+<li>便于用户使用存储器 </li>
+<li>提高存储器利用率 </li>
+<li>为尽量多的用户提供足够大的存储空间 </li>
+</ol>
+</li>
+<li>功能<ol>
+<li>内存分配：静态和动态分配</li>
+<li>内存保护</li>
+<li>地址影射</li>
+<li>内存扩充</li>
+</ol>
+</li>
+</ol>
+<p>设备管理</p>
+<ol>
+<li>任务<ol>
+<li>为用户程序分配I/O设备 </li>
+<li>完成用户程序请求的I/O操作 </li>
+<li>提高CPU和I/O设备的利用率：中断；通道</li>
+<li>改善人机界面 </li>
+</ol>
+</li>
+<li>功能<ol>
+<li>缓冲管理</li>
+<li>设备分配</li>
+<li>设备处理</li>
+<li>虚拟设备功能</li>
+</ol>
+</li>
+</ol>
+<p>文件管理</p>
+<ol>
+<li>文件存储空间的管理</li>
+<li>目录管理</li>
+<li>文件读、写管理</li>
+<li>文件保护</li>
+<li>向用户提供接口</li>
+</ol>
+<p>作业控制</p>
+<ol>
+<li>作业调度</li>
+<li>作业控制<ol>
+<li>批量型作业</li>
+<li>终端型作业</li>
+</ol>
+</li>
+</ol>
+<h3 id="存储器管理"><a href="#存储器管理" class="headerlink" title="存储器管理"></a>存储器管理</h3><h5 id="地址空间和存储空间"><a href="#地址空间和存储空间" class="headerlink" title="地址空间和存储空间"></a>地址空间和存储空间</h5><p>地址空间：源程序经过编译后得到的目标程序，存在于它所限定的地址范围内，这个范围称为地址空间。简言之，地址空间是逻辑地址的集合</p>
+<p>存储空间：是指主存中一系列存储信息的物理单元的集合，这些单元的编号称为物理地址或绝对地址。简言之，存储空间是物理地址的集合</p>
+<h5 id="存储分配的三种方式"><a href="#存储分配的三种方式" class="headerlink" title="存储分配的三种方式"></a>存储分配的三种方式</h5><p>直接指定方式：程序员在编写程序时候，或者编译程序（汇编程序）对源程序进行编译（汇编）时，所用的是实际地址</p>
+<p>静态分配：程序员编程时，或由编译程序产生的目的程序，均可从其地址空间的零地址开始；当装配程序对其进行连接装入时才确定它们在主存中的地址</p>
+<p>动态分配：作业在存储空间中的位置，在其装入时候确定，在其执行过程中可根据需要申请附加存储空间，而且一个作业已占用的部分区域不再需要时候，可以要求归还系统</p>
+<h5 id="单一连续区存储管理"><a href="#单一连续区存储管理" class="headerlink" title="单一连续区存储管理"></a>单一连续区存储管理</h5><p>内存分为两个区域：系统区、用户区。应用程序装入到用户区，可使用用户区全部空间</p>
+<p>最简单，适用于单用户、单任务的OS。CP/M和DOS</p>
+<p>优点是易于管理；缺点是对要求内存空间少的程序，造成内存浪费，程序全部装入，很少使用的程序部分也占用内存</p>
+<h5 id="分区式分配"><a href="#分区式分配" class="headerlink" title="分区式分配"></a>分区式分配</h5><p>把内存分为一些大小相等或不等的分区，每个应用程序占用一个或几个分区。操作系统占用其中一个分区</p>
+<p>适用于多道程序系统和分时系统，支持多个程序并发执行，但难以进行内存分区的共享</p>
+<p>固定式分区：当系统初始化 式，把存储空间划分成若干个任意大小的区域 ；然后，把这些区域分配给每个用户作业。</p>
+<ol>
+<li>把内存划分为若干个固定大小的连续分区。 分区大小相等：只适合于多个相同程序的并发执行 （处理多个类型相同的对象）。分区大小不等：多个小分区、适量的中等分区、少 量的大分区。根据程序的大小，分配当前空闲的、 适当大小的分区。 </li>
+<li>优点：易于实现，开销小</li>
+<li>缺点：内碎片造成浪费，分区总数固定，限制了并发执行程序数目</li>
+<li>采用的数据结构：分区表–记录分区的大小和使用情况</li>
+</ol>
+<p>可变式分区：分区的边界可以移动，即分区的大小可变</p>
+<ol>
+<li>优点：没有内碎片</li>
+<li>缺点：有外碎片</li>
+</ol>
+<h5 id="可变式分区的分配策略"><a href="#可变式分区的分配策略" class="headerlink" title="可变式分区的分配策略"></a>可变式分区的分配策略</h5><ol>
+<li>最佳适应算法（Best Fit）：为一个作业选择分区时 ，总是寻找其大小最接近于作业所要求的存储区域。 </li>
+<li>最坏适应算法（Worst Fit）：为作业选择存储区域时 ，总是寻找最大的空白区</li>
+<li>首次适应算法（First Fit）：每个空白区按其在存储 空间中地址递增的顺序连在一起，在为作业分配存储 区域时，从这个空白区域链的始端开始查找，选择第 一个足以满足请求的空白块。 </li>
+<li>下次适应算法（Next Fit）：把存储空间中空白区构 成一个循环链，每次为存储请求查找合适的分区时， 总是从上次查找结束的地方开始，只要找到一个足够 大的空白区，就将它划分后分配出去。</li>
+</ol>
+<h5 id="可重定位分区分配"><a href="#可重定位分区分配" class="headerlink" title="可重定位分区分配"></a>可重定位分区分配</h5><p>定时的或在内存紧张时， 移动某些已分配区中的信息，把存储空间中所 有的空白区合并为一个大的连续区。</p>
+<h5 id="多重分区分配"><a href="#多重分区分配" class="headerlink" title="多重分区分配"></a>多重分区分配</h5><p>一个作业往往由相对独立的程序 段和数据段组成，将这些片断分别装入到存储空 间中不同的区域内的分配方式</p>
+<h5 id="覆盖管理"><a href="#覆盖管理" class="headerlink" title="覆盖管理"></a>覆盖管理</h5><p>就是把一个大的程序划 分成一系列的覆盖，每个覆盖是一个相对独立 的程序单位。把程序执行时并不要求同时装入 主存的覆盖组成一组，称其为覆盖段，这个覆 盖段被分配到同一个存储区域。这个存储区域 称之为覆盖区，它与覆盖段一一对应。 </p>
+<p>缺点：编程时必须划分程序模块和确定程序模 块之间的覆盖关系，增加编程复杂度。从外存 装入覆盖文件，以时间延长来换取空间节省。</p>
+<h5 id="交换"><a href="#交换" class="headerlink" title="交换"></a>交换</h5><p>广义的说，所谓交换就是把暂时不用的 某个（或某些）程序及其数据的部分或全部从 主存移到辅存中去，以便腾出必要的存储空间 ；接着把指定程序或数据从辅存读到相应的主 存中，并将控制转给它，让其在系统上运行</p>
+<p>优点：增加并发运行的程序数目，并且给用户 提供适当的响应时间；编写程序时不影响程序 结构 </p>
+<p>缺点：对换入和换出的控制增加处理机开销； 程序整个地址空间都进行传送，没有考虑执行 过程中地址访问的统计特性。</p>
+<h4 id="分页式存储管理"><a href="#分页式存储管理" class="headerlink" title="分页式存储管理"></a>分页式存储管理</h4><p>页：在分页存储管理系统中，把每个作业的地址 空间分成一些大小相等的片，称之为页面或页。 </p>
+<p>存储块：在分页存储管理系统中，把主存的存储 空间也分成与页面相同大小的片，这些片称为存 储块，或称为页框</p>
+<h5 id="纯分页系统"><a href="#纯分页系统" class="headerlink" title="纯分页系统"></a>纯分页系统</h5><p>在调度一个作业时，必须把它的所有页一次装到主 存的页框内；如果当时页框数不足，则该作业必须 等待，系统再调度另外作业</p>
+<p>优点： 没有外碎片，每个内碎片不超过页大小。 一个程序不必连续存放。便于改变程序占用空间的大小（ 主要指随着程序运行而动态生成的数据增多，要求地址空间相应增长，通常由系统调用完成而不是操作系统自动完成）。 </p>
+<p>缺点：程序全部装入内存</p>
+<h5 id="页表数据结构"><a href="#页表数据结构" class="headerlink" title="页表数据结构"></a>页表数据结构</h5><p>进程页表：每个进程有一个页表，描述该进程占用的物理页面及逻辑排列顺序</p>
+<p>物理页面表：整个系统有一个物理页面表，描 述物理内存空间的分配使用状况。 </p>
+<p>请求表：整个系统有一个请求表，描述系统内 各个进程页表的位置和大小，用于地址转换， 也可以结合到各进程的PCB里；</p>
+<h4 id="分段式存储管理"><a href="#分段式存储管理" class="headerlink" title="分段式存储管理"></a>分段式存储管理</h4><p>分段地址空间：一个段可定义为一组逻辑信息，每个作业的地 址空间是由一些分段构成的，每段都有自己的 名字，且都是一段连续的地址空间</p>
+<p>地址结构：段号S + 位移量W</p>
+<p>缺点：</p>
+<ol>
+<li>处理机要为地址变换花费时间；要为表格提供附加 的存储空间。 </li>
+<li>为满足分段的动态增长和减少外零头，要采用拼接 手段。</li>
+<li>在辅存中管理不定长度的分段困难较多 。</li>
+<li>分段的最大尺寸受到主存可用空间的限制。</li>
+</ol>
+<h5 id="分页和分段的比较"><a href="#分页和分段的比较" class="headerlink" title="分页和分段的比较"></a>分页和分段的比较</h5><ol>
+<li>分页的作业的地址空间是单一的线性地址空间 ，分段作业的地址空间是二维的。</li>
+<li>“页”是信息的“物理”单位，大小固定。“ 段”是信息的逻辑单位，即它是一组有意义的信息，其长度不定。 </li>
+<li>分页活动用户是看不见的，而是系统对于主存 的管理。分段是用户可见的（分段可以在用户 编程时确定，也可以在编译程序对源程序编译 时根据信息的性质来划分）。</li>
+</ol>
+<h5 id="段页式存储管理"><a href="#段页式存储管理" class="headerlink" title="段页式存储管理"></a>段页式存储管理</h5><p>用分段方法来分配和管理虚拟存储器 ，而用分页方法来分配和管理实存储器</p>
+<p>一个程序首先被分成若干程序段，每一段赋予不 同的分段标识符，然后，对每一分段又分成若干个固定大小的页面</p>
+<h4 id="虚拟存储器"><a href="#虚拟存储器" class="headerlink" title="虚拟存储器"></a>虚拟存储器</h4><h5 id="局部性原理"><a href="#局部性原理" class="headerlink" title="局部性原理"></a>局部性原理</h5><p>指程序在执行过程中的一个较短时期，所执行的指令 地址和指令的操作数地址，分别局限于一定区域。还 可以表现为：</p>
+<ol>
+<li>时间局部性，即一条指令的一次执行和下次执行，一 个数据的一次访问和下次访问都集中在一个较短时期内</li>
+<li>空间局部性，即当前指令和邻近的几条指令，当前访 问的数据和邻近的数据都集中在一个较小区域内</li>
+</ol>
+<h5 id="虚拟存储技术"><a href="#虚拟存储技术" class="headerlink" title="虚拟存储技术"></a>虚拟存储技术</h5><p>在程序装入时，不必将其全部读入到内存，而 只需将当前需要执行的部分页或段读入到内存 ，就可让程序开始执行。 </p>
+<p>在程序执行过程中，如果需执行的指令或访问的数据尚未在内存（称为缺页或缺段），则由处理器通知操作系统将相应的页或段调入到内存，然后继续执行程序。 </p>
+<p>另一方面，操作系统将内存中暂时不使用的页 或段调出保存在外存上，从而腾出空间存放将 要装入的程序以及将要调入的页或段――具有 请求调入和置换功能，只需程序的一部分在内 存就可执行，对于动态链接库也可以请求调入</p>
+<p>优点：</p>
+<ol>
+<li>可在较小的可用内存中执行较大的用户程序； </li>
+<li>可在内存中容纳更多程序并发执行</li>
+<li>不必影响编程时的程序结构（与覆盖技术比较） </li>
+<li>提供给用户可用的虚拟内存空间通常大于物理内存(real memory)</li>
+</ol>
+<p>特征：</p>
+<ol>
+<li>离散性：物理内存分配的不连续，虚拟地址空 间使用的不连续（数据段和栈段之间的空闲空 间，共享段和动态链接库占用的空间） </li>
+<li>多次性</li>
+<li>对换性：与交换的比较：调入和调出是对部分 虚拟地址空间进行 </li>
+<li>虚拟性：通过物理内存和快速外存相结合，提 供大范围的虚拟地址空间 。范围大，但占用容量不超过物理内存和外存交换区 容量之和 。占用容量包括：进程地址空间中的各个段，操作系 统代码</li>
+</ol>
+<h5 id="请求式分页系统"><a href="#请求式分页系统" class="headerlink" title="请求式分页系统"></a>请求式分页系统</h5><p>在运行作业之前，只要求把当前需要的一部分 页面装入主存。当需要其它的页时，可自动的 选择一些页交换倒辅存去，同时把所需的页调 入主存。 </p>
+<p>虚拟存储系统：控制自动页面交换而用户作业 意识不到的那个机构，成为虚拟存储系统</p>
+<h5 id="页面调入策略"><a href="#页面调入策略" class="headerlink" title="页面调入策略"></a>页面调入策略</h5><p>请求式提取：仅当需要时才提取页面的策略</p>
+<p>预先调页：事先提取页面的策略。</p>
+<h4 id="页面置换策略"><a href="#页面置换策略" class="headerlink" title="页面置换策略"></a>页面置换策略</h4><h5 id="先进先出算法"><a href="#先进先出算法" class="headerlink" title="先进先出算法"></a>先进先出算法</h5><p>选择建立最早的页面被置换。可以通过链表来表示各页 的建立时间先后。性能较差。较早调入的页往往是经常 被访问的页，这些页在FIFO算法下被反复调入和调出。 并且有Belady现象。</p>
+<h5 id="最近最久不用的页面置换算法"><a href="#最近最久不用的页面置换算法" class="headerlink" title="最近最久不用的页面置换算法"></a>最近最久不用的页面置换算法</h5><p>选择内存中最久未使用的页面被置换。这是局部性 原理的合理近似，性能接近最佳算法。但由于需要 记录页面使用时间的先后关系，硬件开销太大。硬 件机构如：</p>
+<ol>
+<li>一个特殊的栈：把被访问的页面移到栈顶，于是栈底的是 最久未使用页面。 </li>
+<li>每个页面设立移位寄存器：被访问时左边最高位置1，定 期右移并且最高位补0，于是寄存器数值最小的是最久未 使用页面。</li>
+</ol>
+<h5 id="Clock算法"><a href="#Clock算法" class="headerlink" title="Clock算法"></a>Clock算法</h5><p>也称最近未使用算法(NRU, Not Recently Used)，它是LRU 和FIFO的折衷</p>
+<ol>
+<li>每页有一个使用标志位(use bit)，若该页被访问则置user bit=1。 </li>
+<li>置换时采用一个指针，从当前指针位置开始按地址先后检 查各页，寻找use bit=0的页面作为被置换页。</li>
+<li>指针经过的user bit=1的页都修改user bit=0，最后指针停留 在被置换页的下一个页。</li>
+</ol>
+<h5 id="最不常用算法-LFU-Least-Frequently-Used"><a href="#最不常用算法-LFU-Least-Frequently-Used" class="headerlink" title="最不常用算法(LFU, Least Frequently Used)"></a>最不常用算法(LFU, Least Frequently Used)</h5><p>选择到当前时间为止被访问次数最少的页面被置换； </p>
+<p>每页设置访问计数器，每当页面被访问时，该页面的访 问计数器加1；</p>
+<p>发生缺页中断时，淘汰计数值最小的页面，并将所有计 数清零；</p>
+<h5 id="页面缓冲算法"><a href="#页面缓冲算法" class="headerlink" title="页面缓冲算法"></a>页面缓冲算法</h5><p>它是对FIFO算法的发展，通过被置换页面的缓冲， 有机会找回刚被置换的页面； </p>
+<p>被置换页面的选择和处理：用FIFO算法选择被置换页，把被置换的页面放入两个链表之一。即：如果 页面未被修改，就将其归入到空闲页面链表的末尾 ，否则将其归入到已修改页面链表</p>
+<h3 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h3><p><strong>进程</strong>是程序在一个数据集合上运行的过程，它是系 统进行资源分配和调度的一个独立单位。</p>
+<p>特征：</p>
+<ol>
+<li>动态性</li>
+<li>并发性</li>
+<li>独立性</li>
+<li>异步性</li>
+<li>结构特征：程序段，数据段，进程控制块PCB</li>
+</ol>
+<p>一个进程应该包括：</p>
+<ol>
+<li>程序的代码</li>
+<li>程序的数据</li>
+<li>PC中的值，用来指示下一条将运行的指令</li>
+<li>一组通用的寄存器的当前值，堆、栈</li>
+<li>一组系统资源</li>
+</ol>
+<h5 id="进程与程序的区别"><a href="#进程与程序的区别" class="headerlink" title="进程与程序的区别"></a>进程与程序的区别</h5><ol>
+<li>进程是动态的，程序是静态的：程序是有序代码的集 合；进程是程序的执行。通常进程不可在计算机之间 迁移；而程序通常对应着文件、静态和可以复制。 </li>
+<li>进程是暂时的，程序的永久的：进程是一个状态变化 的过程，程序可长久保存。 </li>
+<li>进程与程序的组成不同：进程的组成包括程序、数据 和进程控制块（即进程状态信息）。 </li>
+<li>进程与程序的对应关系：通过多次执行，一个程序可 对应多个进程；通过调用关系，一个进程可包括多个程序。</li>
+</ol>
+<p><strong>线程</strong>是进程中的一个实体，是一个个CPU调度和分派的单位 ，基本上不拥有资源， 只有必不可少的少量资源 ，可以与其他同进程的 线程共享进程拥有的 所有资源</p>
+<h5 id="进程和线程区别"><a href="#进程和线程区别" class="headerlink" title="进程和线程区别"></a>进程和线程区别</h5><p>区别：</p>
+<ol>
+<li>线程程序任务调度和执行的最小单位。进程是资源分配的最小单位</li>
+<li>进程拥有独立的栈堆空间和数据段，启动一个新的进程必须分配给它独立的地址空间，系统开销大。线程拥有独立的栈空间，但是共享数据段，开销小，切换速度快，效率高。</li>
+<li>进程间相对独立，安全性高。线程间依赖性比较强，一个线程死掉等于整个进程死掉。</li>
+<li>进程间相对独立，通信机制较复杂。线程通信机制由于共享数据段，通信机制方便。</li>
+<li>线程必定只能属于一个进程，而进程可以拥有多个线程而且至少拥有一个线程。</li>
+</ol>
+<p>线程和进程场景选择：</p>
+<ol>
+<li>创建和销毁一个进程代价很大，需要频繁创建销毁优先使用线程。</li>
+<li>线程切换速度快，在需要大量计算、切换频繁时用线程，耗时的操作使用线程可提高应用程序的响应。</li>
+<li>对CPU系统的效率上线程占有，所以可能要发展到多级分布的用进程、多核分布用线程。</li>
+<li>并行操作用线程。</li>
+<li>需要更稳定安全时，选择进程，需要速度时，选线程。 </li>
+</ol>
+<p>对于线程弄清两点是非常重要的：</p>
+<ol>
+<li>线程之间有无先后访问顺序（线程依赖关系）</li>
+<li>多个线程共享访问一个变量（同步互斥问题）</li>
+</ol>
+<p>另外通常我们只会去说同一进程的多个线程共享进程的资源，但是每个线程特有的部分却很少提及，除了标识线程的id，每个线程还有自己的独立栈空间，线程彼此之间是无法访问其他线程栈上内容的。而作为处理机调度的最小单位，线程调度只需要保存线程栈、寄存器数据和PC即可，相比进程切换开销要小很多。    </p>
+<p>进程的优劣：<br>对于在父、子进程间共享状态信息，进程有一个非常清晰的模型：共享文件表，但是不共享用户地址空间。进程有独立的地址空间既是优点也是缺点。优点：一个进程不可能不小心覆盖另一个进程的虚拟内存。缺点：独立的地址空间使得进程共享状态信息变得更加困难。为了共享信息，必须使用显示的IPC（进程间通信）机制。而进程控制和IPC的开销很高。</p>
+<h4 id="进程创建和结束"><a href="#进程创建和结束" class="headerlink" title="进程创建和结束"></a>进程创建和结束</h4><p>进程创建有两种方式，一种是操作系统创建的，一种是父进程创建的。</p>
+<p>从计算机启动到终端执行程序的过程为：0号进程 -&gt; 1号内核进程 -&gt; 1号用户进程(init进程) -&gt; getty进程 -&gt; shell进程 -&gt; 命令行执行进程。所以我们在命令行中通过 ./program执行可执行文件时，所有创建的进程都是shell进程的子进程，这也就是为什么shell一关闭，在shell中执行的进程都自动被关闭的原因。</p>
+<p>相关接口：</p>
+<ol>
+<li>创建进程：pid_t fork(void);<br>返回值：出错返回-1；父进程中返回pdi&gt;0；子进程中pid ==0</li>
+<li>结束进程：void exit(int status)<br>status是退出状态，保存在全局变量，通常0表示正常退出</li>
+<li>获取PID： pid_t getpid(void)<br>返回调用者pid</li>
+<li>获得父进程pid： pid_t getppid(void)<br>返回父进程pid</li>
+</ol>
+<h5 id="如何创建新进程"><a href="#如何创建新进程" class="headerlink" title="如何创建新进程"></a>如何创建新进程</h5><p>在linux中主要提供了fork，vfork，clone三个进程创建方法。</p>
+<p>在linux源码中这是哪个调用的执行过程是执行fork,vfork,clone时，通过一个系统调用表映射到sys_fork(),sys_vfork(),sys_clone()，再在这三个函数中去调用do_fork()去做具体的创建进程工作。</p>
+<p>fork:现在Linux中是采取了copy-on-write(COW写时复制)技术，为了降低开销，fork最初并不会真的产生两个不同的拷贝，因为在那个时候，大量的数据其实完全是一样的。写时复制是在推迟真正的数据拷贝。若后来确实发生了写入，那意味着parent和child的数据不一致了，于是产生复制动作，每个进程拿到属于自己的那一份，这样就可以降低系统调用的开销。</p>
+<p>vfork()：vfork系统调用不同于fork，用vfork创建的子进程与父进程共享地址空间，也就是说子进程完全运行在父进程的地址空间上，如果这时子进程修改了某个变量，这将影响到父进程。 </p>
+<p>但此处有一点要注意的是用vfork()创建的子进程必须显示调用exit()来结束，否则子进程将不能结束，而fork()则不存在这个情况。 </p>
+<p>用 vfork创建子进程后，父进程会被阻塞直到子进程调用exec(exec，将一个新的可执行文件载入到地址空间并执行之。)或exit。vfork的好处是在子进程被创建后往往仅仅是为了调用exec执行另一个程序，因为它就不会对父进程的地址空间有任何引用，所以对地址空间的复制是多余的 ，因此通过vfork共享内存可以减少不必要的开销。</p>
+<p>clone()：系统调用fork()和vfork()是无参数的，而clone()则带有参数。fork()是全部复制，vfork()是共享内存，而clone() 是则可以将父进程资源有选择地复制给子进程，而没有复制的数据结构则通过指针的复制让子进程共享.</p>
+<h5 id="fork-返回值"><a href="#fork-返回值" class="headerlink" title="fork()返回值"></a>fork()返回值</h5><p>fork()之前，只有一个进程在执行这段代码，但是在该条语句后，就变成了两个进程在执行了，这两个进程代码部分完全相同。Fork仅仅被调用一次，但却能够返回两次，它有三种不同的返回值：1.父进程中，fork返回新创建的子进程ID。2.子进程中，fork返回0。3.出现错误，fork返回负值。</p>
+<h5 id="进程的状态"><a href="#进程的状态" class="headerlink" title="进程的状态"></a>进程的状态</h5><p><img src="/.cn//2019072400001.png" alt="31411"></p>
+<ol>
+<li>就绪状态：进程已获得除处理机外的所需资源，等待分配处理机资源；只要分配CPU就可执行。 </li>
+<li>执行状态：占用处理机资源；处于此状态的进程的 数目小于等于CPU的数目。在没有其他进程可以执 行时（如所有进程都在阻塞状态），通常会自动执 行系统的idle进程（相当于空操作）。 </li>
+<li>阻塞状态：正在执行的进程，由于发生某种事件而 暂时无法执行，便放弃处理机处于暂停状态。</li>
+</ol>
+<p>就绪–&gt;运行：</p>
+<ol>
+<li>时间一到，调度程序选择一个进程运行 </li>
+</ol>
+<p>运行–&gt; 就绪 ：</p>
+<ol>
+<li>运行进程用完了时间片 </li>
+<li>运行进程被中断，因为一高优先级进程处于就绪状态</li>
+</ol>
+<p>运行–&gt; 阻塞 ：</p>
+<ol>
+<li>当一进程所需的东西必须等待时 </li>
+<li>OS尚未完成服务 </li>
+<li>对一资源的访问尚不能进行 </li>
+<li>初始化I/O 且必须等待结果 </li>
+<li>等待某一进程提供输入(IPC) </li>
+</ol>
+<p>阻塞–&gt; 就绪 ：</p>
+<ol>
+<li>当所等待的事件发生时候</li>
+</ol>
+<h5 id="孤儿进程、僵尸进程和守护进程"><a href="#孤儿进程、僵尸进程和守护进程" class="headerlink" title="孤儿进程、僵尸进程和守护进程"></a>孤儿进程、僵尸进程和守护进程</h5><p>父进程在调用fork接口之后和子进程独立开，之后子进程和父进程就以未知的顺序向下执行（异步过程）。所以父进程和子进程都有可能先执行完。当父进程先结束，子进程此时就会变成孤儿进程，不过这种情况问题不大，孤儿进程会自动向上被init进程收养，init进程完成对状态收集工作。而且这种过继的方式也是守护进程能够实现的因素。如果子进程先结束，父进程并未调用wait或者waitpid获取进程状态信息，那么子进程描述符就会一直保存在系统里，这种进程称为僵尸进程。</p>
+<p>相关接口：</p>
+<p>回收进程（1）： pid_t wait(int *status)</p>
+<p>一旦调用wait（），就会立刻阻塞自己，wait（）自动分析某个子进程是否退出，如果找到僵尸进程就会负责收集和销毁，如果没有找到就一直阻塞在这里。</p>
+<p>status：指向子进程结束状态值。</p>
+<p>回收进程（2）： pid_t waitpid(pid_t pid,int *status,int options)</p>
+<p>返回值：返回pid：返回收集的子进程id。返回-1：出错 返回0：没有被收集的子进程</p>
+<ol>
+<li>pid：子进程识别码，控制等待哪些子进程。<ol>
+<li>pid &lt; -1,等待进程组识别码为pid绝对值的任何进程</li>
+<li>Pid = -1，等待任何子进程</li>
+<li>Pid = 0，等待进程组识别码与目前进程相同的任何子进程</li>
+<li>Pid&gt;0 ，等待任何子进程识别码为pid的子进程</li>
+</ol>
+</li>
+<li>status： 指向返回码的指针</li>
+<li>options： 选项决定父进程调用waitpid后的状态<ol>
+<li>options = WNOHANG, 即使没有子进程退出也立即返回。</li>
+<li>options = WUNYRACED, 子进程进入暂停马上返回，但结束状态不予理会</li>
+</ol>
+</li>
+</ol>
+<p>守护进程：</p>
+<p>定义：守护进程是脱离终端并在后台运行的进程，执行过程中信息不会显示在终端上并且也不会被终端发出的信号打断。</p>
+<p>操作步骤：创建子进程，父进程退出：fork() + if(pid &gt; 0){exit(0);}，使子进程称为孤儿进程被init进程收养。</p>
+<ol>
+<li>在子进程中创建新会话：setsid()。</li>
+<li>改变当前目录结构为根：chdir(“/“)。</li>
+<li>重设文件掩码：umask(0)。</li>
+<li>关闭文件描述符：for(int i = 0; i &lt; 65535; ++i){close(i);}。</li>
+</ol>
+<h5 id="多进程"><a href="#多进程" class="headerlink" title="多进程"></a>多进程</h5><p>每一个进程是资源分配的基本单位。进程结构由以下几个部分组成：代码段、堆栈段、数据段。代码段是静态的二进制代码，多个程序可以共享。实际上在父进程创建子进程之后，父、子进程除了pid外，几乎所有的部分几乎一样，子进程创建时拷贝父进程PCB中大部分内容，而PCB的内容实际上是各种数据、代码的地址或索引表地址，所以复制了PCB中这些指针实际就等于获取了全部父进程可访问数据。所以简单来说，创建新进程需要复制整个PCB，之后操作系统将PCB添加到进程核心堆栈底部，这样就可以被操作系统感知和调度了。</p>
+<p>父、子进程共享全部数据，但并不是说他们就是对同一块数据进行操作，子进程在读写数据时会通过写时复制机制将公共的数据重新拷贝一份，之后在拷贝出的数据上进行操作。如果子进程想要运行自己的代码段，还可以通过调用execv()函数重新加载新的代码段，之后就和父进程独立开了。我们在shell中执行程序就是通过shell进程先fork()一个子进程再通过execv()重新加载新的代码段的过程。</p>
+<h4 id="进程通信"><a href="#进程通信" class="headerlink" title="进程通信"></a>进程通信</h4><p>进程间通信（IPC，InterProcess Communication）是指在不同进程之间传播或交换信息。</p>
+<p>IPC的方式通常有管道（包括无名管道和命名管道）、消息队列、信号量、共享存储、Socket、Streams等。其中 Socket和Streams支持不同主机上的两个进程IPC</p>
+<h5 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h5><p>通常指无名管道，是 UNIX 系统IPC最古老的形式</p>
+<p>特点：</p>
+<ol>
+<li>它是半双工的（即数据只能在一个方向上流动），具有固定的读端和写端。</li>
+<li>它只能用于具有亲缘关系的进程之间的通信（也是父子进程或者兄弟进程之间）。</li>
+<li>它可以看成是一种特殊的文件，对于它的读写也可以使用普通的read、write 等函数。但是它不是普通的文件，并不属于其他任何文件系统，并且只存在于内存中。</li>
+<li>#include &lt;unistd.h&gt;<br>int pipe(int fd[2]);    // 返回值：若成功返回0，失败返回-1</li>
+</ol>
+<p>原型：当一个管道建立时，它会创建两个文件描述符：fd[0]为读而打开，fd[1]为写而打开。如下图</p>
+<p><img src="/.cn//2019072400002.png" alt="3223"></p>
+<p>要关闭管道只需将这两个文件描述符关闭即可。</p>
+<p>例子：单个进程中的管道几乎没有任何用处。所以，通常调用 pipe 的进程接着调用 fork，这样就创建了父进程与子进程之间的 IPC 通道。如下图所示：</p>
+<p><img src="/.cn//2019072400003.png" alt="58686"></p>
+<p>若要数据流从父进程流向子进程，则关闭父进程的读端（fd[0]）与子进程的写端（fd[1]）；反之，则可以使数据流从子进程流向父进程.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;unistd.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line"> </span><br><span class="line">#define MAXLINE (2014)</span><br><span class="line"> </span><br><span class="line">int main(void)</span><br><span class="line">&#123;</span><br><span class="line">	int n,fd[2];//保存管道返回的两个文件描述符</span><br><span class="line">	pid_t pid;</span><br><span class="line">	char line[MAXLINE];</span><br><span class="line">	if(pipe(fd)&lt;0)//创建管道,fd[0]是读端，fd[1]是写端。</span><br><span class="line">		printf(&quot;pipe error&quot;);</span><br><span class="line">	if((pid=fork())&lt;0)//创建进程</span><br><span class="line">		printf(&quot;fock error&quot;);//创建进程失败</span><br><span class="line">	else if(pid&gt;0)//pid大于零，为父进程，pid的值是子进程的</span><br><span class="line">	&#123;</span><br><span class="line">		close(fd[0]);//关闭读端</span><br><span class="line">		printf(&quot;#the parent process pid %d\n&quot;,getpid());//返回当前进程的id</span><br><span class="line">		printf(&quot;#the children pid is %d\n&quot;,pid);</span><br><span class="line">		printf(&quot;#the process write to pipe: hello world\n&quot;);</span><br><span class="line">		write(fd[1],&quot;hello world\n&quot;,12);//向写端写入12个字节数据</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		close(fd[1]);//关闭写端</span><br><span class="line">		printf(&quot;$the children process pid %d\n&quot;,getpid());</span><br><span class="line">		printf(&quot;$the parent process pid %d\n&quot;,getppid());</span><br><span class="line">		n = read(fd[0],line,MAXLINE);</span><br><span class="line">		write(STDOUT_FILENO,line,n);//把数据写入标准输出文件描述符</span><br><span class="line">	&#125;</span><br><span class="line">	exit(0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="FIFO"><a href="#FIFO" class="headerlink" title="FIFO"></a>FIFO</h5><p>也称为命名管道，它是一种文件类型</p>
+<p>特点：</p>
+<ol>
+<li>FIFO可以在无关的进程之间交换数据，与无名管道不同。</li>
+<li>FIFO有路径名与之相关联，它以一种特殊设备文件形式存在于文件系统中。</li>
+</ol>
+<p>原型：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;sys/stat.h&gt;</span><br><span class="line">// 返回值：成功返回0，出错返回-1</span><br><span class="line">int mkfifo(const char *pathname, mode_t mode);</span><br></pre></td></tr></table></figure>
+
+<p>其中的 mode 参数与open函数中的 mode 相同。一旦创建了一个 FIFO，就可以用一般的文件I/O函数操作它。</p>
+<p>当 open 一个FIFO时，是否设置非阻塞标志（O_NONBLOCK）的区别：</p>
+<p>若没有指定O_NONBLOCK（默认），只读 open 要阻塞到某个其他进程为写而打开此 FIFO。类似的，只写 open 要阻塞到某个其他进程为读而打开它。</p>
+<p>若指定了O_NONBLOCK，则只读 open 立即返回。而只写 open 将出错返回 -1 如果没有进程已经为读而打开该 FIFO，其errno置ENXIO。</p>
+<p>例子：FIFO的通信方式类似于在进程中使用文件来传输数据，只不过FIFO类型文件同时具有管道的特性。在数据读出时，FIFO管道中同时清除数据，并且“先进先出”。下面的例子演示了使用 FIFO 进行 IPC 的过程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">write_fifo.c</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;   // exit</span><br><span class="line">#include&lt;fcntl.h&gt;    // O_WRONLY</span><br><span class="line">#include&lt;sys/stat.h&gt;</span><br><span class="line">#include&lt;time.h&gt;     // time</span><br><span class="line">#include &lt;unistd.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int fd;</span><br><span class="line">    int n, i;</span><br><span class="line">    char buf[1024];</span><br><span class="line">    time_t tp;</span><br><span class="line"></span><br><span class="line">    printf(&quot;I am %d process.\n&quot;, getpid()); // 说明进程ID</span><br><span class="line">    </span><br><span class="line">    if((fd = open(&quot;fifo1&quot;, O_WRONLY)) &lt; 0) // 以写打开一个FIFO </span><br><span class="line">    &#123;</span><br><span class="line">        perror(&quot;Open FIFO Failed&quot;);</span><br><span class="line">        exit(1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    for(i=0; i&lt;10; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        time(&amp;tp);  // 取系统当前时间</span><br><span class="line">        n=sprintf(buf,&quot;Process %d&apos;s time is %s&quot;,getpid(),ctime(&amp;tp));</span><br><span class="line">        printf(&quot;Send message: %s&quot;, buf); // 打印</span><br><span class="line">        if(write(fd, buf, n+1) &lt; 0)  // 写入到FIFO中</span><br><span class="line">        &#123;</span><br><span class="line">            perror(&quot;Write FIFO Failed&quot;);</span><br><span class="line">            close(fd);</span><br><span class="line">            exit(1);</span><br><span class="line">        &#125;</span><br><span class="line">        sleep(1);  // 休眠1秒</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    close(fd);  // 关闭FIFO文件</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">read_fifo.c</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;errno.h&gt;</span><br><span class="line">#include&lt;fcntl.h&gt;</span><br><span class="line">#include&lt;sys/stat.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int fd;</span><br><span class="line">    int len;</span><br><span class="line">    char buf[1024];</span><br><span class="line"></span><br><span class="line">    if(mkfifo(&quot;fifo1&quot;, 0666) &lt; 0 &amp;&amp; errno!=EEXIST) // 创建FIFO管道</span><br><span class="line">        perror(&quot;Create FIFO Failed&quot;);</span><br><span class="line"></span><br><span class="line">    if((fd = open(&quot;fifo1&quot;, O_RDONLY)) &lt; 0)  // 以读打开FIFO</span><br><span class="line">    &#123;</span><br><span class="line">        perror(&quot;Open FIFO Failed&quot;);</span><br><span class="line">        exit(1);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    while((len = read(fd, buf, 1024)) &gt; 0) // 读取FIFO管道</span><br><span class="line">        printf(&quot;Read message: %s&quot;, buf);</span><br><span class="line"></span><br><span class="line">    close(fd);  // 关闭FIFO文件</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在两个终端里用 gcc 分别编译运行上面两个文件，可以看到结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">[cheesezh@localhost]$ ./write_fifo </span><br><span class="line">I am 5954 process.</span><br><span class="line">Send message: Process 5954&apos;s time is Mon Apr 20 12:37:28 2015</span><br><span class="line">Send message: Process 5954&apos;s time is Mon Apr 20 12:37:29 2015</span><br><span class="line">Send message: Process 5954&apos;s time is Mon Apr 20 12:37:30 2015</span><br><span class="line">Send message: Process 5954&apos;s time is Mon Apr 20 12:37:31 2015</span><br><span class="line">Send message: Process 5954&apos;s time is Mon Apr 20 12:37:32 2015</span><br><span class="line">Send message: Process 5954&apos;s time is Mon Apr 20 12:37:33 2015</span><br><span class="line">Send message: Process 5954&apos;s time is Mon Apr 20 12:37:34 2015</span><br><span class="line">Send message: Process 5954&apos;s time is Mon Apr 20 12:37:35 2015</span><br><span class="line">Send message: Process 5954&apos;s time is Mon Apr 20 12:37:36 2015</span><br><span class="line">Send message: Process 5954&apos;s time is Mon Apr 20 12:37:37 2015</span><br><span class="line">[cheesezh@localhost]$ ./read_fifo </span><br><span class="line">Read message: Process 5954&apos;s time is Mon Apr 20 12:37:28 2015</span><br><span class="line">Read message: Process 5954&apos;s time is Mon Apr 20 12:37:29 2015</span><br><span class="line">Read message: Process 5954&apos;s time is Mon Apr 20 12:37:30 2015</span><br><span class="line">Read message: Process 5954&apos;s time is Mon Apr 20 12:37:31 2015</span><br><span class="line">Read message: Process 5954&apos;s time is Mon Apr 20 12:37:32 2015</span><br><span class="line">Read message: Process 5954&apos;s time is Mon Apr 20 12:37:33 2015</span><br><span class="line">Read message: Process 5954&apos;s time is Mon Apr 20 12:37:34 2015</span><br><span class="line">Read message: Process 5954&apos;s time is Mon Apr 20 12:37:35 2015</span><br><span class="line">Read message: Process 5954&apos;s time is Mon Apr 20 12:37:36 2015</span><br><span class="line">Read message: Process 5954&apos;s time is Mon Apr 20 12:37:37 2015</span><br></pre></td></tr></table></figure>
+
+<p>上述例子可以扩展成客户进程—服务器进程通信的实例，write_fifo的作用类似于客户端，可以打开多个客户端向一个服务器发送请求信息，read_fifo类似于服务器，它适时监控着FIFO的读端，当有数据时，读出并进行处理，但是有一个关键的问题是，每一个客户端必须预先知道服务器提供的FIFO接口，下图显示了这种安排：</p>
+<p><img src="/.cn//2019072400004.png" alt="313124"></p>
+<h5 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h5><p>是消息的链接表，存放在内核中。一个消息队列由一个标识符（即队列ID）来标识。</p>
+<p>特点：</p>
+<ol>
+<li>消息队列是面向记录的，其中的消息具有特定的格式以及特定的优先级。</li>
+<li>消息队列独立于发送与接收进程。进程终止时，消息队列及其内容并不会被删除。</li>
+<li>消息队列可以实现消息的随机查询,消息不一定要以先进先出的次序读取,也可以按消息的类型读取。</li>
+</ol>
+<p>原型：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;sys/msg.h&gt;</span><br><span class="line">// 创建或打开消息队列：成功返回队列ID，失败返回-1</span><br><span class="line">int msgget(key_t key, int flag);</span><br><span class="line">// 添加消息：成功返回0，失败返回-1</span><br><span class="line">int msgsnd(int msqid, const void *ptr, size_t size, int flag);</span><br><span class="line">// 读取消息：成功返回消息数据的长度，失败返回-1</span><br><span class="line">int msgrcv(int msqid, void *ptr, size_t size, long type,int flag);</span><br><span class="line">// 控制消息队列：成功返回0，失败返回-1</span><br><span class="line">int msgctl(int msqid, int cmd, struct msqid_ds *buf);</span><br></pre></td></tr></table></figure>
+
+<p>在以下两种情况下，msgget将创建一个新的消息队列：</p>
+<ol>
+<li>如果没有与键值key相对应的消息队列，并且flag中包含了IPC_CREAT标志位。</li>
+<li>key参数为IPC_PRIVATE。</li>
+</ol>
+<p>函数msgrcv在读取消息队列时，type参数有下面几种情况</p>
+<ol>
+<li>type == 0，返回队列中的第一个消息；</li>
+<li>type &gt; 0，返回队列中消息类型为 type 的第一个消息；</li>
+<li>type &lt; 0，返回队列中消息类型值小于或等于 type 绝对值的消息，如果有多个，则取类型值最小的消息</li>
+</ol>
+<p>可以看出，type值非 0 时用于以非先进先出次序读消息。也可以把 type 看做优先级的权值</p>
+<p>例子：下面写了一个简单的使用消息队列进行IPC的例子，服务端程序一直在等待特定类型的消息，当收到该类型的消息以后，发送另一种特定类型的消息作为反馈，客户端读取该反馈并打印出来。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><span class="line">msg_server.c</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line">#include &lt;sys/msg.h&gt;</span><br><span class="line"></span><br><span class="line">// 用于创建一个唯一的key</span><br><span class="line">#define MSG_FILE &quot;/etc/passwd&quot;</span><br><span class="line"></span><br><span class="line">// 消息结构</span><br><span class="line">struct msg_form &#123;</span><br><span class="line">    long mtype;</span><br><span class="line">    char mtext[256];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int msqid;</span><br><span class="line">    key_t key;</span><br><span class="line">    struct msg_form msg;</span><br><span class="line">    </span><br><span class="line">    // 获取key值</span><br><span class="line">    if((key = ftok(MSG_FILE,&apos;z&apos;)) &lt; 0)</span><br><span class="line">    &#123;</span><br><span class="line">        perror(&quot;ftok error&quot;);</span><br><span class="line">        exit(1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 打印key值</span><br><span class="line">    printf(&quot;Message Queue - Server key is: %d.\n&quot;, key);</span><br><span class="line"></span><br><span class="line">    // 创建消息队列</span><br><span class="line">    if ((msqid = msgget(key, IPC_CREAT|0777)) == -1)</span><br><span class="line">    &#123;</span><br><span class="line">        perror(&quot;msgget error&quot;);</span><br><span class="line">        exit(1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 打印消息队列ID及进程ID</span><br><span class="line">    printf(&quot;My msqid is: %d.\n&quot;, msqid);</span><br><span class="line">    printf(&quot;My pid is: %d.\n&quot;, getpid());</span><br><span class="line"></span><br><span class="line">    // 循环读取消息</span><br><span class="line">    for(;;) </span><br><span class="line">    &#123;</span><br><span class="line">        msgrcv(msqid, &amp;msg, 256, 888, 0);// 返回类型为888的第一个消息</span><br><span class="line">        printf(&quot;Server: receive msg.mtext is: %s.\n&quot;, msg.mtext);</span><br><span class="line">        printf(&quot;Server: receive msg.mtype is: %d.\n&quot;, msg.mtype);</span><br><span class="line"></span><br><span class="line">        msg.mtype = 999; // 客户端接收的消息类型</span><br><span class="line">        sprintf(msg.mtext, &quot;hello, I&apos;m server %d&quot;, getpid());</span><br><span class="line">        msgsnd(msqid, &amp;msg, sizeof(msg.mtext), 0);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">msg_client.c</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line">#include &lt;sys/msg.h&gt;</span><br><span class="line"></span><br><span class="line">// 用于创建一个唯一的key</span><br><span class="line">#define MSG_FILE &quot;/etc/passwd&quot;</span><br><span class="line"></span><br><span class="line">// 消息结构</span><br><span class="line">struct msg_form &#123;</span><br><span class="line">    long mtype;</span><br><span class="line">    char mtext[256];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int msqid;</span><br><span class="line">    key_t key;</span><br><span class="line">    struct msg_form msg;</span><br><span class="line"></span><br><span class="line">    // 获取key值</span><br><span class="line">    if ((key = ftok(MSG_FILE, &apos;z&apos;)) &lt; 0) </span><br><span class="line">    &#123;</span><br><span class="line">        perror(&quot;ftok error&quot;);</span><br><span class="line">        exit(1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 打印key值</span><br><span class="line">    printf(&quot;Message Queue - Client key is: %d.\n&quot;, key);</span><br><span class="line"></span><br><span class="line">    // 打开消息队列</span><br><span class="line">    if ((msqid = msgget(key, IPC_CREAT|0777)) == -1) </span><br><span class="line">    &#123;</span><br><span class="line">        perror(&quot;msgget error&quot;);</span><br><span class="line">        exit(1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 打印消息队列ID及进程ID</span><br><span class="line">    printf(&quot;My msqid is: %d.\n&quot;, msqid);</span><br><span class="line">    printf(&quot;My pid is: %d.\n&quot;, getpid());</span><br><span class="line"></span><br><span class="line">    // 添加消息，类型为888</span><br><span class="line">    msg.mtype = 888;</span><br><span class="line">    sprintf(msg.mtext, &quot;hello, I&apos;m client %d&quot;, getpid());</span><br><span class="line">    msgsnd(msqid, &amp;msg, sizeof(msg.mtext), 0);</span><br><span class="line"></span><br><span class="line">    // 读取类型为777的消息</span><br><span class="line">    msgrcv(msqid, &amp;msg, 256, 999, 0);</span><br><span class="line">    printf(&quot;Client: receive msg.mtext is: %s.\n&quot;, msg.mtext);</span><br><span class="line">    printf(&quot;Client: receive msg.mtype is: %d.\n&quot;, msg.mtype);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="信号量"><a href="#信号量" class="headerlink" title="信号量"></a>信号量</h5><p>与已经介绍过的 IPC 结构不同，它是一个计数器。信号量用于实现进程间的互斥与同步，而不是用于存储进程间通信数据。</p>
+<p>特点：</p>
+<ol>
+<li>信号量用于进程间同步，若要在进程间传递数据需要结合共享内存。</li>
+<li>信号量基于操作系统的 PV 操作，程序对信号量的操作都是原子操作。</li>
+<li>每次对信号量的 PV 操作不仅限于对信号量值加 1 或减 1，而且可以加减任意正整数。</li>
+<li>支持信号量组。</li>
+</ol>
+<p>原型：</p>
+<p>最简单的信号量是只能取 0 和 1 的变量，这也是信号量最常见的一种形式，叫做二值信号量（Binary Semaphore）。而可以取多个正整数的信号量被称为通用信号量。</p>
+<p>Linux 下的信号量函数都是在通用的信号量数组上进行操作，而不是在一个单一的二值信号量上进行操作。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;sys/sem.h&gt;</span><br><span class="line">// 创建或获取一个信号量组：若成功返回信号量集ID，失败返回-1</span><br><span class="line">int semget(key_t key, int num_sems, int sem_flags);</span><br><span class="line">// 对信号量组进行操作，改变信号量的值：成功返回0，失败返回-1</span><br><span class="line">int semop(int semid, struct sembuf semoparray[], size_t numops);  </span><br><span class="line">// 控制信号量的相关信息</span><br><span class="line">int semctl(int semid, int sem_num, int cmd, ...);</span><br></pre></td></tr></table></figure>
+
+<p>当semget创建新的信号量集合时，必须指定集合中信号量的个数（即num_sems），通常为1； 如果是引用一个现有的集合，则将num_sems指定为 0 。</p>
+<p>在semop函数中，sembuf结构的定义如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">struct sembuf </span><br><span class="line">&#123;</span><br><span class="line">    short sem_num; // 信号量组中对应的序号，0～sem_nums-1</span><br><span class="line">    short sem_op;  // 信号量值在一次操作中的改变量</span><br><span class="line">    short sem_flg; // IPC_NOWAIT, SEM_UNDO</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中 sem_op 是一次操作中的信号量的改变量：</p>
+<ol>
+<li>若sem_op &gt; 0，表示进程释放相应的资源数，将 sem_op 的值加到信号量的值上。如果有进程正在休眠等待此信号量，则换行它们。</li>
+<li>若sem_op &lt; 0，请求 sem_op 的绝对值的资源<ol>
+<li>如果相应的资源数可以满足请求，则将该信号量的值减去sem_op的绝对值，函数成功返回。</li>
+<li>当相应的资源数不能满足请求时，这个操作与sem_flg有关。<ol>
+<li>sem_flg 指定IPC_NOWAIT，则semop函数出错返回EAGAIN。</li>
+<li>sem_flg 没有指定IPC_NOWAIT，则将该信号量的semncnt值加1，然后进程挂起直到下述情况发生：</li>
+<li>当相应的资源数可以满足请求，此信号量的semncnt值减1，该信号量的值减去sem_op的绝对值。成功返回；</li>
+<li>此信号量被删除，函数smeop出错返回EIDRM；</li>
+<li>进程捕捉到信号，并从信号处理函数返回，此情况下将此信号量的semncnt值减1，函数semop出错返回EINTR</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>若sem_op == 0，进程阻塞直到信号量的相应值为0：<ol>
+<li>当信号量已经为0，函数立即返回。</li>
+<li>如果信号量的值不为0，则依据sem_flg决定函数动作：<ol>
+<li>信号量值为0，将信号量的semzcnt的值减1，函数semop成功返回；</li>
+<li>此信号量被删除，函数smeop出错返回EIDRM；</li>
+<li>进程捕捉到信号，并从信号处理函数返回，在此情况将此信号量的semncnt值减1，函数semop出错返回EINTR</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>在semctl函数中的命令有多种，这里就说两个常用的：</p>
+<ol>
+<li>SETVAL：用于初始化信号量为一个已知的值。所需要的值作为联合semun的val成员来传递。在信号量第一次使用之前需要设置信号量。</li>
+<li>IPC_RMID：删除一个信号量集合。如果不删除信号量，它将继续在系统中存在，即使程序已经退出，它可能在你下次运行此程序时引发问题，而且信号量是一种有限的资源。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;sys/sem.h&gt;</span><br><span class="line"></span><br><span class="line">// 联合体，用于semctl初始化</span><br><span class="line">union semun</span><br><span class="line">&#123;</span><br><span class="line">    intval; /*for SETVAL*/</span><br><span class="line">    struct semid_ds *buf;</span><br><span class="line">    unsigned short  *array;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 初始化信号量</span><br><span class="line">int init_sem(int sem_id, int value)</span><br><span class="line">&#123;</span><br><span class="line">    union semun tmp;</span><br><span class="line">    tmp.val = value;</span><br><span class="line">    if(semctl(sem_id, 0, SETVAL, tmp) == -1)</span><br><span class="line">    &#123;</span><br><span class="line">        perror(&quot;Init Semaphore Error&quot;);</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// P操作:</span><br><span class="line">//    若信号量值为1，获取资源并将信号量值-1 </span><br><span class="line">//    若信号量值为0，进程挂起等待</span><br><span class="line">int sem_p(int sem_id)</span><br><span class="line">&#123;</span><br><span class="line">    struct sembuf sbuf;</span><br><span class="line">    sbuf.sem_num = 0; /*序号*/</span><br><span class="line">    sbuf.sem_op = -1; /*P操作*/</span><br><span class="line">    sbuf.sem_flg = SEM_UNDO;</span><br><span class="line"></span><br><span class="line">    if(semop(sem_id, &amp;sbuf, 1) == -1)</span><br><span class="line">    &#123;</span><br><span class="line">        perror(&quot;P operation Error&quot;);</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// V操作：</span><br><span class="line">//    释放资源并将信号量值+1</span><br><span class="line">//    如果有进程正在挂起等待，则唤醒它们</span><br><span class="line">int sem_v(int sem_id)</span><br><span class="line">&#123;</span><br><span class="line">    struct sembuf sbuf;</span><br><span class="line">    sbuf.sem_num = 0; /*序号*/</span><br><span class="line">    sbuf.sem_op = 1;  /*V操作*/</span><br><span class="line">    sbuf.sem_flg = SEM_UNDO;</span><br><span class="line"></span><br><span class="line">    if(semop(sem_id, &amp;sbuf, 1) == -1)</span><br><span class="line">    &#123;</span><br><span class="line">        perror(&quot;V operation Error&quot;);</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 删除信号量集</span><br><span class="line">int del_sem(int sem_id)</span><br><span class="line">&#123;</span><br><span class="line">    union semun tmp;</span><br><span class="line">    if(semctl(sem_id, 0, IPC_RMID, tmp) == -1)</span><br><span class="line">    &#123;</span><br><span class="line">        perror(&quot;Delete Semaphore Error&quot;);</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int sem_id;  // 信号量集ID</span><br><span class="line">    key_t key;  </span><br><span class="line">    pid_t pid;</span><br><span class="line"></span><br><span class="line">    // 获取key值</span><br><span class="line">    if((key = ftok(&quot;.&quot;, &apos;z&apos;)) &lt; 0)</span><br><span class="line">    &#123;</span><br><span class="line">        perror(&quot;ftok error&quot;);</span><br><span class="line">        exit(1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 创建信号量集，其中只有一个信号量</span><br><span class="line">    if((sem_id = semget(key, 1, IPC_CREAT|0666)) == -1)</span><br><span class="line">    &#123;</span><br><span class="line">        perror(&quot;semget error&quot;);</span><br><span class="line">        exit(1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 初始化：初值设为0资源被占用</span><br><span class="line">    init_sem(sem_id, 0);</span><br><span class="line"></span><br><span class="line">    if((pid = fork()) == -1)</span><br><span class="line">        perror(&quot;Fork Error&quot;);</span><br><span class="line">    else if(pid == 0) /*子进程*/ </span><br><span class="line">    &#123;</span><br><span class="line">        sleep(2);</span><br><span class="line">        printf(&quot;Process child: pid=%d\n&quot;, getpid());</span><br><span class="line">        sem_v(sem_id);  /*释放资源*/</span><br><span class="line">    &#125;</span><br><span class="line">    else  /*父进程*/</span><br><span class="line">    &#123;</span><br><span class="line">        sem_p(sem_id);   /*等待资源*/</span><br><span class="line">        printf(&quot;Process father: pid=%d\n&quot;, getpid());</span><br><span class="line">        sem_v(sem_id);   /*释放资源*/</span><br><span class="line">        del_sem(sem_id); /*删除信号量集*/</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面的例子如果不加信号量，则父进程会先执行完毕。这里加了信号量让父进程等待子进程执行完以后再执行。</p>
+<h5 id="共享内存"><a href="#共享内存" class="headerlink" title="共享内存"></a>共享内存</h5><p>指两个或多个进程共享一个给定的存储区。</p>
+<p>特点：</p>
+<ol>
+<li>共享内存是最快的一种 IPC，因为进程是直接对内存进行存取。</li>
+<li>因为多个进程可以同时操作，所以需要进行同步。</li>
+<li>信号量+共享内存通常结合在一起使用，信号量用来同步对共享内存的访问。</li>
+</ol>
+<p>原型：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;sys/shm.h&gt;</span><br><span class="line">// 创建或获取一个共享内存：成功返回共享内存ID，失败返回-1</span><br><span class="line">int shmget(key_t key, size_t size, int flag);</span><br><span class="line">// 连接共享内存到当前进程的地址空间：成功返回指向共享内存的指针，失败返回-1</span><br><span class="line">void *shmat(int shm_id, const void *addr, int flag);</span><br><span class="line">// 断开与共享内存的连接：成功返回0，失败返回-1</span><br><span class="line">int shmdt(void *addr); </span><br><span class="line">// 控制共享内存的相关信息：成功返回0，失败返回-1</span><br><span class="line">int shmctl(int shm_id, int cmd, struct shmid_ds *buf);</span><br></pre></td></tr></table></figure>
+
+<p>当用shmget函数创建一段共享内存时，必须指定其 size；而如果引用一个已存在的共享内存，则将 size 指定为0 。</p>
+<p>当一段共享内存被创建以后，它并不能被任何进程访问。必须使用shmat函数连接该共享内存到当前进程的地址空间，连接成功后把</p>
+<p>共享内存区对象映射到调用进程的地址空间，随后可像本地空间一样访问。</p>
+<p>shmdt函数是用来断开shmat建立的连接的。注意，这并不是从系统中删除该共享内存，只是当前进程不能再访问该共享内存而已。</p>
+<p>shmctl函数可以对共享内存执行多种操作，根据参数 cmd 执行相应的操作。常用的是IPC_RMID（从系统中删除该共享内存）。</p>
+<p>例子：</p>
+<p>下面这个例子，使用了【共享内存+信号量+消息队列】的组合来实现服务器进程与客户进程间的通信。</p>
+<ol>
+<li>共享内存用来传递数据；</li>
+<li>信号量用来同步；</li>
+<li>消息队列用来 在客户端修改了共享内存后 通知服务器读取。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br></pre></td><td class="code"><pre><span class="line">server.c</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;sys/shm.h&gt;  // shared memory</span><br><span class="line">#include&lt;sys/sem.h&gt;  // semaphore</span><br><span class="line">#include&lt;sys/msg.h&gt;  // message queue</span><br><span class="line">#include&lt;string.h&gt;   // memcpy</span><br><span class="line"></span><br><span class="line">// 消息队列结构</span><br><span class="line">struct msg_form &#123;</span><br><span class="line">    long mtype;</span><br><span class="line">    char mtext;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 联合体，用于semctl初始化</span><br><span class="line">union semun</span><br><span class="line">&#123;</span><br><span class="line">    int              val; /*for SETVAL*/</span><br><span class="line">    struct semid_ds *buf;</span><br><span class="line">    unsigned short  *array;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 初始化信号量</span><br><span class="line">int init_sem(int sem_id, int value)</span><br><span class="line">&#123;</span><br><span class="line">    union semun tmp;</span><br><span class="line">    tmp.val = value;</span><br><span class="line">    if(semctl(sem_id, 0, SETVAL, tmp) == -1)</span><br><span class="line">    &#123;</span><br><span class="line">        perror(&quot;Init Semaphore Error&quot;);</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// P操作:</span><br><span class="line">//  若信号量值为1，获取资源并将信号量值-1 </span><br><span class="line">//  若信号量值为0，进程挂起等待</span><br><span class="line">int sem_p(int sem_id)</span><br><span class="line">&#123;</span><br><span class="line">    struct sembuf sbuf;</span><br><span class="line">    sbuf.sem_num = 0; /*序号*/</span><br><span class="line">    sbuf.sem_op = -1; /*P操作*/</span><br><span class="line">    sbuf.sem_flg = SEM_UNDO;</span><br><span class="line"></span><br><span class="line">    if(semop(sem_id, &amp;sbuf, 1) == -1)</span><br><span class="line">    &#123;</span><br><span class="line">        perror(&quot;P operation Error&quot;);</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// V操作：</span><br><span class="line">//  释放资源并将信号量值+1</span><br><span class="line">//  如果有进程正在挂起等待，则唤醒它们</span><br><span class="line">int sem_v(int sem_id)</span><br><span class="line">&#123;</span><br><span class="line">    struct sembuf sbuf;</span><br><span class="line">    sbuf.sem_num = 0; /*序号*/</span><br><span class="line">    sbuf.sem_op = 1;  /*V操作*/</span><br><span class="line">    sbuf.sem_flg = SEM_UNDO;</span><br><span class="line"></span><br><span class="line">    if(semop(sem_id, &amp;sbuf, 1) == -1)</span><br><span class="line">    &#123;</span><br><span class="line">        perror(&quot;V operation Error&quot;);</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 删除信号量集</span><br><span class="line">int del_sem(int sem_id)</span><br><span class="line">&#123;</span><br><span class="line">    union semun tmp;</span><br><span class="line">    if(semctl(sem_id, 0, IPC_RMID, tmp) == -1)</span><br><span class="line">    &#123;</span><br><span class="line">        perror(&quot;Delete Semaphore Error&quot;);</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 创建一个信号量集</span><br><span class="line">int creat_sem(key_t key)</span><br><span class="line">&#123;</span><br><span class="line">    int sem_id;</span><br><span class="line">    if((sem_id = semget(key, 1, IPC_CREAT|0666)) == -1)</span><br><span class="line">    &#123;</span><br><span class="line">        perror(&quot;semget error&quot;);</span><br><span class="line">        exit(-1);</span><br><span class="line">    &#125;</span><br><span class="line">    init_sem(sem_id, 1);  /*初值设为1资源未占用*/</span><br><span class="line">    return sem_id;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    key_t key;</span><br><span class="line">    int shmid, semid, msqid;</span><br><span class="line">    char *shm;</span><br><span class="line">    char data[] = &quot;this is server&quot;;</span><br><span class="line">    struct shmid_ds buf1;  /*用于删除共享内存*/</span><br><span class="line">    struct msqid_ds buf2;  /*用于删除消息队列*/</span><br><span class="line">    struct msg_form msg;  /*消息队列用于通知对方更新了共享内存*/</span><br><span class="line"></span><br><span class="line">    // 获取key值</span><br><span class="line">    if((key = ftok(&quot;.&quot;, &apos;z&apos;)) &lt; 0)</span><br><span class="line">    &#123;</span><br><span class="line">        perror(&quot;ftok error&quot;);</span><br><span class="line">        exit(1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 创建共享内存</span><br><span class="line">    if((shmid = shmget(key, 1024, IPC_CREAT|0666)) == -1)</span><br><span class="line">    &#123;</span><br><span class="line">        perror(&quot;Create Shared Memory Error&quot;);</span><br><span class="line">        exit(1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 连接共享内存</span><br><span class="line">    shm = (char*)shmat(shmid, 0, 0);</span><br><span class="line">    if((int)shm == -1)</span><br><span class="line">    &#123;</span><br><span class="line">        perror(&quot;Attach Shared Memory Error&quot;);</span><br><span class="line">        exit(1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // 创建消息队列</span><br><span class="line">    if ((msqid = msgget(key, IPC_CREAT|0777)) == -1)</span><br><span class="line">    &#123;</span><br><span class="line">        perror(&quot;msgget error&quot;);</span><br><span class="line">        exit(1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 创建信号量</span><br><span class="line">    semid = creat_sem(key);</span><br><span class="line">    </span><br><span class="line">    // 读数据</span><br><span class="line">    while(1)</span><br><span class="line">    &#123;</span><br><span class="line">        msgrcv(msqid, &amp;msg, 1, 888, 0); /*读取类型为888的消息*/</span><br><span class="line">        if(msg.mtext == &apos;q&apos;)  /*quit - 跳出循环*/ </span><br><span class="line">            break;</span><br><span class="line">        if(msg.mtext == &apos;r&apos;)  /*read - 读共享内存*/</span><br><span class="line">        &#123;</span><br><span class="line">            sem_p(semid);</span><br><span class="line">            printf(&quot;%s\n&quot;,shm);</span><br><span class="line">            sem_v(semid);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 断开连接</span><br><span class="line">    shmdt(shm);</span><br><span class="line"></span><br><span class="line">    /*删除共享内存、消息队列、信号量*/</span><br><span class="line">    shmctl(shmid, IPC_RMID, &amp;buf1);</span><br><span class="line">    msgctl(msqid, IPC_RMID, &amp;buf2);</span><br><span class="line">    del_sem(semid);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">client.c</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;sys/shm.h&gt;  // shared memory</span><br><span class="line">#include&lt;sys/sem.h&gt;  // semaphore</span><br><span class="line">#include&lt;sys/msg.h&gt;  // message queue</span><br><span class="line">#include&lt;string.h&gt;   // memcpy</span><br><span class="line"></span><br><span class="line">// 消息队列结构</span><br><span class="line">struct msg_form &#123;</span><br><span class="line">    long mtype;</span><br><span class="line">    char mtext;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 联合体，用于semctl初始化</span><br><span class="line">union semun</span><br><span class="line">&#123;</span><br><span class="line">    int              val; /*for SETVAL*/</span><br><span class="line">    struct semid_ds *buf;</span><br><span class="line">    unsigned short  *array;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// P操作:</span><br><span class="line">//  若信号量值为1，获取资源并将信号量值-1 </span><br><span class="line">//  若信号量值为0，进程挂起等待</span><br><span class="line">int sem_p(int sem_id)</span><br><span class="line">&#123;</span><br><span class="line">    struct sembuf sbuf;</span><br><span class="line">    sbuf.sem_num = 0; /*序号*/</span><br><span class="line">    sbuf.sem_op = -1; /*P操作*/</span><br><span class="line">    sbuf.sem_flg = SEM_UNDO;</span><br><span class="line"></span><br><span class="line">    if(semop(sem_id, &amp;sbuf, 1) == -1)</span><br><span class="line">    &#123;</span><br><span class="line">        perror(&quot;P operation Error&quot;);</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// V操作：</span><br><span class="line">//  释放资源并将信号量值+1</span><br><span class="line">//  如果有进程正在挂起等待，则唤醒它们</span><br><span class="line">int sem_v(int sem_id)</span><br><span class="line">&#123;</span><br><span class="line">    struct sembuf sbuf;</span><br><span class="line">    sbuf.sem_num = 0; /*序号*/</span><br><span class="line">    sbuf.sem_op = 1;  /*V操作*/</span><br><span class="line">    sbuf.sem_flg = SEM_UNDO;</span><br><span class="line"></span><br><span class="line">    if(semop(sem_id, &amp;sbuf, 1) == -1)</span><br><span class="line">    &#123;</span><br><span class="line">        perror(&quot;V operation Error&quot;);</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    key_t key;</span><br><span class="line">    int shmid, semid, msqid;</span><br><span class="line">    char *shm;</span><br><span class="line">    struct msg_form msg;</span><br><span class="line">    int flag = 1; /*while循环条件*/</span><br><span class="line"></span><br><span class="line">    // 获取key值</span><br><span class="line">    if((key = ftok(&quot;.&quot;, &apos;z&apos;)) &lt; 0)</span><br><span class="line">    &#123;</span><br><span class="line">        perror(&quot;ftok error&quot;);</span><br><span class="line">        exit(1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 获取共享内存</span><br><span class="line">    if((shmid = shmget(key, 1024, 0)) == -1)</span><br><span class="line">    &#123;</span><br><span class="line">        perror(&quot;shmget error&quot;);</span><br><span class="line">        exit(1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 连接共享内存</span><br><span class="line">    shm = (char*)shmat(shmid, 0, 0);</span><br><span class="line">    if((int)shm == -1)</span><br><span class="line">    &#123;</span><br><span class="line">        perror(&quot;Attach Shared Memory Error&quot;);</span><br><span class="line">        exit(1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 创建消息队列</span><br><span class="line">    if ((msqid = msgget(key, 0)) == -1)</span><br><span class="line">    &#123;</span><br><span class="line">        perror(&quot;msgget error&quot;);</span><br><span class="line">        exit(1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 获取信号量</span><br><span class="line">    if((semid = semget(key, 0, 0)) == -1)</span><br><span class="line">    &#123;</span><br><span class="line">        perror(&quot;semget error&quot;);</span><br><span class="line">        exit(1);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    // 写数据</span><br><span class="line">    printf(&quot;***************************************\n&quot;);</span><br><span class="line">    printf(&quot;*                 IPC                 *\n&quot;);</span><br><span class="line">    printf(&quot;*    Input r to send data to server.  *\n&quot;);</span><br><span class="line">    printf(&quot;*    Input q to quit.                 *\n&quot;);</span><br><span class="line">    printf(&quot;***************************************\n&quot;);</span><br><span class="line">    </span><br><span class="line">    while(flag)</span><br><span class="line">    &#123;</span><br><span class="line">        char c;</span><br><span class="line">        printf(&quot;Please input command: &quot;);</span><br><span class="line">        scanf(&quot;%c&quot;, &amp;c);</span><br><span class="line">        switch(c)</span><br><span class="line">        &#123;</span><br><span class="line">            case &apos;r&apos;:</span><br><span class="line">                printf(&quot;Data to send: &quot;);</span><br><span class="line">                sem_p(semid);  /*访问资源*/</span><br><span class="line">                scanf(&quot;%s&quot;, shm);</span><br><span class="line">                sem_v(semid);  /*释放资源*/</span><br><span class="line">                /*清空标准输入缓冲区*/</span><br><span class="line">                while((c=getchar())!=&apos;\n&apos; &amp;&amp; c!=EOF);</span><br><span class="line">                msg.mtype = 888;  </span><br><span class="line">                msg.mtext = &apos;r&apos;;  /*发送消息通知服务器读数据*/</span><br><span class="line">                msgsnd(msqid, &amp;msg, sizeof(msg.mtext), 0);</span><br><span class="line">                break;</span><br><span class="line">            case &apos;q&apos;:</span><br><span class="line">                msg.mtype = 888;</span><br><span class="line">                msg.mtext = &apos;q&apos;;</span><br><span class="line">                msgsnd(msqid, &amp;msg, sizeof(msg.mtext), 0);</span><br><span class="line">                flag = 0;</span><br><span class="line">                break;</span><br><span class="line">            default:</span><br><span class="line">                printf(&quot;Wrong input!\n&quot;);</span><br><span class="line">                /*清空标准输入缓冲区*/</span><br><span class="line">                while((c=getchar())!=&apos;\n&apos; &amp;&amp; c!=EOF);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 断开连接</span><br><span class="line">    shmdt(shm);</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>五种通讯方式总结</p>
+<ol>
+<li>管道：速度慢，容量有限，只有父子进程能通讯    </li>
+<li>FIFO：任何进程间都能通讯，但速度慢    </li>
+<li>消息队列：容量受到系统限制，且要注意第一次读的时候，要考虑上一次没有读完数据的问题    </li>
+<li>信号量：不能传递复杂消息，只能用来同步    </li>
+<li>共享内存区：能够很容易控制容量，速度快，但要保持同步，比如一个进程在写的时候，另一个进程要注意读写的问题，相当于线程中的线程安全，当然，共享内存区同样可以用作线程间通讯，不过没这个必要，线程间本来就已经共享了同一进程内的一块内存</li>
+</ol>
+<h5 id="共享内存，管道，socket等进程间通信方式的优缺点"><a href="#共享内存，管道，socket等进程间通信方式的优缺点" class="headerlink" title="共享内存，管道，socket等进程间通信方式的优缺点"></a>共享内存，管道，socket等进程间通信方式的优缺点</h5><p>共享内存可以说是最有用的进程间通信方式，也是最快的IPC形式。两个不同进程A、B共享内存的意思是，同一块物理内存被映射到进程A、B各自的进程地址空间。</p>
+<p>进程A可以即时看到进程B对共享内存中数据的更新，反之亦然。由于多个进程共享同一块内存区域，必然需要某种同步机制，互斥锁和信号量都可以。</p>
+<p>采用共享内存通信的一个显而易见的好处是效率高，因为进程可以直接读写内存，而不需要任何数据的拷贝。</p>
+<p>对于像管道和消息队列等通信方式，则需要在内核和用户空间进行四次的数据拷贝，而共享内存则只拷贝两次数据： </p>
+<ol>
+<li>一次从输入文件到共享内存区，</li>
+<li>另一次从共享内存区到输出文件。</li>
+</ol>
+<p>实际上，进程之间在共享内存时，并不总是读写少量数据后就解除映射，有新的通信时，再重新建立共享内存区域。而是保持共享区域，直到通信完毕为止，这样，数据内容一直保存在共享内存中，并没有写回文件。共享内存中的内容往往是在解除映射时才写回 文件的。因此，采用共享内存的通信方式效率是非常高的。</p>
+<p>进程间通信的方式有很多，常见的有信号量，消息队列，管道，共享内存，和socket等，这里我们主要讨论管道，共享内存，和socket，其他的比较简单只做简单的介绍。</p>
+<p>信号量：信号量实际上是一个计数器，通常在多线程或者多进程开发中会用到，主要用来控制多线程多进程对于共享资源访问，通常配合锁来实现同时只有一个进程或者线程操作共享资源，防止数据的不同步。</p>
+<p>消息队列：消息队列是消息的链表，存放在内核中并由消息队列表示符，我们可以在两个进程之间通过消息队列来实现进程间通信。不过消息队列在工作中好像并不怎么常用。</p>
+<p>接下来主要谈谈剩下的三种，这些是我们经常会用到的。</p>
+<p>管道分为有名管道和无名管道两种</p>
+<p>无名管道 ：主要用于父进程与子进程之间，或者两个兄弟进程之间。在linux系统中可以通过系统调用建立起一个单向的通信管道，且这种关系只能由父进程来建立。因此，每个管道都是单向的，当需要双向通信时就需要建立起两个管道。管道两端的进程均将该管道看做一个文件，一个进程负责往管道中写内容，而另一个从管道中读取。这种传输遵循“先入先出”（FIFO）的规则。</p>
+<p>有名管道：命名管道是为了解决无名管道只能用于近亲进程之间通信的缺陷而设计的。命名管道是建立在实际的磁盘介质或文件系统（而不是只存在于内存中）上有自己名字的文件，任何进程可以在任何时间通过文件名或路径名与该文件建立联系。为了实现命名管道，引入了一种新的文件类型——FIFO文件（遵循先进先出的原则）。实现一个命名管道实际上就是实现一个FIFO文件。命名管道一旦建立，之后它的读、写以及关闭操作都与普通管道完全相同。虽然FIFO文件的inode节点在磁盘上，但是仅是一个节点而已，文件的数据还是存在于内存缓冲页面中，和普通管道相同。</p>
+<p>管道有很多致命的缺点，比如只能在具有亲缘关系的进程间通信，只能单向传输数据，另外管道的缓冲区是有限的（管道制存在于内存中，在管道创建时，为缓冲区分配一个页面大小，管道所传送的是无格式字节流，这就要求管道的读出方和写入方必须事先约定好数据的格式，最后就是管道操作不当很容易阻塞。因此管道虽然偶尔会见到，但是很少人会用。</p>
+<p>共享内存：这个是经常用的，共享内存号称是最快的进程间通信方式，她在系统内存中开辟一块内存区，分别映射到各个进程的虚拟地址空间中，任何一个进程操作了内存区都会反映到其他进程中，各个进程之间的通信并没有像copy数据一样从内核到用户，再从用户到内核的拷贝。这种方式可以像访问自己的私有空间一样访问共享内存区，但是这事这种特性加大了共享内存的编程难度，对于数据的同步问题是一个难点，没有一定的经验很容易造成数据的混乱。但是我们可以使用一个折中的方法，我们可以结合它和管道来使用。</p>
+<p>举个例子进程A和B通信，如果我们用一块共享内存区来实现它们的通信，对于数据的同步是个令人头疼的问题，但是我们可以用两个共享内存区。</p>
+<p>内存区 1 ，A-&gt;B,A只能写数据，B只能读数据</p>
+<p>内存区 2， B-&gt;A,A只能读数据，B只能写数据</p>
+<p>这样就不会因为，多个进程同时写一块内存造成数据的混乱了，看起来是不是有点像管道，其实就是管道的机制，但是不同的是，她的速度要比管道快的多，他的数据大小没有限制（当然不能超过系统的内存大小），当然也不会有阻塞问题。但是这种方式也有明显的缺点，它只适合点对点的通信，如果要多个进程间通信，内存区的数量会呈线性增长，会造成数据的冗余，并且管理起来也会变得困难,如果你的进程数量在各位数着中方式是一个好的选择，否则就要采用一块共享内存，同时做好数据的同步了。</p>
+<p>最后一点，通过名字就知道它是基于内存的，所以他只能在同一主机上使用，如果我们要做分布式应用或者跨物理机通信，那么socket就是我们唯一的选择了。</p>
+<p>socket是一种面相网络的一种进程间通信方式，只要有网络存在，它可以跨越任何限制。socket编程是一个宽泛的说法，对于我们程序猿来说tcp，udp，http是我们经常用的一些网络协议。当然socket也是我们用的最多的，他的限制住要在与带宽，网络延时和连接数量的限制等。这也是我们在开发服务程序时都要面对c10k问题的原因。</p>
+<h4 id="进程同步"><a href="#进程同步" class="headerlink" title="进程同步"></a>进程同步</h4><p>信号量、管程、会合、分布式系统</p>
+<h5 id="信号量-1"><a href="#信号量-1" class="headerlink" title="信号量"></a>信号量</h5><p>用于进程间传递信号的一个整数值。在信号量上只有三种操作可以进行：初始化，P操作和V操作，这三种操作都是原子操作。</p>
+<p> P操作(递减操作)可以用于阻塞一个进程，V操作(增加操作)可以用于解除阻塞一个进程。</p>
+<p> 基本原理是两个或多个进程可以通过简单的信号进行合作，一个进程可以被迫在某一位置停止，直到它接收到一个特定的信号。该信号即为信号量s。<br> 为通过信号量s传送信号，进程可执行原语semSignal(s);为通过信号量s接收信号，进程可执行原语semWait(s);如果相应的信号仍然没有发送，则进程被阻塞，直到发送完为止。</p>
+<h5 id="管程"><a href="#管程" class="headerlink" title="管程"></a>管程</h5><p>管程是由一个或多个过程、一个初始化序列和局部数据组成的软件模块，其主要特点如下：</p>
+<p>局部数据变量只能被管程的过程访问，任何外部过程都不能访问。</p>
+<p>一个进程通过调用管程的一个过程进入管程。</p>
+<p>在任何时候，只能有一个进程在管程中执行，调用管程的任何其他进程都被阻塞，以等待管程可用。</p>
+<p>管程通过使用条件变量提供对同步的支持，这些条件变量包含在管程中，并且只有在管程中才能被访问。有两个函数可以操作条件变量：</p>
+<p>cwait(c)：调用进程的执行在条件c上阻塞，管程现在可被另一个进程使用。</p>
+<p>csignal(c)：恢复执行在cwait之后因为某些条件而阻塞的进程。如果有多个这样的进程，选择其中一个；如果没有这样的进程，什么以不做</p>
+<h5 id="会合"><a href="#会合" class="headerlink" title="会合"></a>会合</h5><p>一个进程可以有许多入口，一个入口对应一段程序，一个进程可 以调用另一个进程的入口。当一个进程调用另一个进程的入口， 而且被调用的进程已准备好接受这个调用时，会合就发生了。当 调用者发出调用请求时，被调用的进程未准备接受这个调用时， 则调用者等待；反之，当被调用者准备接受调用，而当前尚无调用者时，则被调用者等待。即先到达会合处等待后到达者。当多 个进程调用同一个进程的同一个入口时，被调用者按先来先服务 （FCFS）的次序接受调用。入口处可以携带调用参数，还可以有 返回参数，以实现信息的交换。被调用者可以选择会合的入口。</p>
+<h4 id="进程中线程同步"><a href="#进程中线程同步" class="headerlink" title="进程中线程同步"></a>进程中线程同步</h4><p><img src="/.cn//2019072400005.png" alt="41341"></p>
+<p>线程同步的四种方法：</p>
+<h5 id="临界区（Critical-Section）"><a href="#临界区（Critical-Section）" class="headerlink" title="临界区（Critical Section）"></a>临界区（Critical Section）</h5><p>通过对多线程的串行化来访问公共资源或一段代码，速度快，适合控制数据访问。</p>
+<p>优点：保证在某一时刻只有一个线程能访问数据的简便办法</p>
+<p>缺点：虽然临界区同步速度很快，但却只能用来同步本进程内的线程，而不可用来同步多个进程中的线程。</p>
+<h5 id="互斥量（Mutex）"><a href="#互斥量（Mutex）" class="headerlink" title="互斥量（Mutex）"></a>互斥量（Mutex）</h5><p>为协调共同对一个共享资源的单独访问而设计的。</p>
+<p>互斥量跟临界区很相似，比临界区复杂，互斥对象只有一个，只有拥有互斥对象的线程才具有访问资源的权限。</p>
+<p>优点：使用互斥不仅仅能够在同一应用程序不同线程中实现资源的安全共享，而且可以在不同应用程序的线程之间实现对资源的安全共享。</p>
+<p>缺点：互斥量是可以命名的，也就是说它可以跨越进程使用，所以创建互斥量需要的资源更多，所以如果只为了在进程内部是用的话使用临界区会带来速度上的优势并能够减少资源占用量。因为互斥量是跨进程的互斥量一旦被创建，就可以通过名字打开它。<br>通过互斥量可以指定资源被独占的方式使用，但如果有下面一种情况通过互斥量就无法处理，比如现在一位用户购买了一份三个并发访问许可的数据库系统，可以根据用户购买的访问许可数量来决定有多少个线程/进程能同时进行数据库操作，这时候如果利用互斥量就没有办法完成这个要求，信号量对象可以说是一种资源计数器。</p>
+<h5 id="信号量（Semaphore）"><a href="#信号量（Semaphore）" class="headerlink" title="信号量（Semaphore）"></a>信号量（Semaphore）</h5><p>为控制一个具有有限数量用户资源而设计。它允许多个线程在同一时刻访问同一资源，但是需要限制在同一时刻访问此资源的最大线程数目。互斥量是信号量的一种特殊情况，当信号量的最大资源数=1就是互斥量了。</p>
+<p>优点：适用于对Socket（套接字）程序中线程的同步。（例如，网络上的HTTP服务器要对同一时间内访问同一页面的用户数加以限制，只有不大于设定的最大用户数目的线程能够进行访问，而其他的访问企图则被挂起，只有在有用户退出对此页面的访问后才有可能进入。）</p>
+<p>缺点：信号量机制必须有公共内存，不能用于分布式操作系统，这是它最大的弱点；<br>信号量机制功能强大，但使用时对信号量的操作分散， 而且难以控制，读写和维护都很困难，加重了程序员的编码负担；</p>
+<p>核心操作P-V分散在各用户程序的代码中，不易控制和管理，一旦错误，后果严重，且不易发现和纠正。</p>
+<h5 id="事件（Event）"><a href="#事件（Event）" class="headerlink" title="事件（Event）"></a>事件（Event）</h5><p>用来通知线程有一些事件已发生，从而启动后继任务的开始。</p>
+<p>优点：事件对象通过通知操作的方式来保持线程的同步，并且可以实现不同进程中的线程同步操作。</p>
+<p>临界区不是内核对象，只能用于进程内部的线程同步，是用户方式的同步。互斥、信号量是内核对象可以用于不同进程之间的线程同步（跨进程同步）。互斥其实是信号量的一种特殊形式。互斥可以保证在某一时刻只有一个线程可以拥有临界资源。信号量可以保证在某一时刻有指定数目的线程可以拥有临界资源。</p>
+<h4 id="线程的创建和结束"><a href="#线程的创建和结束" class="headerlink" title="线程的创建和结束"></a>线程的创建和结束</h4><p>在一个文件内的多个函数通常都是按照main函数中出现的顺序来执行，但是在分时系统下，我们可以让每个函数都作为一个逻辑流并发执行，最简单的方式就是采用多线程策略。在main函数中调用多线程接口创建线程，每个线程对应特定的函数（操作），这样就可以不按照main函数中各个函数出现的顺序来执行，避免了忙等的情况。线程基本操作的接口如下。</p>
+<h5 id="创建线程"><a href="#创建线程" class="headerlink" title="创建线程"></a>创建线程</h5><p>int pthread_create(pthread_t <em>pthread, const pthread_attr_t *attr, void *(</em>start_routine)(void *), void *agr);</p>
+<p>创建一个线程pthread和start_routine不可或缺，分别用于标识线程和执行入口，其他可以填NULL。</p>
+<ol>
+<li>pthread：用来返回线程的id， *pthread值即为tid，类型为 pthread_t = unsigned long int</li>
+<li>attr：指向线程属性结构体的指针，用于改变所创建线程的属性，填NULL使用默认值</li>
+<li>start_routine：线程执行函数的首地址，传入函数指针</li>
+<li>arg：通过地址传递来传递函数参数，这里是无符号类型指针，可以传任意类型变量的地址，在被传入函数中先强制类型转换成所需类型即可。</li>
+</ol>
+<h5 id="获取线程ID"><a href="#获取线程ID" class="headerlink" title="获取线程ID"></a>获取线程ID</h5><p>pthread_t  pthread_self(); </p>
+<h5 id="等待线程结束"><a href="#等待线程结束" class="headerlink" title="等待线程结束"></a>等待线程结束</h5><p>int pthread_join(pthread_t tid, void** reval)</p>
+<p>主线程调用，等待子线程退出并回收资源，类似于进程中wait/waitpid回收僵尸进程，调用pthread_join线程会被阻塞</p>
+<ol>
+<li>tid：创建线程时通过指针得到tid值</li>
+<li>reval：指向返回值的指针</li>
+</ol>
+<h5 id="线程结束"><a href="#线程结束" class="headerlink" title="线程结束"></a>线程结束</h5><p>pthread_exit(void *retval)</p>
+<p>子线程执行，用来结束当前线程并通过retval传递返回值，该返回值可通过pthread_join获得</p>
+<h5 id="分离线程"><a href="#分离线程" class="headerlink" title="分离线程"></a>分离线程</h5><p>主线程、子线程均可调用。主线程中pthread_detach(tid),子线程中pthread_detach(pthread_self()),调用后和主线程分离，子线程结束时自己立即回收资源。</p>
+<p>线程属性对象类型为pthread_attr_t，结构体定义如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">typedef struct&#123;</span><br><span class="line">    int etachstate;    // 线程分离的状态</span><br><span class="line">    int schedpolicy;    // 线程调度策略</span><br><span class="line">    struct sched_param schedparam;    // 线程的调度参数</span><br><span class="line">    int inheritsched;    // 线程的继承性</span><br><span class="line">    int scope;    // 线程的作用域</span><br><span class="line">    // 以下为线程栈的设置</span><br><span class="line">    size_t guardsize;    // 线程栈末尾警戒缓冲大小</span><br><span class="line">    int stackaddr_set;    // 线程的栈设置</span><br><span class="line">    void *    stackaddr;    // 线程栈的位置</span><br><span class="line">    size_t stacksize;    // 线程栈大小</span><br><span class="line">&#125;pthread_arrt_t；</span><br></pre></td></tr></table></figure>
+
+<h4 id="线程状态"><a href="#线程状态" class="headerlink" title="线程状态"></a>线程状态</h4><p>新建状态、就绪状态、运行状态、阻塞状态(等待阻塞、同步阻塞、其他阻塞)、死亡状态</p>
+<ol>
+<li>新建状态(New)：新创建了一个线程对象。</li>
+<li>就绪状态(Runnable)：线程对象创建后，其他线程调用了该对象的start()方法。该状态的线程位于“可运行线程池”中，变得可运行，只等待获取CPU的使用权。即在就绪状态的进程除CPU之外，其它的运行所需资源都已全部获得。</li>
+<li>运行状态(Running)：就绪状态的线程获取了CPU，执行程序代码。</li>
+<li>阻塞状态(Blocked)：阻塞状态是线程因某种原因放弃CPU使用权，暂时停止运行。直到线程进入就绪状态，才有机会转到运行状态。<ol>
+<li>等待阻塞：运行的线程执行wait()方法，该线程会释放占用的所有资源，JVM会把该线程放入“等待池”中。进入这个状态后，是不能自动唤醒的，必须依靠其他线程调用notify()或notifyAll()方法才能被唤醒，唤醒后进入“锁池”中，通过获取锁状态来判断是否进入就绪状态</li>
+<li>同步阻塞：运行的线程在获取对象的同步锁时，若该同步锁被别的线程占用，则JVM会把该线程放入“锁池”中。</li>
+<li>其他阻塞：运行的线程执行sleep()或join()方法，或者发出了I/O请求时，JVM会把该线程置为阻塞状态。当sleep()状态超时、join()等待线程终止或者超时、或者I/O处理完毕时，线程重新转入就绪状态。</li>
+</ol>
+</li>
+<li>死亡状态(Dead)：线程执行完了或者因异常退出了run()方法，该线程结束生命周期</li>
+</ol>
+<p><img src="/.cn//2019072400006.png" alt="3414241"></p>
+<h5 id="线程共享进程哪些"><a href="#线程共享进程哪些" class="headerlink" title="线程共享进程哪些"></a>线程共享进程哪些</h5><p>线程共享的环境包括：进程代码段、进程的公有数据(利用这些共享的数据，线程很容易的实现相互之间的通讯)、进程打开的文件描述符、信号的处理器、进程的当前目录和进程用户ID与进程组ID。</p>
+<p>线程之间特有的：每个线程都有自己独立的线程上下文，包括线程ID、栈、栈指针、程序计数器、条件码和通用目的寄存器值。</p>
+<p>线程之间共有的：共享进程上下文的剩余部分，包括只读文本（代码）、读/写数据、堆以及所有的共享库代码和数据区域。线程也共享相同的打开文件的集合。</p>
+<h5 id="线程间通信"><a href="#线程间通信" class="headerlink" title="线程间通信"></a>线程间通信</h5><p>共享内存：共享内存这种方式比较常见，我们经常会设置一个共享变量。然后多个线程去操作同一个共享变量。从而达到线程通讯的目的。</p>
+<p>消息传递：不同的线程之间通过显式的发送消息来达到交互目的。消息传递最有名的方式应该是actor模型了。每个actor都有一个收件箱（消息队列）用来保存收到其他actor传递来的消息。</p>
+<h3 id="处理机调度"><a href="#处理机调度" class="headerlink" title="处理机调度"></a>处理机调度</h3><p>调度的类型与模型、调度算法、实时系统中的调度、多处理机调度</p>
+<h4 id="调度类型"><a href="#调度类型" class="headerlink" title="调度类型"></a>调度类型</h4><h5 id="高级调度"><a href="#高级调度" class="headerlink" title="高级调度"></a>高级调度</h5><p>又称为“宏观调度”、“作业调度”。从用 户工作流程的角度，一次提交的若干个作业，对每个作 业进行调度。时间上通常是分钟、小时或天。</p>
+<h5 id="中级调度"><a href="#中级调度" class="headerlink" title="中级调度"></a>中级调度</h5><p>内外存交换：又称为“中级调度”。从存储器资源的角 度。将进程的部分或全部换出到外存上，将当前所需部 分换入到内存。指令和数据必须在内存里才能被CPU直 接访问。</p>
+<h5 id="低级调度"><a href="#低级调度" class="headerlink" title="低级调度"></a>低级调度</h5><p>低级调度：又称为“微观调度”、“进程或线程 调度”。从CPU资源的角度，执行的单位。时间上 通常是毫秒。因为执行频繁，要求在实现时达到 高效率。 </p>
+<h4 id="何时进行调度"><a href="#何时进行调度" class="headerlink" title="何时进行调度"></a>何时进行调度</h4><ol>
+<li>当一个新的进程被创建时，是执行新进程还是继 续执行父进程？ </li>
+<li>当一个进程运行完毕时； </li>
+<li>当一个进程由于I/O、信号量或其他的某个原因 被阻塞时； </li>
+<li>当一个I/O中断发生时，表明某个I/O操作已经完 成，而等待该I/O操作的进程转入就绪状态； </li>
+<li>在分时系统中，当一个时钟中断发生时</li>
+</ol>
+<h4 id="何时进行切换"><a href="#何时进行切换" class="headerlink" title="何时进行切换"></a>何时进行切换</h4><p>只要OS取得对CPU的控制，进程切换就可能发生: </p>
+<ol>
+<li>用户调用：来自程序的显式请求(如：打开文件)， 该进程多半会被阻塞 </li>
+<li>陷阱：最末一条指令导致出错，会引起进程移至退出状态 </li>
+<li>中断：外部因素影响当前指令的执行，控制被转移 至中断处理程序</li>
+</ol>
+<p>在进程（上下文）中切换的步骤：</p>
+<ol>
+<li>保存处理器的上下文，包括程序计数器和其它寄 存器 </li>
+<li>用新状态和其它相关信息更新正在运行进程的 PCB </li>
+<li>把进程移至合适的队列-就绪、阻塞 </li>
+<li>选择另一个要执行的进程 </li>
+<li>更新被选中进程的PCB </li>
+<li>从被选中进程中重装入CPU 上下文</li>
+</ol>
+<h5 id="面向用户的调度性能准则"><a href="#面向用户的调度性能准则" class="headerlink" title="面向用户的调度性能准则"></a>面向用户的调度性能准则</h5><p>周转时间：作业从提交到完成（得到结果）所经 历的时间。包括：在收容队列中等待，CPU上执行 ，就绪队列和阻塞队列中等待，结果输出等待－ －批处理系统 •外存等待时间、就绪等待时间、CPU执行时间、 I/O操作时间 •平均周转时间、带权平均周转时间（T/Ts) </p>
+<p>响应时间：用户输入一个请求（如击键）到系统 给出首次响应（如屏幕显示）的时间－－分时系 统 </p>
+<p>截止时间：开始截止时间和完成截止时间－－实时系 统，与周转时间有些相似。 </p>
+<p>优先级：可以使关键任务达到更好的指标。 </p>
+<p>公平性：不因作业或进程本身的特性而使上述指标过 分恶化。如长作业等待很长时间。</p>
+<h5 id="面向系统的调度性能准则"><a href="#面向系统的调度性能准则" class="headerlink" title="面向系统的调度性能准则"></a>面向系统的调度性能准则</h5><p>吞吐量：单位时间内所完成的作业数，跟作业本 身特性和调度算法都有关系－－批处理系统 •平均周转时间不是吞吐量的倒数，因为并发执行的 作业在时间上可以重叠。如：在2小时内完成4个作 业，而平均周转时间是1.25小时，则吞吐量是2个作 业/小时 </p>
+<p>处理机利用率：－－大中型主机 </p>
+<p>各种资源的均衡利用：如CPU繁忙的作业和I/O繁 忙（指次数多，每次时间短）的作业搭配－－大 中型主机</p>
+<h4 id="调度算法"><a href="#调度算法" class="headerlink" title="调度算法"></a>调度算法</h4><p>通常将作业或进程归入各种就绪或阻塞队列。有的算 法适用于作业调度，有的算法适用于进程调度，有的 两者都适应</p>
+<p>不可抢占式方式 ，一旦处理器分配给一个进程，它就一直占用处理器 ，直到该进程自己因调用原语操作或等待I/O等原 因而进入阻塞状态，或时间片用完时才让出处理器 ，重新进行 </p>
+<p>抢占式方式 ，就绪队列中一旦有优先级高于当前运行进程优先级 的进程存在时，便立即进行进程调度，把处理器转 给优先级高的进程</p>
+<h5 id="先来先服务-FCFS-First-Come-First-Service"><a href="#先来先服务-FCFS-First-Come-First-Service" class="headerlink" title="先来先服务(FCFS, First Come First Service)"></a>先来先服务(FCFS, First Come First Service)</h5><p>这是最简单的调度算法，按先后顺序调度。 </p>
+<ol>
+<li>按照作业提交或进程变为就绪状态的先后次序，分 派CPU； </li>
+<li>当前作业或进程占用CPU，直到执行完或阻塞，才 出让CPU（非抢占方式）。 </li>
+<li>在作业或进程唤醒后（如I/O完成），并不立即恢 复执行，通常等到当前作业或进程出让CPU。最简 单的算法。 </li>
+</ol>
+<p>FCFS的特点 </p>
+<ol>
+<li>比较有利于长作业，而不利于短作业。 </li>
+<li>有利于CPU繁忙的作业，不利于I/O繁忙的作业。</li>
+</ol>
+<h5 id="短作业优先-SJF-Shortest-Job-First"><a href="#短作业优先-SJF-Shortest-Job-First" class="headerlink" title="短作业优先(SJF, Shortest Job First)"></a>短作业优先(SJF, Shortest Job First)</h5><p>又称为“短进程优先”SPN(Shortest Process Next)； 这是对FCFS算法的改进，其目标是减少平均周转时间。 </p>
+<p>对预计执行时间短的作业（进程）优先分派处理机。通常 后来的短作业不抢先正在执行的作业。</p>
+<p>优点： </p>
+<ol>
+<li>比FCFS改善平均周转时间和平均带权周转时间，缩 短作业的等待时间； </li>
+<li>提高系统的吞吐量； </li>
+</ol>
+<p>缺点： </p>
+<ol>
+<li>对长作业非常不利，可能长时间得不到执行； </li>
+<li>未能依据作业的紧迫程度来划分执行的优先级； </li>
+<li>难以准确估计作业（进程）的执行时间，从而影响 调度性能。</li>
+</ol>
+<h5 id="时间片轮转-Round-Robin-算法"><a href="#时间片轮转-Round-Robin-算法" class="headerlink" title="时间片轮转(Round Robin)算法"></a>时间片轮转(Round Robin)算法</h5><p>本算法主要用于微观调度，设计目标是提高资源利用率。其基本 思路是通过时间片轮转，提高进程并发性和响应 时间特性，从而提高资源利用率；</p>
+<p>将系统中所有的就绪进程按照FCFS原则，排成 一个队列。 </p>
+<p>每次调度时将CPU分派给队首进程，让其执行 一个时间片。时间片的长度从几个ms到几百ms 。 </p>
+<p>在一个时间片结束时，发生时钟中断。 </p>
+<p>调度程序据此暂停当前进程的执行，将其送到 就绪队列的末尾，并通过上下文切换执行当前 的队首进程。 </p>
+<p>进程可以未使用完一个时间片，就出让CPU（ 如阻塞）。</p>
+<p>时间片长度变化的影响 •过长－&gt;退化为FCFS算法，进程在一个时间片内都 执行完，响应时间长。 •过短－&gt;用户的一次请求需要多个时间片才能处理 完，上下文切换次数增加，响应时间长。 </p>
+<p>对响应时间的要求：T(响应时间)=N(进程数目 )*q(时间片) </p>
+<p>就绪进程的数目：数目越多，时间片越小 </p>
+<p>系统的处理能力：应当使用户输入通常在一个 时间片内能处理完，否则使响应时间，平均周 转时间和平均带权周转时间延长</p>
+<h5 id="优先级算法-Priority-Scheduling"><a href="#优先级算法-Priority-Scheduling" class="headerlink" title="优先级算法(Priority Scheduling)"></a>优先级算法(Priority Scheduling)</h5><p>本算法是平衡各进程对响应时间的要求。适用于作业调度和 进程调度，可分成抢先式和非抢先式</p>
+<p>静态优先级：创建进程时就确定，直到进程终止前都不改变。通常是 一个整数。依据： •进程类型（系统进程优先级较高） •对资源的需求（对CPU和内存需求较少的进程，优先级较 高） •用户要求（紧迫程度和付费多少）</p>
+<p>动态优先级：在创建进程时赋予的优先级，在进程运行过程中 可以自动改变，以便获得更好的调度性能。如： •在就绪队列中，等待时间延长则优先级提高，从而 使优先级较低的进程在等待足够的时间后，其优先 级提高到可被调度执行； •进程每执行一个时间片，就降低其优先级，从而一 个进程持续执行时，其优先级降低到出让CPU。</p>
+<p>高响应比优先调度算法：响应比=(执行时间＋等待时间）/执行时间；等待时间相同，短作业优先 ；要求服务时间相同，优先权决定于等待时间，（ FCFS) ；长作业等待时间长，优先权提高</p>
+<h5 id="多级队列算法-Multiple-level-Queue"><a href="#多级队列算法-Multiple-level-Queue" class="headerlink" title="多级队列算法(Multiple-level Queue)"></a>多级队列算法(Multiple-level Queue)</h5><p>本算法引入多个就绪队列，通过各队列的区别对待 ，达到一个综合的调度目标； •根据作业或进程的性质或类型的不同，将就绪队列再分为 若干个子队列。 •每个作业固定归入一个队列。 </p>
+<p>不同队列可有不同的优先级、时间片长度、调度策 略等；在运行过程中还可改变进程所在队列。如： 系统进程、用户交互进程、批处理进程等。</p>
+<h5 id="多级反馈队列算法-Round-Robin-with-Multiple-Feedback"><a href="#多级反馈队列算法-Round-Robin-with-Multiple-Feedback" class="headerlink" title="多级反馈队列算法(Round Robin with Multiple Feedback)"></a>多级反馈队列算法(Round Robin with Multiple Feedback)</h5><p>多级反馈队列算法时间片轮转算法和优先级算法的综合 和发展。优点： •为提高系统吞吐量和缩短平均周转时间而照顾短进程 •为获得较好的I/O设备利用率和缩短响应时间而照顾I/O 型进程 •不必估计进程的执行时间，动态调节</p>
+<p>设置多个就绪队列，分别赋予不同的优先级，如逐级 降低，队列1的优先级最高。每个队列执行时间片的长 度也不同，规定优先级越低则时间片越长，如逐级加倍</p>
+<p>新进程进入内存后，先投入队列1的末尾，按FCFS算法 调度；若按队列1一个时间片未能执行完，则降低投入 到队列2的末尾，同样按FCFS算法调度；如此下去，降 低到最后的队列，则按“时间片轮转”算法调度直到 完成。 </p>
+<p>仅当较高优先级的队列为空，才调度较低优先级的队 列中的进程执行。如果进程执行时有新进程进入较高 优先级的队列，则抢先执行新进程，并把被抢先的进 程投入原队列的末尾</p>
+<h4 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h4><p>死锁是指多个进程因竞争资源而造成的一种僵局（互相等待），若无外力作用，这些进程都将无法向前推进。例如，在某一个计算机系统中只有一台打印机和一台输入 设备，进程P1正占用输入设备，同时又提出使用打印机的请求，但此时打印机正被进程P2 所占用，而P2在未释放打印机之前，又提出请求使用正被P1占用着的输入设备。这样两个进程相互无休止地等待下去，均无法继续执行，此时两个进程陷入死锁状态。</p>
+<p>产生原因</p>
+<ol>
+<li>系统资源的竞争</li>
+<li>系统资源的竞争导致系统资源不足，以及资源分配不当，导致死锁。</li>
+<li>进程运行推进顺序不合适</li>
+<li>进程在运行过程中，请求和释放资源的顺序不当，会导致死锁。</li>
+</ol>
+<p>死锁的四个必要条件</p>
+<ol>
+<li>互斥条件：进程对于所分配到的资源具有排它性，即一个资源只能被一个进程占用，直到被该进程释放 </li>
+<li>请求和保持条件：一个进程因请求被占用资源而发生阻塞时，对已获得的资源保持不放。 </li>
+<li>不剥夺条件：任何一个资源在没被该进程释放之前，任何其他进程都无法对他剥夺占用 </li>
+<li>循环等待条件：当发生死锁时，所等待的进程必定会形成一个环路（类似于死循环），造成永久阻塞。</li>
+</ol>
+<p>避免死锁：</p>
+<ol>
+<li>加锁顺序：当多个线程需要相同的一些锁，但是按照不同的顺序加锁，死锁就很容易发生。</li>
+<li>加锁时限：另外一个可以避免死锁的方法是在尝试获取锁的时候加一个超时时间，这也就意味着在尝试获取锁的过程中若超过了这个时限该线程则放弃对该锁请求。若一个线程没有在给定的时限内成功获得所有需要的锁，则会进行回退并释放所有已经获得的锁，然后等待一段随机的时间再重试。这段随机的等待时间让其它线程有机会尝试获取相同的这些锁，并且让该应用在没有获得锁的时候可以继续运行</li>
+<li>死锁检测：死锁检测是一个更好的死锁预防机制，它主要是针对那些不可能实现按序加锁并且锁超时也不可行的场景。</li>
+</ol>
+<p>死锁预防</p>
+<p>我们可以通过破坏死锁产生的4个必要条件来 预防死锁，由于资源互斥是资源使用的固有特性是无法改变的。</p>
+<ol>
+<li>破坏不可剥夺条件：一个进程不能获得所需要的全部资源时便处于等待状态，</li>
+<li>破坏请求与保持条件：第一种方法静态分配即每个进程在开始执行时申请他所需要的全部资源。第二种是动态分配即每个进程在申请所需要的资源时他本身不沾油系统资源</li>
+<li>破坏循环等待条件：采用资源有序分配基本思想是将系统中的所有资源顺序编号，将紧缺的、稀少的采用较大的编号吗，在申请资源时必须按照编号的顺序进行，一个进程只有在获得较小编号的资源才能申请较大编号的资源。</li>
+</ol>
+<h3 id="设备管理"><a href="#设备管理" class="headerlink" title="设备管理"></a>设备管理</h3><h5 id="外设管理目的"><a href="#外设管理目的" class="headerlink" title="外设管理目的"></a>外设管理目的</h5><ol>
+<li>提高效率：提高I/O访问效率，匹配CPU和多种不同处理速度 的外设</li>
+<li>方便使用：方便用户使用，对不同类型的设备统一使用方法 ，协调对设备的并发使用</li>
+<li>方便控制：方便OS内部对设备的控制：增加和删除设备，适 应新的设备类型 </li>
+</ol>
+<h5 id="外设管理功能"><a href="#外设管理功能" class="headerlink" title="外设管理功能"></a>外设管理功能</h5><ol>
+<li>提供设备使用的用户接口：命令接口和编程接口。 </li>
+<li>设备分配和释放：使用设备前，需要分配设备和相应的通道 、控制器。 </li>
+<li>设备的访问和控制：包括并发访问和差错处理。 </li>
+<li>I/O缓冲和调度：目标是提高I/O访问效率</li>
+</ol>
+<h4 id="I-O控制技术"><a href="#I-O控制技术" class="headerlink" title="I/O控制技术"></a>I/O控制技术</h4><h5 id="程序控制I-O-programmed-I-O"><a href="#程序控制I-O-programmed-I-O" class="headerlink" title="程序控制I/O(programmed I/O)"></a>程序控制I/O(programmed I/O)</h5><p>I/O操作由程序发起，并等待操作完成。数据的每次读 写通过CPU。 </p>
+<p>缺点：在外设进行数据处理时，CPU只能等待。</p>
+<h5 id="中断驱动方式-interrupt-driven-I-O"><a href="#中断驱动方式-interrupt-driven-I-O" class="headerlink" title="中断驱动方式(interrupt-driven I/O)"></a>中断驱动方式(interrupt-driven I/O)</h5><p>I/O操作由程序发起，在操作完成时（如数据可读或 已经写入）由外设向CPU发出中断，通知该程序。 数据的每次读写通过CPU。 </p>
+<p>优点：在外设进行数据处理时，CPU不必等待，可 以继续执行该程序或其他程序。 </p>
+<p>缺点：CPU每次处理的数据量少（通常不超过几个 字节），只适于数据传输率较低的设备。</p>
+<h5 id="直接存储访问方式-DMA-Direct-Memory-Access"><a href="#直接存储访问方式-DMA-Direct-Memory-Access" class="headerlink" title="直接存储访问方式(DMA, Direct Memory Access)"></a>直接存储访问方式(DMA, Direct Memory Access)</h5><p>由程序设置DMA控制器中的若干寄存器值（如内存始址 ，传送字节数），然后发起I/O操作，而后者完成内存 与外设的成批数据交换，在操作完成时由DMA控制器向 CPU发出中断。 </p>
+<p>优点：CPU只需干预I/O操作的开始和结束，而其中的 一批数据读写无需CPU控制，适于高速设备。</p>
+<h4 id="阻塞IO和非阻塞IO"><a href="#阻塞IO和非阻塞IO" class="headerlink" title="阻塞IO和非阻塞IO"></a>阻塞IO和非阻塞IO</h4><p>在进行网络编程时，我们常常见到同步(Sync)/异步(Async)，阻塞(Block)/非阻塞(Unblock)四种调用方式：</p>
+<p>同步：所谓同步，就是在发出一个功能调用时，在没有得到结果之前，该调用就不返回。也就是必须一件一件事做,等前一件做完了才能做下一件事。<br>例如普通B/S模式（同步）：提交请求-&gt;等待服务器处理-&gt;处理完毕返回 这个期间客户端浏览器不能干任何事</p>
+<p>异步：异步的概念和同步相对。当一个异步过程调用发出后，调用者不能立刻得到结果。实际处理这个调用的部件在完成后，通过状态、通知和回调来通知调用者。<br>例如 ajax请求（异步）: 请求通过事件触发-&gt;服务器处理（这是浏览器仍然可以作其他事情）-&gt;处理完毕</p>
+<p>阻塞：阻塞调用是指调用结果返回之前，当前线程会被挂起（线程进入非可执行状态，在这个状态下，cpu不会给线程分配时间片，即线程暂停运行）。函数只有在得到结果之后才会返回。<br>有人也许会把阻塞调用和同步调用等同起来，实际上他是不同的。对于同步调用来说，很多时候当前线程还是激活的，只是从逻辑上当前函数没有返回而已。 例如，我们在socket中调用recv函数，如果缓冲区中没有数据，这个函数就会一直等待，直到有数据才返回。而此时，当前线程还会继续处理各种各样的消息。<br>快递的例子：比如到你某个时候到A楼一层（假如是内核缓冲区）取快递，但是你不知道快递什么时候过来，你又不能干别的事，只能死等着。但你可以睡觉（进程处于休眠状态），因为你知道快递把货送来时一定会给你打个电话（假定一定能叫醒你）。</p>
+<p>非阻塞：非阻塞和阻塞的概念相对应，指在不能立刻得到结果之前，该函数不会阻塞当前线程，而会立刻返回。<br>还是等快递的例子：如果用忙轮询的方法，每隔5分钟到A楼一层(内核缓冲区）去看快递来了没有。如果没来，立即返回。而快递来了，就放在A楼一层，等你去取。<br>对象的阻塞模式和阻塞函数调用<br>对象是否处于阻塞模式和函数是不是阻塞调用有很强的相关性，但是并不是一一对应的。阻塞对象上可以有非阻塞的调用方式，我们可以通过一定的API去轮询状 态，在适当的时候调用阻塞函数，就可以避免阻塞。而对于非阻塞对象，调用特殊的函数也可以进入阻塞调用。函数select就是这样的一个例子。</p>
+<ol>
+<li>同步，就是我调用一个功能，该功能没有结束前，我死等结果。</li>
+<li>异步，就是我调用一个功能，不需要知道该功能结果，该功能有结果后通知我（回调通知）</li>
+<li>阻塞，就是调用我（函数），我（函数）没有接收完数据或者没有得到结果之前，我不会返回。</li>
+<li>非阻塞，  就是调用我（函数），我（函数）立即返回，通过select通知调用者<br>同步IO和异步IO的区别就在于：数据拷贝的时候进程是否阻塞！<br>  阻塞IO和非阻塞IO的区别就在于：应用程序的调用是否立即返回！</li>
+</ol>
+<h4 id="同步IO和异步IO的区别"><a href="#同步IO和异步IO的区别" class="headerlink" title="同步IO和异步IO的区别"></a>同步IO和异步IO的区别</h4><p>Linux系统中，所有的设备读写都可以看做文件的读写来操作，对文件的读写一般要经过内核态和用户态的切换，正因为有了切换才导致IO有同步和异步的说法。</p>
+<p>通常IO分为两种：来自网络的IO；来自文件或设备的IO</p>
+<p>阻塞IO和非阻塞IO的区别在于：应用程序的调用是否立即返回。</p>
+<p>如何区别是同步IO还是异步IO？数据拷贝的时候是否阻塞；当请求被阻塞，就是同步IO，否则就是异步IO。</p>
+<p>同步IO的特点：</p>
+<ol>
+<li>同步IO指的是是用户进程触发IO操作并等待或者轮询的去查看IO操作是否就绪。</li>
+<li>同步IO的执行者是IO操作的发起者，同步IO需要发起者进行内核态到用户态的数据拷贝过程，所以这里必须阻塞。</li>
+</ol>
+<p>异步IO的特点：</p>
+<ol>
+<li>异步IO是指用户进程触发IO操作以后就立即返回，继续做自己的事情，而当IO操作已经完成的时候会得到IO完成的通知。</li>
+<li>异步IO的执行者是内核线程，内核线程会完成数据从内核态到用户态的拷贝，没有阻塞。</li>
+</ol>
+<h3 id="磁盘管理"><a href="#磁盘管理" class="headerlink" title="磁盘管理"></a>磁盘管理</h3><h5 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h5><p>扇区（sector） 盘片被分成许多扇形的区域 </p>
+<p>磁道（track） 盘片上以盘片中心为圆心，不同半径的同心圆。 </p>
+<p>柱面（cylinder) •硬盘中，不同盘片相同半径的磁道所组成的圆柱。 </p>
+<p>每个磁盘有两个面，每个面都有一个磁头(head)。</p>
+<h5 id="磁盘调度算法"><a href="#磁盘调度算法" class="headerlink" title="磁盘调度算法"></a>磁盘调度算法</h5><p>先来先服务</p>
+<p>最短寻道时间优先</p>
+<h5 id="提高磁盘I-O速度"><a href="#提高磁盘I-O速度" class="headerlink" title="提高磁盘I/O速度"></a>提高磁盘I/O速度</h5><p>磁盘高速缓存的形式 •独立缓存 •以虚拟内存为缓存 </p>
+<p>数据交付 •直接交付 •指针交付 </p>
+<p>置换算法 </p>
+<p>周期性写回 •sync</p>
+<h3 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h3><p>文件系统是指操作系统中与文件管理有关的那部分软件 和被管理的文件以及实施管理所需要的一些数据结构的总体。</p>
+<p>目的：</p>
+<ol>
+<li>方便的文件访问和控制：以符号名称作为文件标识， 便于用户使用； </li>
+<li>并发文件访问和控制：在多道程系统中支持对文件的 并发访问和控制； </li>
+<li>统一的用户接口：在不同设备上提供同样的接口，方 便用户操作和编程； </li>
+<li>多种文件访问权限：在多用户系统中的不同用户对同 一文件会有不同的访问权限； </li>
+<li>优化性能：存储效率、检索性能、读写性能； </li>
+<li>差错恢复：能够验证文件的正确性，并具有一定的差 错恢复能力；</li>
+</ol>
+<p>操作系统为系统管理者和用户提供了对文件的透明存 取（按名存取） ，不必了解文件存放的物理机制和查找方法，只需给定一 个代表某段程序或数据的文件名称，文件系统就会自动 地完成对给定文件名称相对应的文件的有关操作</p>
+<h3 id="分布式"><a href="#分布式" class="headerlink" title="分布式"></a>分布式</h3><h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"> ls -l 等同于 ll	显示当前目录下文件的属性</span><br><span class="line"> ls -d	仅列出目录</span><br><span class="line"> ls -al	显示当前目录下所有文件详细信息，包括隐藏文件</span><br><span class="line"> cd [~] [-]	切换目录 [~目前用户身份的主目录] [-前一个工作目录]</span><br><span class="line"> chgrp 用户组 文件名	修改文件的用户组</span><br><span class="line"> chown 用户名 文件名	修改文件的所有者</span><br><span class="line"> chmod 770 文件名	修改文件的权限</span><br><span class="line"> cp A B	复制文件A为B</span><br><span class="line"> rm A rm -r A	删除A</span><br><span class="line">	删除非空目录或文件A</span><br><span class="line"> su root	切换为root用户</span><br><span class="line"> mkdir/rmdir	新建目录、删除一个空目录</span><br><span class="line"> mkdir -p test1/test2	创建多层空目录</span><br><span class="line"> mkdir -m 777 test2	创建目录时设定权限</span><br><span class="line"> touch	新建空的文件</span><br><span class="line"> man 命令	查询命令详细解释</span><br><span class="line"> bzip2	压缩文件</span><br><span class="line"> bunzip2	解压文件</span><br><span class="line"> nano 	文本编辑器</span><br><span class="line"> pwd	显示当前目录</span><br><span class="line"> echo	打印</span><br><span class="line"> mv 文件名 目标位置	移动文件</span><br><span class="line"> mv A B	重命名A为B（目录或文件都可以）</span><br><span class="line"> PATH=&quot;$PATH&quot;:/root	添加/root到环境变量中</span><br><span class="line"> vim	进入后按i可以输入</span><br><span class="line">	退出按ESC然后:wq</span><br><span class="line">	不保存退出 按ESC 然后:q!</span><br><span class="line">	一般模式中：</span><br><span class="line">	/word 向下寻找word字符串</span><br><span class="line">	?word 向上寻找word字符串</span><br><span class="line">	n 重复前一个查找 N 与 n反向重复查找</span><br><span class="line"> umask -S	查看目前用户在新建文件或目录时候的默认权限</span><br><span class="line"> find	搜索文件，很复杂，很多参数</span><br><span class="line"> tar -jcv -f 名字.tar.bz2 A	压缩“A”变成“名字.tar.bz2”</span><br><span class="line"> tar -jtv -f 名字.tar.bz2	查询</span><br><span class="line"> tar -jxv -f 名字.tar.bz2 [-C 指定目录]	在当前目录解压 【-C 在指定目录解压】</span><br><span class="line"> groupadd A	新建用户组A</span><br><span class="line"> groupdel A	删除用户组A</span><br><span class="line"> groups [A]	查看自己所在的用户组，【查看A所在的用户组】</span><br><span class="line">usermod 	该命令有很多参数，可以修改账号各个属性</span><br><span class="line">usermod -G XXX B	新建XXX用户组为B的支持用户组，B原来的用户组仍有（支持用户组不是当前用户组，有效用户组才是当前用户组）</span><br><span class="line"> newgrp B	切换当前用户的有效用户组为B</span><br><span class="line"> useradd A	新增用户A（必须要设置密码才能用）</span><br><span class="line"> useradd -u 666 -g B -c &quot;XXX&quot; A	新增用户A，用户组为B，UID为666，账号全名是XXX</span><br><span class="line"> passwd A	给用户A设置密码，若没有A，则是给自己设置密码，密码需要超过8个字符</span><br><span class="line"> echo &quot;XXX&quot; | passwd --stdin A	设置用户A的密码为XXX</span><br><span class="line"> passwd -l A	使账号A密码失效（让其无法登陆）</span><br><span class="line"> passwd -u A	使账号A密码恢复</span><br><span class="line"> passwd -S A	查询账号A密码状态</span><br><span class="line"> userdel -r A	删除用户A，连同用户主文件夹一起删除（慎用）</span><br><span class="line"> setfacl -m u:A:rwx B	设置账户A针对文件B的权限为rwx（针对单独用户设置权限）</span><br><span class="line"> setfacl -m g:A:rx B	设置用户组A针对文件B的权限为rx</span><br><span class="line"> setfacl -b A	消除文件A的ACL权限</span><br><span class="line"> getfacl B	查询文件B的权限详情</span><br><span class="line"> ctrl+c	终止当前程序运行</span><br><span class="line">ctrl+alt+F1	切回图形界面</span><br><span class="line">ctrl+alt+F2-F7	切回命令行界面</span><br><span class="line"> yum install XXX	CentOS的apt-get install XXX</span><br><span class="line"> which XXX	检测某个XXX应用是否安装</span><br><span class="line"> reboot	重启服务器</span><br><span class="line"> ifconfig	查看Linux（包括本地虚拟机的Linux）的IP地址</span><br><span class="line"> shift+PgUp\PgDn	命令行界面上下滚动</span><br><span class="line">启动命令 &amp;	在后台启动，不占用命令窗口，比如启动Redis的时候 ./redis-server &amp;</span><br><span class="line"> kill -9 PID	关闭服务，比如某程序PID=6817 kill -9 6817 就关闭了这个服务</span><br><span class="line"> top	查看当前系统负载情况，如果是单核CPU 那么load average低于1说明没有线程等待</span><br><span class="line">netstat -nap| grep 5672	查看端口号5672是否被监听</span><br><span class="line">free -m	查看内存使用情况</span><br><span class="line"> ps -A	显示所有运行中的进程</span><br><span class="line"> netstat -nultp	查看当前正在使用的端口情况</span><br><span class="line">God status	查看当前部署的服务</span><br><span class="line"> god stop 服务名	停止服务</span><br><span class="line"> scp jinsong@IP地址:/路径     ./	复制远程主机上的文件到当前目录</span><br><span class="line"> pwd	显示当前路径</span><br></pre></td></tr></table></figure>
+
+<h5 id="top命令"><a href="#top命令" class="headerlink" title="top命令"></a>top命令</h5><p>终端输入top之后，就是下面这样啦</p>
+<p><img src="/.cn//2019072400007.png" alt="4133"></p>
+<p>前面是参数，后面就是进程和进程号之类的了</p>
+<p>第一行：当前时间，系统运行时间，登录用户数量，平均负载（分别在5，10，15分钟内）<br>这里是：早上9：37：19，系统运行了8分钟，1一个用户</p>
+<p>第二行：显示了系统的进程总数，后面是相应的状态下的进程<br>这里是：一共209个进程，1个是running状态，208个sleeping状态，0个stopped，0个zombie<br>关于进程的状态，这里解释一下zombie：这个是僵尸进程，就是，这个进程其实已经结束了，它仅仅在进程列表中保留一个位置，记载该进程的状态信息等，僵尸进程不再占有内存空间，没有可执行程序，也不能被调用。。这个进程中存储着进程的各种信息，占用cpu啊，运行时间之类的。。。这个进程会被其父进程收集它的信息。。。</p>
+<p>第三行：就是cpu的各种信息了<br>参数说明如下：<br>us：用户空间占cpu百分比<br>sy：内核空间占cpu百分比<br>ni：用户进程空间内改变过优先级的进程占用cpu百分比<br>id：空闲cpu百分比<br>wa：等待输入输出的cpu时间百分比<br>hi：硬中断（处理硬件中断的cpu时间）<br>si：软中断（处理软件中断的cpu时间）<br>第四行、第五行：内存使用<br>第一行：物理内存的使用，第二行：虚拟内存（交换空间）的使用。<br>每一行的后面四个参数是：总的内存，已经使用的内存，空闲内存，缓冲内存<br>第六行：表头，具体解释如下：<br>PID： 进程ID进程的唯一标识符<br>USER：进程ID 进程的唯一标识符<br>PR：进程调度优先级，一个拥有更高进程优先级的进程拥有更大的机率得到处理器的处理。，”tr”值代表这些进程运行在实时态<br>NI：进程的nice值（优先值）。越小意味着越高的优先级。<br>VIRT：系统使用的虚拟内存<br>RES：驻留内存大小，驻留内存是任务使用的非交换物理内存大小<br>SHR：是进程使用的共享内存<br>S：进程状态：<br>D：不可中断的睡眠态<br>R：运行态<br>S：睡眠态<br>T：被跟踪或已停止<br>Z：僵尸态<br>%CPU 自从上一次更新时到现在任务所使用的CPU时间百分比。<br>%MEM 进程使用的可用物理内存百分比<br>TIME+ 任务启动后到现在所使用的全部CPU时间，精确到百分之一秒。<br>COMMAND 进程所使用的命令。</p>
+<h5 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h5><p>ps命令是最基本的进程查看命令，使用该命令可以确定有哪些进程正在运行和运行的状态、进程是否结束、进程有没有僵尸、哪些进程占用了过多的资源等等。ps是显示瞬间进程的状态，并不动态连续；如果想对进程进行实时监控应该用top命令。</p>
+<p>参数：<br>-A ：所有的进程均显示出来，与 -e 具有同样的效用；<br>-a ： 显示现行终端机下的所有进程，包括其他用户的进程；<br>-u ：以用户为主的进程状态 ；<br>x ：通常与 a 这个参数一起使用，可列出较完整信息。</p>
+<p>输出格式规划：<br>l ：较长、较详细的将该PID 的的信息列出；<br>j ：工作的格式 (jobs format)<br>-f ：做一个更为完整的输出</p>
+<h5 id="netstat"><a href="#netstat" class="headerlink" title="netstat"></a>netstat</h5><p>netstat命令用于显示与IP、TCP、UDP和ICMP协议相关的统计数据，一般用于检验本机各端口的网络连接情况。netstat是在内核中访问网络及相关信息的程序，它能提供TCP连接，TCP和UDP监听，进程内存管理的相关报告。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">列出所有端口情况</span><br><span class="line">[root@xiesshavip002 ~]# netstat -a      # 列出所有端口</span><br><span class="line">[root@xiesshavip002 ~]# netstat -at     # 列出所有TCP端口</span><br><span class="line">[root@xiesshavip002 ~]# netstat -au     # 列出所有UDP端口</span><br><span class="line"></span><br><span class="line">列出所有处于监听状态的 Sockets</span><br><span class="line">[root@xiesshavip002 ~]# netstat -l   # 只显示监听端口</span><br><span class="line">[root@xiesshavip002 ~]# netstat -lt  # 显示监听TCP端口</span><br><span class="line">[root@xiesshavip002 ~]# netstat -lu  # 显示监听UDP端口</span><br><span class="line">[root@xiesshavip002 ~]# netstat -lx  # 显示监听UNIX端口</span><br><span class="line"></span><br><span class="line">显示每个协议的统计信息</span><br><span class="line">[root@xiesshavip002 ~]# netstat -s     # 显示所有端口的统计信息</span><br><span class="line">[root@xiesshavip002 ~]# netstat -st    # 显示所有TCP的统计信息</span><br><span class="line">[root@xiesshavip002 ~]# netstat -su    # 显示所有UDP的统计信息</span><br><span class="line"></span><br><span class="line">显示 PID 和进程名称</span><br><span class="line">[root@xiesshavip002 ~]# netstat -p</span><br><span class="line"></span><br><span class="line">显示核心路由信息</span><br><span class="line">[root@xiesshavip002 ~]# netstat -r</span><br><span class="line">Kernel IP routing table</span><br><span class="line">Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface</span><br><span class="line">default         gateway         0.0.0.0         UG        0 0          0 eth0</span><br><span class="line">192.168.130.0   0.0.0.0         255.255.255.0   U         0 0          0 eth0</span><br><span class="line">[root@xiesshavip002 ~]# netstat -rn   # 显示数字格式，不查询主机名称</span><br><span class="line">Kernel IP routing table</span><br><span class="line">Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface</span><br><span class="line">0.0.0.0         192.168.130.1   0.0.0.0         UG        0 0          0 eth0</span><br><span class="line">192.168.130.0   0.0.0.0         255.255.255.0   U         0 0          0 eth0</span><br></pre></td></tr></table></figure>
+
+<h5 id="awk"><a href="#awk" class="headerlink" title="awk"></a>awk</h5><p>awk是一个强大的文本分析工具。</p>
+<p>相对于grep的查找，sed的编辑，awk在其对数据分析并生成报告时，显得尤为强大。简单来说awk就是把文件逐行的读入，以空格为默认分隔符将每行切片，切开的部分再进行各种分析处理。</p>
+<p>使用方法：awk ‘{patten + action}’ {filename}</p>
+<p>尽管操作可能会很复杂，但语法总是这样，其中 pattern 表示 AWK 在数据中查找的内容，而 action 是在找到匹配内容时所执行的一系列命令。花括号（{}）不需要在程序中始终出现，但它们用于根据特定的模式对一系列指令进行分组。 pattern就是要表示的正则表达式，用斜杠括起来。</p>
+<p>awk语言的最基本功能是在文件或者字符串中基于指定规则浏览和抽取信息，awk抽取信息后，才能进行其他文本操作。完整的awk脚本通常用来格式化文本文件中的信息。</p>
+<p>通常，awk是以文件的一行为处理单位的。awk每接收文件的一行，然后执行相应的命令，来处理文本。</p>
+<h5 id="find"><a href="#find" class="headerlink" title="find"></a>find</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line">查找文件</span><br><span class="line">find ./ -type f</span><br><span class="line"></span><br><span class="line">查找目录</span><br><span class="line">find ./ -type d</span><br><span class="line"></span><br><span class="line">查找名字为test的文件或目录</span><br><span class="line">find ./ -name test</span><br><span class="line"></span><br><span class="line">查找名字符合正则表达式的文件,注意前面的‘.*’(查找到的文件带有目录)</span><br><span class="line">find ./ -regex .*so.*\.gz</span><br><span class="line"></span><br><span class="line">查找文件名匹配*.c的文件</span><br><span class="line">find ./ -name *.c</span><br><span class="line"></span><br><span class="line">查找文件更新日时在距现在时刻二天以内的文件</span><br><span class="line">find ./ -mtime -2</span><br><span class="line"></span><br><span class="line">查找文件更新日时在距现在时刻二天以上的文件</span><br><span class="line">find ./ -mtime +2</span><br><span class="line"></span><br><span class="line">查找文件更新日时在距现在时刻一天以上二天以内的文件</span><br><span class="line">find ./ -mtime 2</span><br><span class="line"></span><br><span class="line">查找文件更新日时在距现在时刻二分以内的文件</span><br><span class="line">find ./ -mmin -2</span><br><span class="line"></span><br><span class="line">查找文件更新日时在距现在时刻二分以上的文件</span><br><span class="line">find ./ -mmin +2</span><br><span class="line"></span><br><span class="line">查找文件更新日时在距现在时刻一分以上二分以内的文件</span><br><span class="line">find ./ -mmin 2</span><br><span class="line"></span><br><span class="line">查找空文件或空目录</span><br><span class="line">find ./ -empty</span><br><span class="line"></span><br><span class="line">查找权限为644的文件或目录(需完全符合)</span><br><span class="line">find ./ -perm 664</span><br><span class="line"></span><br><span class="line">查找用户/组权限为读写，其他用户权限为读(其他权限不限)的文件或目录</span><br><span class="line">find ./ -perm -664</span><br><span class="line"></span><br><span class="line">查找用户有写权限或者组用户有写权限的文件或目录</span><br><span class="line">find ./ -perm /220</span><br><span class="line">find ./ -perm /u+w,g+w</span><br><span class="line">find ./ -perm /u=w,g=w</span><br><span class="line"></span><br><span class="line">查找所有者权限有读权限的目录或文件</span><br><span class="line">find ./ -perm -u=r</span><br><span class="line"></span><br><span class="line">查找用户组权限有读权限的目录或文件</span><br><span class="line">find ./ -perm -g=r</span><br><span class="line"></span><br><span class="line">查找其它用户权限有读权限的目录或文件</span><br><span class="line">find ./ -perm -o=r</span><br><span class="line"></span><br><span class="line">查找所有者为lzj的文件或目录</span><br><span class="line">find ./ -user lzj</span><br><span class="line"></span><br><span class="line">查找组名为gname的文件或目录</span><br><span class="line">find ./ -group gname</span><br><span class="line"></span><br><span class="line">查找文件的用户ID不存在的文件</span><br><span class="line">find ./ -nouser</span><br><span class="line"></span><br><span class="line">查找文件的组ID不存在的文件</span><br><span class="line">find ./ -nogroup</span><br><span class="line"></span><br><span class="line">查找文件size小于10个字节的文件或目录</span><br><span class="line">find ./ -size -10c</span><br><span class="line"></span><br><span class="line">查找文件size等于10个字节的文件或目录</span><br><span class="line">find ./ -size 10c</span><br><span class="line"></span><br><span class="line">查找文件size大于10个字节的文件或目录</span><br><span class="line">find ./ -size +10c</span><br><span class="line"></span><br><span class="line">查找文件size小于10k的文件或目录</span><br><span class="line">find ./ -size -10k</span><br><span class="line"></span><br><span class="line">查找文件size小于10M的文件或目录</span><br><span class="line">find ./ -size -10M</span><br><span class="line"></span><br><span class="line">查找文件size小于10G的文件或目录</span><br><span class="line">find ./ -size -10G</span><br></pre></td></tr></table></figure>
+
+<h5 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h5><p>Linux系统中grep命令是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹配的行打印出来。</p>
+<p>使用格式：grep [OPTIONS] PATTERN [FILE…]</p>
+<p>例如：grep -i “s” /etc/passwd</p>
+<p>常用参数：<br>-c： 打印符合要求的行数（数目）<br>-i ：忽略大小写<br>-n：输出行和行号<br>-v：打印不符合要求的行，即反选<br>-A：后跟数字(有无空格都可以)，例如-A2 表示打印筛选行及前2行<br>-B：后跟数字，例如-B2表示打印筛选行及后2行<br>-C：后跟数字，例如-C2表示打印筛选行及前后各2行<br>-o：只打印符合要求的内容，而非整行</p>
+<h5 id="wc"><a href="#wc" class="headerlink" title="wc"></a>wc</h5><p>wc命令的功能为统计指定文件中的字节数、字数、行数, 并将统计结果显示输出。 </p>
+<p>语法：wc [选项] 文件… </p>
+<p>说明：该命令统计给定文件中的字节数、字数、行数。如果没有给出文件名，则从标准输入读取。wc同时也给出所有指定文件的总统计数。字是由空格字符区分开的最大字符串。 </p>
+<p>该命令各选项含义如下： </p>
+<ul>
+<li>c 统计字节数。 </li>
+<li>l 统计行数。 </li>
+<li>w 统计字数。<br>这些选项可以组合使用。<br>输出列的顺序和数目不受选项的顺序和数目的影响。总是按下述顺序显示并且每项最多一列。<br>行数、字数、字节数、文件名<br>如果命令行中没有文件名，则输出中不出现文件名。<br>统计指定文件中的字节数、字数、行数，并将统计结果显示输出。</li>
+</ul>
+<h5 id="sed"><a href="#sed" class="headerlink" title="sed"></a>sed</h5><p>sed是一个很好的文件处理工具，本身是一个管道命令，主要是以行为单位进行处理，可以将数据行进行替换、删除、新增、选取等特定工作，下面先了解一下sed的用法</p>
+<p>sed命令行格式为：<br>    sed [-nefri] ‘command’ 输入文本        </p>
+<p>常用选项：<br>       -n∶使用安静(silent)模式。在一般 sed 的用法中，所有来自 STDIN的资料一般都会被列出到萤幕上。但如果加上 -n 参数后，         则只有经过sed 特殊处理的那一行(或者动作)才会被列出来。<br>      -e：直接在指令列模式上进行 sed 的动作编辑；<br>      -f：直接将 sed 的动作写在一个档案内， -f filename 则可以执行 filename 内的sed 动作；<br>     -r：sed 的动作支援的是延伸型正规表示法的语法。(预设是基础正规表示法语法)<br>      -i：直接修改读取的档案内容，而不是由萤幕输出。       </p>
+<p>常用命令：<br>       a：新增，a 的后面可以接字串，而这些字串会在新的一行出现(目前的下一行)～<br>     c：取代，c 的后面可以接字串，这些字串可以取代 n1,n2 之间的行！<br>     d：删除，因为是删除啊，所以 d 后面通常不接任何咚咚；<br>       i：插入， i 的后面可以接字串，而这些字串会在新的一行出现(目前的上一行)；<br>      p：列印，亦即将某个选择的资料印出。通常 p 会与参数 sed -n 一起运作～<br>    s：取代，可以直接进行取代的工作哩！通常这个 s 的动作可以搭配正规表示法！</p>
+<h5 id="head和tail"><a href="#head和tail" class="headerlink" title="head和tail"></a>head和tail</h5><p>head [option] …filename…<br>    选项：-n num  显示文件的前num行。<br>         -c num  显示文件的前num个字节。<br>         -c -n   显示文件除了最后n个字节的其他内容。<br>          -q      隐藏文件名。<br>          -v      显示文件名。<br>tail [option] …filename…<br>    选项：-n num 显示文件的后num行。<br>         -r num 逆序显示filename最后10行。<br>         -f 检视filename的尾部内容（相当于-n 10）。</p>
+<h5 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h5><p>基本正则表达式：Basic REGEXP</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">元字符	描述</span><br><span class="line"> ？	匹配任意单个字符</span><br><span class="line">*	匹配任意字符</span><br><span class="line">[]	匹配指定范围内的任意单个字符</span><br><span class="line">[^]	匹配指定范围外的任意单个字符</span><br><span class="line">[:lower:]	小写字母</span><br><span class="line">[:upper:]	大写字母</span><br><span class="line">[:alpha:]	所有字母</span><br><span class="line">[:digit:]	数字</span><br><span class="line">[:alnum:]	所有数字和字母</span><br><span class="line">[:punct:]	标点符号</span><br><span class="line">[:space:]	空白字符</span><br><span class="line">\?	匹配其前面的字符1次或0次</span><br><span class="line">\&#123;m,n\&#125;	匹配其前面的字符至少m次，至多n次</span><br><span class="line">^	铆定行首，此字符后面的任意内容必须出现在行首</span><br><span class="line">$	铆定行尾，此字符前面的任意内容必须出现在行尾</span><br><span class="line">^$	表示空白行</span><br><span class="line">\&lt;或\b	铆定词首，其后面的任意字符必须作为单词的首部出现</span><br><span class="line">\&gt;或\b	铆定词尾，其前面的任意字符必须作为单词的尾部出现</span><br><span class="line">\(\)	分组</span><br><span class="line">\(ab\)*	ab作为一个整体，可以出现任意次</span><br><span class="line">\(ab\).*\1	引用第一个左括号以及与之对应的右括号所包括的所有内容</span><br><span class="line">\(ab\).*\2	引用第二个左括号以及与之对应的右括号所包括的所有内容</span><br></pre></td></tr></table></figure>
+
+<p>扩展正则表达式：Extended REGEXP</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">字符匹配</span><br><span class="line">.	匹配任意单个字符</span><br><span class="line">[]	匹配指定范围内的任意单个字符</span><br><span class="line">[^]	匹配指定范围外的任意单个字符</span><br><span class="line">次数匹配</span><br><span class="line">*	匹配其前字符任意次</span><br><span class="line">?	匹配其前字符0次或1次</span><br><span class="line">+	匹配其前字符至少1次，类似于基本正则表达式\&#123;1,\&#125;</span><br><span class="line">&#123;m,n&#125;	匹配其前面的字符至少m次，至多n次</span><br><span class="line">位置铆定</span><br><span class="line">^	行首</span><br><span class="line">$	行尾</span><br><span class="line">\&lt;或\b	词首</span><br><span class="line">\&gt;或\b	词尾</span><br><span class="line">分组</span><br><span class="line">().*\1\2\3	 </span><br><span class="line">或者</span><br><span class="line">|	or  a|b ，a或者b ，有一个就行</span><br><span class="line">	C|cat--&gt; C或cat</span><br><span class="line">(C|c)at--&gt;Cat或cat</span><br></pre></td></tr></table></figure>
+
+<h5 id="如何查找出现频率最高的100个IP地址"><a href="#如何查找出现频率最高的100个IP地址" class="headerlink" title="如何查找出现频率最高的100个IP地址"></a>如何查找出现频率最高的100个IP地址</h5><p>查看日志中访问次数最多的前10个IP<br>cat access_log | cut –d  ‘ ’  –f 1 | sort | uniq –c | sort –nr | awk ‘{print $0}’ | head –n 100 | less</p>
+<p>查看日志中出现100次以上的IP<br>cat access_log | cut –d ‘ ’ –f 1 |sort |uniq -c | awk ‘{if($1&gt;100) print $0}’ | sort –nr | less</p>
+<h5 id="linux如何统计文件中某个字符串出现的频率"><a href="#linux如何统计文件中某个字符串出现的频率" class="headerlink" title="linux如何统计文件中某个字符串出现的频率"></a>linux如何统计文件中某个字符串出现的频率</h5><ol>
+<li>grep+wc<br>grep –o targetStr finename | wc –l     #单个字符串<pre><code>grep –o ‘targetStr1\|targetStr2’ finename | wc –l      #多个字符串</code></pre></li>
+<li>awk<br>awk –v RS=”@#$j” ‘{print gsub(/targetstr/,”$”}’ filename</li>
+</ol>
+<h5 id="linux启动的第一个进程"><a href="#linux启动的第一个进程" class="headerlink" title="linux启动的第一个进程"></a>linux启动的第一个进程</h5><p>init进程是内核启动的第一个进程，它是后续进程的发起者。</p>
+<p>内核启动init进程的过程如下：</p>
+<ol>
+<li>打开标准输入、标准输出、标准错误文件。</li>
+<li>如果radmdisk_execute_command指定了要运行的程序，则启动它。</li>
+<li>如果excute_command指定了要运行的程序，则启动它。</li>
+<li>依次尝试执行/sbin/init、/etc/init、/bin/init、/bin/sh。</li>
+</ol>
+<h5 id="linux查看端口占用"><a href="#linux查看端口占用" class="headerlink" title="linux查看端口占用"></a>linux查看端口占用</h5><ol>
+<li>lsof –i            #查看所有的服务端口。</li>
+<li>lsof –i:端口号      #查看占用端口</li>
+<li>netstat –a        #查看所有的服务端口。</li>
+<li>netstat –an | grep 端口号       #检验下是不是已经打开了某端口。</li>
+</ol>
+<h5 id="linux查看CPU和内存使用"><a href="#linux查看CPU和内存使用" class="headerlink" title="linux查看CPU和内存使用"></a>linux查看CPU和内存使用</h5><ol>
+<li>ps命令可以实时的现实各个进程的内存使用情况。</li>
+<li>top命令提供了实时的运行中的程序的资源使用统计。    </li>
+<li>atop命令是一个终端环境的监控命令。</li>
+<li>/proc/meminfo查看RAM使用情况最简单的方法是通过查看/proc/meminfo文件。</li>
+<li>free命令是一个快速查看内存使用情况的方法，它是对/proc/meminfo收集到的信息的一个概述。    </li>
+</ol>
+<h5 id="Linux查看系统负载命令"><a href="#Linux查看系统负载命令" class="headerlink" title="Linux查看系统负载命令"></a>Linux查看系统负载命令</h5><ol>
+<li>top</li>
+<li>uptime</li>
+<li>w</li>
+<li>vmstat</li>
+</ol>
+<h5 id="Linux调试程序"><a href="#Linux调试程序" class="headerlink" title="Linux调试程序"></a>Linux调试程序</h5><ol>
+<li>printf语句。</li>
+<li>查询(cpu信息，内存容量)。</li>
+<li>跟踪工具- strace的和ltrace是两个在Linux中用来追踪程序的执行细节的跟踪工具。</li>
+<li>GDB-来自自由软件基金会的调试器。当被调试的程序运行时，它给用户控制权去执行各种动作。比如:<br>启动程序<br>停在指定位置<br>停在指定的条件<br>检查所需信息<br>改变程序中的数据。<br>你也可以将一个崩溃的程序coredump附着到GDB并分析故障的原因。</li>
+</ol>
+<h5 id="Linux硬链接和软连接"><a href="#Linux硬链接和软连接" class="headerlink" title="Linux硬链接和软连接"></a>Linux硬链接和软连接</h5><p>硬链接总结：（类似于shared_ptr智能指针）</p>
+<ol>
+<li>具有相同inode（索引节点）号的多个文件互为硬链接文件；</li>
+<li>删除硬链接文件或者删除源文件任意之一，文件实体并未被删除；</li>
+<li>只有删除了源文件和所有对应的硬链接文件，文件实体才会被删除；</li>
+<li>硬链接文件是文件的另一个入口；</li>
+<li>可以通过给文件设置硬链接文件来防止重要文件被误删；</li>
+<li>创建硬链接命令 ln 源文件 硬链接文件；</li>
+<li>硬链接文件是普通文件，可以用rm删除；</li>
+<li>对于静态文件（没有进程正在调用），当硬链接数为0时文件就被删除。注意：如果有进程正在调用，则无法删除或者即使文件名被删除但空间不会释放。</li>
+</ol>
+<p>软连接总结：</p>
+<ol>
+<li>软链接类似windows系统的快捷方式；</li>
+<li>软链接里面存放的是源文件的路径，指向源文件；</li>
+<li>删除源文件，软链接依然存在，但无法访问源文件内容；</li>
+<li>软链接失效时一般是白字红底闪烁；</li>
+<li>创建软链接命令 ln -s 源文件 软链接文件；</li>
+<li>软链接和源文件是不同的文件，文件类型也不同，inode号也不同；</li>
+<li>软链接的文件类型是“l”，可以用rm删除。</li>
+</ol>
+<h5 id="linux文件系统"><a href="#linux文件系统" class="headerlink" title="linux文件系统"></a>linux文件系统</h5><p>网络文件系统：如 nfs、cifs 等；<br>磁盘文件系统：如 ext4、ext3 等；<br>特殊文件系统：如 proc、sysfs、ramfs、tmpfs 等。</p>
+<h5 id="core-dump"><a href="#core-dump" class="headerlink" title="core dump"></a>core dump</h5><p>当程序运行过程中异常终止或崩溃，操作系统会将程序当时的内存状态记录下来，保存在一个文件中，这种行为就叫做core dump（核心转储）。但实际上，除了内存信息之外，还有些关键的程序运行状态也会同时 dump 下来，例如寄存器信息（包括程序指针、栈指针等）、内存管理信息、其他处理器和操作系统状态和信息。core dump文件可以再现程序出错时的情景。</p>
+<h5 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h5><p>《操作系统实用教程》</p>
+<p><a href="https://blog.csdn.net/guowenyan001/article/details/9190585" target="_blank" rel="noopener">https://blog.csdn.net/guowenyan001/article/details/9190585</a></p>
+<p><a href="https://blog.csdn.net/u014303647/article/details/88752856" target="_blank" rel="noopener">https://blog.csdn.net/u014303647/article/details/88752856</a></p>
+<p><a href="https://blog.csdn.net/zhyfxy/article/details/70157248" target="_blank" rel="noopener">https://blog.csdn.net/zhyfxy/article/details/70157248</a></p>
+<p><a href="https://blog.csdn.net/u012349696/article/details/51154364" target="_blank" rel="noopener">https://blog.csdn.net/u012349696/article/details/51154364</a></p>
+<p><a href="https://blog.csdn.net/u010318270/article/details/81058090" target="_blank" rel="noopener">https://blog.csdn.net/u010318270/article/details/81058090</a></p>
+<p><a href="https://www.cnblogs.com/lustar/p/7716165.html" target="_blank" rel="noopener">https://www.cnblogs.com/lustar/p/7716165.html</a></p>
+<p><a href="https://blog.csdn.net/Jacoob1024/article/details/81097721" target="_blank" rel="noopener">https://blog.csdn.net/Jacoob1024/article/details/81097721</a></p>
+<p><a href="https://blog.csdn.net/u011726005/article/details/82670730" target="_blank" rel="noopener">https://blog.csdn.net/u011726005/article/details/82670730</a></p>
+<p><a href="https://blog.csdn.net/wujiafei_njgcxy/article/details/77116175" target="_blank" rel="noopener">https://blog.csdn.net/wujiafei_njgcxy/article/details/77116175</a></p>
+<p><a href="https://blog.csdn.net/lovenankai/article/details/6874475" target="_blank" rel="noopener">https://blog.csdn.net/lovenankai/article/details/6874475</a></p>
+<p><a href="http://www.cnblogs.com/zgq0/p/8780893.html" target="_blank" rel="noopener">http://www.cnblogs.com/zgq0/p/8780893.html</a></p>
+<p><a href="http://blog.csdn.net/fengye245/article/details/7783717" target="_blank" rel="noopener">http://blog.csdn.net/fengye245/article/details/7783717</a></p>
+<p><a href="https://blog.csdn.net/qq_38211852/article/details/80211169" target="_blank" rel="noopener">https://blog.csdn.net/qq_38211852/article/details/80211169</a></p>
+<p><a href="https://www.jianshu.com/p/6a6845464770" target="_blank" rel="noopener">https://www.jianshu.com/p/6a6845464770</a></p>
+<p><a href="https://blog.csdn.net/qq546770908/article/details/53082870" target="_blank" rel="noopener">https://blog.csdn.net/qq546770908/article/details/53082870</a></p>
+<p><a href="https://blog.csdn.net/misszhoudandan/article/details/81173046" target="_blank" rel="noopener">https://blog.csdn.net/misszhoudandan/article/details/81173046</a></p>
+<p><a href="https://blog.csdn.net/Misszhoudandan/article/details/81193227" target="_blank" rel="noopener">https://blog.csdn.net/Misszhoudandan/article/details/81193227</a></p>
+<p><a href="https://www.cnblogs.com/hadoop-dev/p/6899171.html" target="_blank" rel="noopener">https://www.cnblogs.com/hadoop-dev/p/6899171.html</a></p>
+<p><a href="https://www.cnblogs.com/bopo/p/9228834.html" target="_blank" rel="noopener">https://www.cnblogs.com/bopo/p/9228834.html</a></p>
+<p><a href="https://www.cnblogs.com/Peter2014/p/7594504.html" target="_blank" rel="noopener">https://www.cnblogs.com/Peter2014/p/7594504.html</a></p>
+<p><a href="https://www.cnblogs.com/bokeyuan-dlam/articles/9157857.html" target="_blank" rel="noopener">https://www.cnblogs.com/bokeyuan-dlam/articles/9157857.html</a></p>
+<p><a href="https://blog.csdn.net/qq_36357820/article/details/76606113" target="_blank" rel="noopener">https://blog.csdn.net/qq_36357820/article/details/76606113</a></p>
+<p><a href="https://www.cnblogs.com/zhuiluoyu/p/6154898.html" target="_blank" rel="noopener">https://www.cnblogs.com/zhuiluoyu/p/6154898.html</a></p>
+<p><a href="https://www.cnblogs.com/CEO-H/p/7794306.html" target="_blank" rel="noopener">https://www.cnblogs.com/CEO-H/p/7794306.html</a></p>
+<p><a href="https://blog.csdn.net/chuhongcai/article/details/53931371" target="_blank" rel="noopener">https://blog.csdn.net/chuhongcai/article/details/53931371</a></p>
+<p><a href="https://blog.csdn.net/qq43599939/article/details/78873150" target="_blank" rel="noopener">https://blog.csdn.net/qq43599939/article/details/78873150</a></p>
+<p><a href="https://www.cnblogs.com/ginvip/p/6376049.html" target="_blank" rel="noopener">https://www.cnblogs.com/ginvip/p/6376049.html</a></p>
+<p><a href="https://blog.csdn.net/freeking101/article/details/53404897" target="_blank" rel="noopener">https://blog.csdn.net/freeking101/article/details/53404897</a></p>
+<p><a href="http://www.cnblogs.com/csj2018/p/9158963.html" target="_blank" rel="noopener">http://www.cnblogs.com/csj2018/p/9158963.html</a></p>
+<p><a href="https://www.cnblogs.com/bigbean/p/3669739.html" target="_blank" rel="noopener">https://www.cnblogs.com/bigbean/p/3669739.html</a></p>
+<p><a href="https://www.cnblogs.com/xiaoleiel/p/8349487.html" target="_blank" rel="noopener">https://www.cnblogs.com/xiaoleiel/p/8349487.html</a></p>
+<p><a href="https://www.cnblogs.com/ftl1012/p/netstat.html" target="_blank" rel="noopener">https://www.cnblogs.com/ftl1012/p/netstat.html</a></p>
+<p><a href="https://www.cnblogs.com/wxgblogs/p/6591980.html" target="_blank" rel="noopener">https://www.cnblogs.com/wxgblogs/p/6591980.html</a></p>
+<p><a href="https://blog.csdn.net/abc15766228491/article/details/79339208" target="_blank" rel="noopener">https://blog.csdn.net/abc15766228491/article/details/79339208</a></p>
+<script type="text/javascript" src="/js/jquery.js?v=2.0.3" async></script><div class="post-donate"><div id="donate_board" class="donate_bar center"><a id="btn_donate" href="javascript:;" title="����" class="btn_donate"></a><div class="donate_txt"> &uarr;<br>Desire is the starting point of all achievement！<br></div></div><div id="donate_guide" class="donate_bar center hidden pay"><img src="/img/weChatMoney.png" title="΢�Ŵ���" alt="΢�Ŵ���"><img src="/img/alipayMoney.png" title="֧��������" alt="֧��������"></div><script type="text/javascript">document.getElementById('btn_donate').onclick = function(){
+    $('#donate_board').addClass('hidden');
+    $('#donate_guide').removeClass('hidden');
+}</script></div></div><div class="post-copyright"><blockquote><p>原文作者: Yang Peng</p><p>原文链接: <a href="http://ylovex.cn/2019/07/21/操作系统基础/">http://ylovex.cn/2019/07/21/操作系统基础/</a></p><p>版权声明: 转载请注明出处(必须保留作者署名及链接)</p></blockquote></div><div class="tags"><a href="/tags/操作系统/">操作系统</a></div><div class="post-share"><div class="social-share"><span>分享到:</span></div></div><div class="post-nav"><a href="/2019/07/25/java基础面试题总结/" class="pre">java基础面试题总结</a><a href="/2019/07/16/java多线程基础/" class="next">java多线程基础</a></div><div id="comments"><div id="lv-container" data-id="city" data-uid="MTAyMC80NDk3OC8yMTQ5OA=="></div></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#操作系统基础"><span class="toc-text">操作系统基础</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#计算机系统组成"><span class="toc-text">计算机系统组成</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#基本功能"><span class="toc-text">基本功能</span></a></li></ol></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#存储器管理"><span class="toc-text">存储器管理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#地址空间和存储空间"><span class="toc-text">地址空间和存储空间</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#存储分配的三种方式"><span class="toc-text">存储分配的三种方式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#单一连续区存储管理"><span class="toc-text">单一连续区存储管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#分区式分配"><span class="toc-text">分区式分配</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#可变式分区的分配策略"><span class="toc-text">可变式分区的分配策略</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#可重定位分区分配"><span class="toc-text">可重定位分区分配</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#多重分区分配"><span class="toc-text">多重分区分配</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#覆盖管理"><span class="toc-text">覆盖管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#交换"><span class="toc-text">交换</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分页式存储管理"><span class="toc-text">分页式存储管理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#纯分页系统"><span class="toc-text">纯分页系统</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#页表数据结构"><span class="toc-text">页表数据结构</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分段式存储管理"><span class="toc-text">分段式存储管理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#分页和分段的比较"><span class="toc-text">分页和分段的比较</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#段页式存储管理"><span class="toc-text">段页式存储管理</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#虚拟存储器"><span class="toc-text">虚拟存储器</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#局部性原理"><span class="toc-text">局部性原理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#虚拟存储技术"><span class="toc-text">虚拟存储技术</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#请求式分页系统"><span class="toc-text">请求式分页系统</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#页面调入策略"><span class="toc-text">页面调入策略</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#页面置换策略"><span class="toc-text">页面置换策略</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#先进先出算法"><span class="toc-text">先进先出算法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#最近最久不用的页面置换算法"><span class="toc-text">最近最久不用的页面置换算法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Clock算法"><span class="toc-text">Clock算法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#最不常用算法-LFU-Least-Frequently-Used"><span class="toc-text">最不常用算法(LFU, Least Frequently Used)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#页面缓冲算法"><span class="toc-text">页面缓冲算法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程和线程"><span class="toc-text">进程和线程</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#进程与程序的区别"><span class="toc-text">进程与程序的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#进程和线程区别"><span class="toc-text">进程和线程区别</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#进程创建和结束"><span class="toc-text">进程创建和结束</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#如何创建新进程"><span class="toc-text">如何创建新进程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#fork-返回值"><span class="toc-text">fork()返回值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#进程的状态"><span class="toc-text">进程的状态</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#孤儿进程、僵尸进程和守护进程"><span class="toc-text">孤儿进程、僵尸进程和守护进程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#多进程"><span class="toc-text">多进程</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#进程通信"><span class="toc-text">进程通信</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#管道"><span class="toc-text">管道</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#FIFO"><span class="toc-text">FIFO</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#消息队列"><span class="toc-text">消息队列</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#信号量"><span class="toc-text">信号量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#共享内存"><span class="toc-text">共享内存</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#共享内存，管道，socket等进程间通信方式的优缺点"><span class="toc-text">共享内存，管道，socket等进程间通信方式的优缺点</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#进程同步"><span class="toc-text">进程同步</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#信号量-1"><span class="toc-text">信号量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#管程"><span class="toc-text">管程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#会合"><span class="toc-text">会合</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#进程中线程同步"><span class="toc-text">进程中线程同步</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#临界区（Critical-Section）"><span class="toc-text">临界区（Critical Section）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#互斥量（Mutex）"><span class="toc-text">互斥量（Mutex）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#信号量（Semaphore）"><span class="toc-text">信号量（Semaphore）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#事件（Event）"><span class="toc-text">事件（Event）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#线程的创建和结束"><span class="toc-text">线程的创建和结束</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#创建线程"><span class="toc-text">创建线程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#获取线程ID"><span class="toc-text">获取线程ID</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#等待线程结束"><span class="toc-text">等待线程结束</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#线程结束"><span class="toc-text">线程结束</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#分离线程"><span class="toc-text">分离线程</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#线程状态"><span class="toc-text">线程状态</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#线程共享进程哪些"><span class="toc-text">线程共享进程哪些</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#线程间通信"><span class="toc-text">线程间通信</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#处理机调度"><span class="toc-text">处理机调度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#调度类型"><span class="toc-text">调度类型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#高级调度"><span class="toc-text">高级调度</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#中级调度"><span class="toc-text">中级调度</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#低级调度"><span class="toc-text">低级调度</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#何时进行调度"><span class="toc-text">何时进行调度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#何时进行切换"><span class="toc-text">何时进行切换</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#面向用户的调度性能准则"><span class="toc-text">面向用户的调度性能准则</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#面向系统的调度性能准则"><span class="toc-text">面向系统的调度性能准则</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#调度算法"><span class="toc-text">调度算法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#先来先服务-FCFS-First-Come-First-Service"><span class="toc-text">先来先服务(FCFS, First Come First Service)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#短作业优先-SJF-Shortest-Job-First"><span class="toc-text">短作业优先(SJF, Shortest Job First)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#时间片轮转-Round-Robin-算法"><span class="toc-text">时间片轮转(Round Robin)算法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#优先级算法-Priority-Scheduling"><span class="toc-text">优先级算法(Priority Scheduling)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#多级队列算法-Multiple-level-Queue"><span class="toc-text">多级队列算法(Multiple-level Queue)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#多级反馈队列算法-Round-Robin-with-Multiple-Feedback"><span class="toc-text">多级反馈队列算法(Round Robin with Multiple Feedback)</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#死锁"><span class="toc-text">死锁</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设备管理"><span class="toc-text">设备管理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#外设管理目的"><span class="toc-text">外设管理目的</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#外设管理功能"><span class="toc-text">外设管理功能</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#I-O控制技术"><span class="toc-text">I/O控制技术</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#程序控制I-O-programmed-I-O"><span class="toc-text">程序控制I/O(programmed I/O)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#中断驱动方式-interrupt-driven-I-O"><span class="toc-text">中断驱动方式(interrupt-driven I/O)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#直接存储访问方式-DMA-Direct-Memory-Access"><span class="toc-text">直接存储访问方式(DMA, Direct Memory Access)</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#阻塞IO和非阻塞IO"><span class="toc-text">阻塞IO和非阻塞IO</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#同步IO和异步IO的区别"><span class="toc-text">同步IO和异步IO的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#磁盘管理"><span class="toc-text">磁盘管理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#基本概念"><span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#磁盘调度算法"><span class="toc-text">磁盘调度算法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#提高磁盘I-O速度"><span class="toc-text">提高磁盘I/O速度</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件系统"><span class="toc-text">文件系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分布式"><span class="toc-text">分布式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux"><span class="toc-text">Linux</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#top命令"><span class="toc-text">top命令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ps"><span class="toc-text">ps</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#netstat"><span class="toc-text">netstat</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#awk"><span class="toc-text">awk</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#find"><span class="toc-text">find</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#grep"><span class="toc-text">grep</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#wc"><span class="toc-text">wc</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#sed"><span class="toc-text">sed</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#head和tail"><span class="toc-text">head和tail</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#正则表达式"><span class="toc-text">正则表达式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#如何查找出现频率最高的100个IP地址"><span class="toc-text">如何查找出现频率最高的100个IP地址</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#linux如何统计文件中某个字符串出现的频率"><span class="toc-text">linux如何统计文件中某个字符串出现的频率</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#linux启动的第一个进程"><span class="toc-text">linux启动的第一个进程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#linux查看端口占用"><span class="toc-text">linux查看端口占用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#linux查看CPU和内存使用"><span class="toc-text">linux查看CPU和内存使用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Linux查看系统负载命令"><span class="toc-text">Linux查看系统负载命令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Linux调试程序"><span class="toc-text">Linux调试程序</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Linux硬链接和软连接"><span class="toc-text">Linux硬链接和软连接</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#linux文件系统"><span class="toc-text">linux文件系统</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#core-dump"><span class="toc-text">core dump</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a></li></ol></li></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2021/01/23/2021年-新的起点/">2021年-新的起点</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/13/LeetCode-钥匙和房间/">LeetCode-钥匙和房间</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/05/nowcoder-进制转换/">nowcoder-进制转换</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/30/Redis设计与实现笔记八/">Redis设计与实现笔记八</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/27/LeetCode-二叉树的序列化与反序列化/">LeetCode-二叉树的序列化与反序列化</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/25/java基础面试题总结/">java基础面试题总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/21/操作系统基础/">操作系统基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/16/java多线程基础/">java多线程基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/13/Redis设计与实现笔记七/">Redis设计与实现笔记七</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/10/Redis设计与实现笔记六/">Redis设计与实现笔记六</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Redis/">Redis</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jvm/">jvm</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/leetcode/">leetcode</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nowcoder/">nowcoder</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信号处理/">信号处理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/">数据结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机网络/">计算机网络</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="/tags/Life/" style="font-size: 15px;">Life</a> <a href="/tags/Redis/" style="font-size: 15px;">Redis</a> <a href="/tags/code/" style="font-size: 15px;">code</a> <a href="/tags/lms/" style="font-size: 15px;">lms</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/List/" style="font-size: 15px;">List</a> <a href="/tags/Map/" style="font-size: 15px;">Map</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/jvm/" style="font-size: 15px;">jvm</a> <a href="/tags/Set/" style="font-size: 15px;">Set</a> <a href="/tags/Stack/" style="font-size: 15px;">Stack</a> <a href="/tags/遍历/" style="font-size: 15px;">遍历</a> <a href="/tags/动态规划/" style="font-size: 15px;">动态规划</a> <a href="/tags/bfs/" style="font-size: 15px;">bfs</a> <a href="/tags/dp/" style="font-size: 15px;">dp</a> <a href="/tags/web/" style="font-size: 15px;">web</a> <a href="/tags/http/" style="font-size: 15px;">http</a> <a href="/tags/单例模式/" style="font-size: 15px;">单例模式</a> <a href="/tags/排序/" style="font-size: 15px;">排序</a> <a href="/tags/网络/" style="font-size: 15px;">网络</a> <a href="/tags/MySQL/" style="font-size: 15px;">MySQL</a> <a href="/tags/操作系统/" style="font-size: 15px;">操作系统</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="https://github.com/yxxyyx1314" title="github" target="_blank">github</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">网站地图</a> |  <a href="/atom.xml">订阅本站</a> |  <a href="/about/">联系博主</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次，本站总访客数:<i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>人</p><p><span> Copyright &copy;<a href="/." rel="nofollow">Yang Peng.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?1ec291f029f752ac2c73c4f283e80301";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();
+</script><script type="text/javascript" src="/js/search.json.js?v=2.0.3"></script><script type="text/javascript" src="/js/toctotop.js?v=2.0.3" async></script><link rel="stylesheet" type="text/css" href="/share/css/share.css"><script type="text/javascript" src="/share/js/social-share.js" charset="utf-8"></script><script type="text/javascript" src="/share/js/qrcode.js" charset="utf-8"></script><script>(function(d, s) {
+  var j, e = d.getElementsByTagName('body')[0];
+  if (typeof LivereTower === 'function') { return; }
+  j = d.createElement(s);
+  j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+  j.async = true;
+  e.appendChild(j);
+})(document, 'script');
+</script></body></html>

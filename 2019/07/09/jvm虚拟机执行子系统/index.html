@@ -1,0 +1,150 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="Yang Peng's blogs"><meta name="keywords" content="cs,java,go"><title>jvm虚拟机执行子系统 | My Personal Time</title><link rel="stylesheet" type="text/css" href="//fonts.loli.net/css?family=Source+Code+Pro"><link rel="stylesheet" type="text/css" href="/css/donate.css"><link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.3"><link rel="stylesheet" type="text/css" href="/css/highlight.css?v=2.0.3"><link rel="Shortcut Icon" href="/favicon.ico"><link rel="bookmark" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">jvm虚拟机执行子系统</h1><a id="logo" href="/.">My Personal Time</a><p class="description">Desire is the starting point of all achievement</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="搜索"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="title">{title}</div><div class="time">{date}</div><div class="tags">{tags}</div></a></div></template></div></div></div><div id="layout" class="layout-g"><div class="layout-l"><div class="content_container"><div class="post"><h1 class="post-title">jvm虚拟机执行子系统</h1><div class="post-meta"><a href="/2019/07/09/jvm虚拟机执行子系统/#comments" class="comment-count"></a><p><span class="date">Jul 09, 2019</span><span><a href="/categories/jvm/" class="category">jvm</a></span><span><i id="busuanzi_container_page_pv"><i id="busuanzi_value_page_pv"></i><i>点击</i></i></span></p></div><div class="post-content"><h3 id="虚拟机执行子系统"><a href="#虚拟机执行子系统" class="headerlink" title="虚拟机执行子系统"></a>虚拟机执行子系统</h3><h4 id="类文件结构"><a href="#类文件结构" class="headerlink" title="类文件结构"></a>类文件结构</h4><p>任何一个Class文件都对应着唯一一个类或者接口的定义信息，但反过来说，类或接口并不一定都得定义在文件里（譬如类或者接口也可以通过类加载器直接生成）。</p>
+<p>Class文件是一组以8位字节为基础单位的二进制流，各个数据项目严格按照顺序紧凑地 排列在Class文件之中，中间没有添加任何分隔符，这使得整个Class文件中存储的内容几乎 全部是程序运行的必要数据，没有空隙存在。当遇到需要占用8位字节以上空间的数据项时，则会按照高位在前的方式分割成若干个8位字节进行存储。</p>
+<p>Class文件格式采用一种类似于C语言结构体的伪结构来存 储数据，这种伪结构中只有两种数据类型：无符号数和表：</p>
+<ol>
+<li>无符号数属于基本的数据类型，以u1、u2、u4、u8来分别代表1个字节、2个字节、4个 字节和8个字节的无符号数，无符号数可以用来描述数字、索引引用、数量值或者按照UTF-8 编码构成字符串值。 </li>
+<li>表是由多个无符号数或者其他表作为数据项构成的复合数据类型，所有表都习惯性以“_info”结尾。表用于描述有层次关系的复合结构的数据，整个Class文件本质上就是一张表。</li>
+</ol>
+<p><img src="/.cn//201907070950.png" alt="2070950"></p>
+<h5 id="Class类文件结构详解："><a href="#Class类文件结构详解：" class="headerlink" title="Class类文件结构详解："></a>Class类文件结构详解：</h5><ol>
+<li>魔数：每个Class文件的头4个字节称为魔数，唯一的作用是确定这个文件是否为一个能被虚拟机接受的Class文件。值为：0xCAFEBABE。</li>
+<li>版本号：紧接着魔数的4个字节存储的是Class文件的版本号，第5和第6个字节是次版本号，第7和第8个字节是主版本号。java版本号从45开始。</li>
+<li>常量池：紧接着版本号之后的是常量池入口，常量池可以理解为Class文件之中的资源仓库，常量池入口需要放置一项u2类型的数据，代表常量池容量计数器，该容量计数从1开始而不是0；常量池主要存在两大类常量：字面量和符号引用，字面量比较接近于java语言层面的常量概念，如文本字符串、声明为final的常量值等。符号引用则属于编译原理方面的概念，包含：类和接口的全限定名、字段的名称和描述符、方法的名称和描述符。</li>
+<li>访问标志：常量池结束后，紧接着的两个字符代表访问标志，这个标志用于识别一些类或者接口层次的访问信息，包括：这个Class是类还是接口、是否定义为public类型、是否定义为abstract类型、如果是类的话，是否被声明为final等</li>
+<li>类索引、父类索引、接口索引：类索引和父类索引都是一个u2类型的数据，而接口索引集合是一组u2类型的数据集合</li>
+<li>字符表集合：用于描述接口或者类中声明的变量，字段包括类级变量以及实例级变量，但不包括在方法内部声明的局部变量。</li>
+<li>方法表集合：结构如同字段表一样，依次包括了访问标志、名称索引、描述符索引、属性表集合几项</li>
+<li>属性表集合：常用属性如下<ol>
+<li>Code属性；使用位置：方法表；含义：Java代码编译成的字节码指令</li>
+<li>ConstantValue属性；字段表；final关键字定义的常量值</li>
+<li>Deprecated属性；类、方法表、字段表；被声明为deprecated的方法和字段</li>
+<li>Exceptions属性、方法表、方法抛出的异常</li>
+<li>EnclosingMethod属性、方法表、仅当一个类为局部类或者匿名类时才能拥有这个属性，这个属性用于标识这个类所在的外围方法</li>
+</ol>
+</li>
+</ol>
+<h4 id="虚拟机类加载机制"><a href="#虚拟机类加载机制" class="headerlink" title="虚拟机类加载机制"></a>虚拟机类加载机制</h4><p>虚拟机把描述类的数据从Class文件加载到内存，并对数据进行校验、转换解析和初始化，最终形成可以被虚拟机直接使用的Java类型，这就是JVM的类加载机制。</p>
+<h5 id="类加载的时机"><a href="#类加载的时机" class="headerlink" title="类加载的时机"></a>类加载的时机</h5><p>类从被加载到虚拟机内存中开始，到卸载出内存为止，它的整个生命周期包括：加载 （Loading）、验证（Verification）、准备（Preparation）、解析（Resolution）、初始化 （Initialization）、使用（Using）和卸载（Unloading）7个阶段。其中验证、准备、解析3个 部分统称为连接（Linking）</p>
+<p><img src="/.cn//201907080950.png" alt="7080950"></p>
+<p>其中，加载、验证、准备、初始化和卸载这5个阶段是确认的，</p>
+<p>解析阶段不一定：在某些情况在初始化阶段之后开始，这是为了支持Java语言的运行时绑定（也称为动态绑定或晚期绑定）</p>
+<p>虚拟机严格规定了有且只有5种情况必须立即对类进行“初始化”（而加载、验证、准备自然需要在此之前开始）：</p>
+<ol>
+<li>遇到new、getstatic、putstatic或invokestatic这4条字节码指令时，如果类没有进行过初始化，则需要先触发其初始化。生成这4条指令的最常见的Java代码场景是：使用new关键字实例化对象的时候、读取或设置一个类的静态字段（被final修饰、已在编译期把结果放入常量池的静态字段除外）的时候，以及调用一个类的静态方法的时候。 </li>
+<li>使用java.lang.reflect包的方法对类进行反射调用的时候，如果类没有进行过初始化， 则需要先触发其初始化</li>
+<li>当初始化一个类的时候，如果发现其父类还没有进行过初始化，则需要先触发其父类的初始化</li>
+<li>当虚拟机启动时，用户需要指定一个要执行的主类（包含main（）方法的那个 类），虚拟机会先初始化这个主类</li>
+<li>当使用JDK 1.7的动态语言支持时，如果一个java.lang.invoke.MethodHandle实例最后<br>的解析结果REF_getStatic、REF_putStatic、REF_invokeStatic的方法句柄，并且这个方法句柄 所对应的类没有进行过初始化，则需要先触发其初始化。 </li>
+</ol>
+<p>对于这5种会触发类进行初始化的场景，虚拟机规范中使用了一个很强烈的限定语：“有 且只有”，这5种场景中的行为称为对一个类进行主动引用。除此之外，所有引用类的方式都 不会触发初始化，称为被动引用：</p>
+<ol>
+<li>对于静态字段，只有直接定义这个字段的类才会被初始化，因此通过其子类来引用父类中定义的静态字段，只会触发父类的初始化而不会触发子类的初始化</li>
+<li>通过数组定义来引用类，不会触发此类的初始化 </li>
+<li>常量在编译阶段会存入调用类的常量池中，本质上并没有直接引用到定义常量的类，因此不会触发定义常量的类的初始化</li>
+</ol>
+<p>接口也用初始化过程，当一个类在初始化时，要求其父类全部都已经初始 化过了，但是一个接口在初始化时，并不要求其父接口全部都完成了初始化，只有在真正使 用到父接口的时候（如引用接口中定义的常量）才会初始化。 </p>
+<h5 id="类加载过程"><a href="#类加载过程" class="headerlink" title="类加载过程"></a>类加载过程</h5><h6 id="加载"><a href="#加载" class="headerlink" title="加载"></a>加载</h6><ol>
+<li>通过一个类的全限定名来获取定义此类的二进制字节流。JVM把这个阶段的动作放在了虚拟机外部的“类加载器”中实现。未指明从哪里获取，因此有各种花样，比如从JAR包、WAR包，或者网络，或者运行时计算生成比如动态代理、由其他文件生成、从数据库读取等等。</li>
+<li>将这个字节流所代表的的静态存储结构转化为方法区的运行时数据结构。</li>
+<li>在内存中生成一个代表这个类的java.lang.Class对象，作为方法区这个类的各种数据的访问入口。即对象类型数据（非对象实例数据）存在方法区。</li>
+</ol>
+<h6 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h6><p>验证的目的是确保Class文件的字节流中包含的信号符合当前虚拟机的要求，不会危害虚拟机自身的安全。</p>
+<p>分为四个阶段：</p>
+<ol>
+<li>文件格式验证：验证字节流是否符合Class文件格式的规范，并且能被当前版本的虚拟机处理</li>
+<li>元数据验证：是对字节码描述的信息进行语义分析，以保证其描述的信息符合Java语言规范的要求</li>
+<li>字节码验证：主要是通过数据流和控制流分析，确定程序语义是合法的、符合逻辑的</li>
+<li>符号引用验证：发生在虚拟机将符号引用转化为直接引用的时候，这个转化动作将在连接的第三阶段–解析阶段中发生。符号引用验证可以看做是对类自身以外的信息进行匹配性校验。</li>
+</ol>
+<p>对于虚拟机的类加载机制来说，验证阶段是一个非常重要的、但不是一定必要（因为对 程序运行期没有影响）的阶段。如果所运行的全部代码（包括自己编写的及第三方包中的代 码）都已经被反复使用和验证过，那么在实施阶段就可以考虑使用-Xverify：none参数来关 闭大部分的类验证措施，以缩短虚拟机类加载的时间。 </p>
+<h6 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h6><p>准备阶段是正式为类变量分配内存并设置类变量初始值的阶段，这些变量所使用的内存都将在方法区中进行分配。</p>
+<p>这个阶段中有两个容易产生混淆的概念需要强调一下，首先，这时候进行内存分配的仅包括类变量（被static修饰的变量），而不包括实例变量，实例变量将会在对象实例化时随着对象一起分配在Java堆中。其次，这里所说的初始值“通常情况”下是数据类型的零值。</p>
+<p>比如public static int value=123：在准备阶段过后value=0，只有在初始化阶段后，value才等于123；</p>
+<p>但是如何类字段的字段属性表中存在ConstantValue属性，那么在准备阶段变量value就会被初始化为ConstantValue属性所指定的值，比如 public static final int value=123，编译时Javac将会为value生成ConstantValue属性，在准备阶段虚拟机就会根据ConstantValue的设置将value赋值为123.</p>
+<h6 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h6><p>解析阶段是虚拟机将常量池内的符号引用替换为直接引用的过程。</p>
+<p>符号引用（Symbolic References）：符号引用以一组符号来描述所引用的目标，符号可以是任何形式的字面量，只要使用时能无歧义地定位到目标即可。符号引用与虚拟机实现的内存布局无关，引用的目标并不一定已经加载到内存中。</p>
+<p>直接引用（Direct References）：直接引用可以是直接指向目标的指针、相对偏移量或是 一个能间接定位到目标的句柄。直接引用是和虚拟机实现的内存布局相关的，同一个符号引 用在不同虚拟机实例上翻译出来的直接引用一般不会相同。如果有了直接引用，那引用的目标必定已经在内存中存在</p>
+<p>虚拟机规范之中并未规定解析阶段发生的具体时间，只要求了在执行anewarray、 checkcast、getfield、getstatic、instanceof、invokedynamic、invokeinterface、invokespecial、 invokestatic、invokevirtual、ldc、ldc_w、multianewarray、new、putfield和putstatic这16个用于 操作符号引用的字节码指令之前，先对它们所使用的符号引用进行解析</p>
+<p>对同一个符号引用进行多次解析请求是很常见的事情，除invokedynamic指令以外，虚拟 机实现可以对第一次解析的结果进行缓存（在运行时常量池中记录直接引用，并把常量标识 为已解析状态）从而避免解析动作重复进行。</p>
+<p>对于invokedynamic指令，上面规则则不成立。当碰到某个前面已经由invokedynamic指令 触发过解析的符号引用时，并不意味着这个解析结果对于其他invokedynamic指令也同样生 效。因为invokedynamic指令的目的本来就是用于动态语言支持（目前仅使用Java语言不会生 成这条字节码指令），它所对应的引用称为“动态调用点限定符”（Dynamic Call Site Specifier），这里“动态”的含义就是必须等到程序实际运行到这条指令的时候，解析动作才能进行。相对的，其余可触发解析的指令都是“静态”的，可以在刚刚完成加载阶段，还没有 开始执行代码时就进行解析。</p>
+<p>解析动作主要针对类或者接口、字段、类方法、接口方法、方法类型、方法句柄和调用点限定符7类符号引用进行</p>
+<h6 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h6><p>是类加载过程的最后一步，类加载过程中，除了在加载阶段用户应用程序可以通过自定义类加载器参与之外，其余动作完全由虚拟机主导和控制，到了初始化阶段，才开始真正执行类中定义的Java程序代码。</p>
+<p>在准备阶段，变量已经赋过一次系统要求的初始值，而在初始化阶段，则根据程序员通 过程序制定的主观计划去初始化类变量和其他资源，或者可以从另外一个角度来表达：初始 化阶段是执行类构造器＜clinit＞（）方法的过程。</p>
+<h5 id="类加载器"><a href="#类加载器" class="headerlink" title="类加载器"></a>类加载器</h5><p>虚拟机把类加载阶段中的通过一个类的全限定名来获取定义此类的二进制字节流这个动作放在了虚拟机外部的“类加载器”中实现。</p>
+<p>对于任意一个类，都需要由加载它的类加载器和这个类本身一同确立其在Java虚拟机中的唯一性</p>
+<p>比较两个类是否“相等”，只有在这个两个类是由同一个类加载器加载的前提下才有意义。</p>
+<h6 id="双亲委派模型"><a href="#双亲委派模型" class="headerlink" title="双亲委派模型"></a>双亲委派模型</h6><p>绝大部分Java程序都会使用到3种系统提供的类加载器：</p>
+<ol>
+<li>启动类加载器：这个类将器负责将存放在＜ JAVA_HOME＞\lib目录中的，或者被-Xbootclasspath参数所指定的路径中的，并且是虚拟机 识别的（仅按照文件名识别，如rt.jar，名字不符合的类库即使放在lib目录中也不会被加载） 类库加载到虚拟机内存中</li>
+<li>扩展类加载器：它负责加载＜JAVA_HOME＞\lib\ext目录中的，或者被java.ext.dirs系 统变量所指定的路径中的所有类库，开发者可以直接使用扩展类加载器。 </li>
+<li>应用程序类加载器：它负责加载用户类路径（ClassPath）上所指定的类 库，开发者可以直接使用这个类加载器，如果应用程序中没有自定义过自己的类加载器，一 般情况下这个就是程序中默认的类加载器。</li>
+</ol>
+<p><img src="/.cn//201907080951.png" alt="7080951"></p>
+<p>上图就是类加载器的双亲委派模型，双亲委派模型要求除了顶层的启动类加载器外，其余的类加载器都应当 有自己的父类加载器。这里类加载器之间的父子关系一般不会以继承（Inheritance）的关系 来实现，而是都使用组合（Composition）关系来复用父加载器的代码</p>
+<p>双亲委派模型的工作过程是：如果一个类加载器收到了类加载的请求，它首先不会自己去尝试加载这个类，而是把这个请求委派给父类加载器去完成，每一个层次的类加载器都是如此，因此所有的加载请求最终都应该传送到顶层的启动类加载器中，只有当父加载器反馈自己无法完成这个加载请求（它的搜索范围中没有找到所需的类）时，子加载器才会尝试自己去加载。 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">protected synchronized Class＜?＞loadClass（String name,boolean resolve）throws ClassNotFoundException &#123; //首先，检查请求的类是否已经被加载过了 Class c=findLoadedClass（name）； </span><br><span class="line">if（c==null）&#123; </span><br><span class="line">try&#123; </span><br><span class="line">if（parent！=null）&#123; </span><br><span class="line">c=parent.loadClass（name,false）；</span><br><span class="line">&#125;else&#123;</span><br><span class="line">c=findBootstrapClassOrNull（name）；</span><br><span class="line">&#125; </span><br><span class="line">&#125;catch（ClassNotFoundException e）&#123; </span><br><span class="line">//如果父类加载器抛出ClassNotFoundException </span><br><span class="line">//说明父类加载器无法完成加载请求</span><br><span class="line">&#125; </span><br><span class="line">if（c==null）&#123; </span><br><span class="line">//在父类加载器无法加载的时候 </span><br><span class="line">//再调用本身的findClass方法来进行类加载</span><br><span class="line">c=findClass（name）；</span><br><span class="line">&#125; </span><br><span class="line">&#125; </span><br><span class="line">if（resolve）&#123; </span><br><span class="line">resolveClass（c）； </span><br><span class="line">&#125; return c；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>好处：Java类随着它的类加载器一起具备了一种带有优先级的层次关系。</p>
+<p>为什么需要双亲委派模型：</p>
+<ol>
+<li>例如类java.lang.Object，它存在在rt.jar中，无论哪一个类加载器要加载这个类，最终都是委派给处于模型最顶端的Bootstrap ClassLoader进行加载，因此Object类在程序的各种类加载器环境中都是同一个类。相反，如果没有双亲委派模型而是由各个类加载器自行加载的话，如果用户编写了一个java.lang.Object的同名类并放在ClassPath中，那系统中将会出现多个不同的Object类，程序将混乱。</li>
+<li>如果不采用双亲委派模型，那么由各个类加载器自己去加载的话，那么系统中会存在多种不同的Object类。</li>
+</ol>
+<h4 id="虚拟机字节码执行引擎"><a href="#虚拟机字节码执行引擎" class="headerlink" title="虚拟机字节码执行引擎"></a>虚拟机字节码执行引擎</h4><p>执行引擎是Java虚拟机最核心的组成部分之一。</p>
+<h5 id="运行时栈帧结构"><a href="#运行时栈帧结构" class="headerlink" title="运行时栈帧结构"></a>运行时栈帧结构</h5><p>栈帧（Stack Frame）是用于支持虚拟机进行方法调用和方法执行的数据结构，它是虚拟机运行时数据区中的虚拟机栈（Virtual Machine Stack）的栈元素。</p>
+<p>栈帧存储了方法的局部变量表、操作数栈、动态连接和方法返回地址等信息。每一个方法从调用开始至执行完成的过程，都对应着一个栈帧在虚拟机栈里面从入栈到出栈的过程。</p>
+<p> 每一个栈帧都包括了局部变量表、操作数栈、动态连接、方法返回地址和一些额外的附加信息。在编译程序代码的时候，栈帧中需要多大的局部变量表，多深的操作数栈都已经完全确定了，并且写入到方法表的Code属性之中，因此一个栈帧需要分配多少内存，不会受 到程序运行期变量数据的影响，而仅仅取决于具体的虚拟机实现。</p>
+<p> 一个线程中的方法调用链可能会很长，很多方法都同时处于执行状态。对于执行引擎来 说，在活动线程中，只有位于栈顶的栈帧才是有效的，称为当前栈帧（Current Stack Frame），与这个栈帧相关联的方法称为当前方法（Current Method）。执行引擎运行的所有 字节码指令都只针对当前栈帧进行操作。</p>
+<p><img src="/.cn//201907080953.png" alt="080953"></p>
+<h6 id="局部变量表"><a href="#局部变量表" class="headerlink" title="局部变量表"></a>局部变量表</h6><p>是一组变量值存储空间，用于存放方法参数和方法 内部定义的局部变量。在Java程序编译为Class文件时，就在方法的Code属性的max_locals数 据项中确定了该方法所需要分配的局部变量表的最大容量</p>
+<p>以变量槽（Slot）为最小单位，到每个Slot都应该能存放一 个boolean、byte、char、short、int、float、reference或returnAddress类型的数据。</p>
+<h6 id="操作数栈"><a href="#操作数栈" class="headerlink" title="操作数栈"></a>操作数栈</h6><p>也常称为操作栈，它是一个后入先出（Last In First Out,LIFO）栈。同局部变量表一样，操作数栈的最大深度也在编译的时候写入到Code属性的 max_stacks数据项中。操作数栈的每一个元素可以是任意的Java数据类型，包括long和 double。32位数据类型所占的栈容量为1，64位数据类型所占的栈容量为2。在方法执行的任 何时候，操作数栈的深度都不会超过在max_stacks数据项中设定的最大值</p>
+<h6 id="动态连接"><a href="#动态连接" class="headerlink" title="动态连接"></a>动态连接</h6><p>每个栈帧都包含一个指向运行时常量池[1]中该栈帧所属方法的引用，持有这个引用是为 了支持方法调用过程中的动态连接（Dynamic Linking）。Class 文件的常量池中存有大量的符号引用，字节码中的方法调用指令就以常量池中指向方法的符 号引用作为参数。这些符号引用一部分会在类加载阶段或者第一次使用的时候就转化为直接引用，这种转化称为静态解析。另外一部分将在每一次运行期间转化为直接引用，这部分称为动态连接</p>
+<h6 id="方法返回地址"><a href="#方法返回地址" class="headerlink" title="方法返回地址"></a>方法返回地址</h6><p>当一个方法开始执行后，只有两种方法可以退出：</p>
+<ol>
+<li>执行引擎遇到任意一个方法返回的字节码指令</li>
+<li>遇到异常，并且该异常没有在方法体内得到处理</li>
+</ol>
+<h5 id="方法调用"><a href="#方法调用" class="headerlink" title="方法调用"></a>方法调用</h5><p>方法调用阶段唯一的任务就是确认被调用方法的版本（即调用哪一个方法），一切方法调用在Class文件里面存储的都只是符号引用，而不是方法在实践运行时内存布局中的入口地址。</p>
+<h6 id="解析-1"><a href="#解析-1" class="headerlink" title="解析"></a>解析</h6><p>所有方法调用中的目标方法在Class文件里面都是一个常量池中的符号引用，在类加载的解析阶段会将其中一部分符号引用转化为直接引用</p>
+<p>这类解析成立前提：方法在程序真正运行之前就有一个可确定的调用版本，并且这个方法的调用版本在运行期不可变。</p>
+<p>符合“编译期可知，运行期不可变”：主要包括静态方法和私有方法。</p>
+<p>Java虚拟机里面提供了5条方法调用字节指令：</p>
+<ol>
+<li>invokestatic：调用静态方法</li>
+<li>invokespecial：调用实例构造器<init>方法，私有方法和父类方法</init></li>
+<li>invokevirtual;调用所有的虚方法</li>
+<li>invokeinterface:调用接口方法，会在运行时再确认一个实现此接口的对象</li>
+<li>invokedynamic:先在运行时动态解析出调用点限定符所引用的方法，然后再执行该方 法，在此之前的4条调用指令，分派逻辑是固化在Java虚拟机内部的，而invokedynamic指令 的分派逻辑是由用户所设定的引导方法决定</li>
+</ol>
+<p>只要能被invokestatic和invokespecial指令调用的方法，都可以在解析阶段中确定唯一的 调用版本，符合这个条件的有静态方法、私有方法、实例构造器、父类方法4类，它们在类 加载的时候就会把符号引用解析为该方法的直接引用。这些方法可以称为非虚方法，与之相 反，其他方法称为虚方法（除去final方法）</p>
+<h6 id="分派"><a href="#分派" class="headerlink" title="分派"></a>分派</h6><p>静态分派：所有依赖静态类型来定位方法执行版本的分派动作称为静态分派。典型应用是方法重载。</p>
+<p>动态分派：在运行期根据实际类型确定方法执行的颁布的分派过程，重要体现是方法重写</p>
+<h5 id="Java代码编译过程"><a href="#Java代码编译过程" class="headerlink" title="Java代码编译过程"></a>Java代码编译过程</h5><p><img src="/.cn//201907080952.png" alt="7080952"></p>
+<p>代码编译是由Javac编译器来完成，流程如上图所示。<br>Javac的任务就是将Java源代码编译成Java字节码，也就是JVM能够识别的二进制代码，从表面看是将.java文件转化为.class文件。而实际上是将Java源代码转化成一连串二进制数字，这些二进制数字是有格式的，只有JVM能够真确的识别他们到底代表什么意思。</p>
+<p>具体流程：</p>
+<ol>
+<li>词法分析：读取源代码，一个字节一个字节的读进来，找出这些词法中我们定义的语言关键词如：if、else、while等，识别哪些if是合法的哪些是不合法的。这个步骤就是词法分析过程</li>
+<li>语法分析：就是对词法分析中得到的token流进行语法分析，这一步就是检查这些关键词组合在一起是不是符合Java语言规范。如if的后面是不是紧跟着一个布尔型判断表达式。</li>
+<li>语义分析：语法分析完成之后也就不存在语法问题了，语义分析的主要工作就是把一些难懂的，复杂的语法转化成更简单的语法。比如将foreach转化为for循环。</li>
+<li>字节码生成：将会根据经过注释的抽象语法树生成字节码，也就是将一个数据结构转化为另外一个数据结构，结果就是生成符合java虚拟机规范的字节码。</li>
+</ol>
+<script type="text/javascript" src="/js/jquery.js?v=2.0.3" async></script><div class="post-donate"><div id="donate_board" class="donate_bar center"><a id="btn_donate" href="javascript:;" title="����" class="btn_donate"></a><div class="donate_txt"> &uarr;<br>Desire is the starting point of all achievement！<br></div></div><div id="donate_guide" class="donate_bar center hidden pay"><img src="/img/weChatMoney.png" title="΢�Ŵ���" alt="΢�Ŵ���"><img src="/img/alipayMoney.png" title="֧��������" alt="֧��������"></div><script type="text/javascript">document.getElementById('btn_donate').onclick = function(){
+    $('#donate_board').addClass('hidden');
+    $('#donate_guide').removeClass('hidden');
+}</script></div></div><div class="post-copyright"><blockquote><p>原文作者: Yang Peng</p><p>原文链接: <a href="http://ylovex.cn/2019/07/09/jvm虚拟机执行子系统/">http://ylovex.cn/2019/07/09/jvm虚拟机执行子系统/</a></p><p>版权声明: 转载请注明出处(必须保留作者署名及链接)</p></blockquote></div><div class="tags"><a href="/tags/java/">java</a><a href="/tags/jvm/">jvm</a></div><div class="post-share"><div class="social-share"><span>分享到:</span></div></div><div class="post-nav"><a href="/2019/07/10/Redis设计与实现笔记六/" class="pre">Redis设计与实现笔记六</a><a href="/2019/07/08/Redis设计与实现笔记五/" class="next">Redis设计与实现笔记五</a></div><div id="comments"><div id="lv-container" data-id="city" data-uid="MTAyMC80NDk3OC8yMTQ5OA=="></div></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#虚拟机执行子系统"><span class="toc-text">虚拟机执行子系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#类文件结构"><span class="toc-text">类文件结构</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Class类文件结构详解："><span class="toc-text">Class类文件结构详解：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#虚拟机类加载机制"><span class="toc-text">虚拟机类加载机制</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#类加载的时机"><span class="toc-text">类加载的时机</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#类加载过程"><span class="toc-text">类加载过程</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#加载"><span class="toc-text">加载</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#验证"><span class="toc-text">验证</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#准备"><span class="toc-text">准备</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#解析"><span class="toc-text">解析</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#初始化"><span class="toc-text">初始化</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#类加载器"><span class="toc-text">类加载器</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#双亲委派模型"><span class="toc-text">双亲委派模型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#虚拟机字节码执行引擎"><span class="toc-text">虚拟机字节码执行引擎</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#运行时栈帧结构"><span class="toc-text">运行时栈帧结构</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#局部变量表"><span class="toc-text">局部变量表</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#操作数栈"><span class="toc-text">操作数栈</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#动态连接"><span class="toc-text">动态连接</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#方法返回地址"><span class="toc-text">方法返回地址</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#方法调用"><span class="toc-text">方法调用</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#解析-1"><span class="toc-text">解析</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#分派"><span class="toc-text">分派</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Java代码编译过程"><span class="toc-text">Java代码编译过程</span></a></li></ol></li></ol></li></ol></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2021/01/23/2021年-新的起点/">2021年-新的起点</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/13/LeetCode-钥匙和房间/">LeetCode-钥匙和房间</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/05/nowcoder-进制转换/">nowcoder-进制转换</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/30/Redis设计与实现笔记八/">Redis设计与实现笔记八</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/27/LeetCode-二叉树的序列化与反序列化/">LeetCode-二叉树的序列化与反序列化</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/25/java基础面试题总结/">java基础面试题总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/21/操作系统基础/">操作系统基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/16/java多线程基础/">java多线程基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/13/Redis设计与实现笔记七/">Redis设计与实现笔记七</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/10/Redis设计与实现笔记六/">Redis设计与实现笔记六</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Redis/">Redis</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/jvm/">jvm</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/leetcode/">leetcode</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nowcoder/">nowcoder</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信号处理/">信号处理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/">数据结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机网络/">计算机网络</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="/tags/Life/" style="font-size: 15px;">Life</a> <a href="/tags/Redis/" style="font-size: 15px;">Redis</a> <a href="/tags/code/" style="font-size: 15px;">code</a> <a href="/tags/lms/" style="font-size: 15px;">lms</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/List/" style="font-size: 15px;">List</a> <a href="/tags/Map/" style="font-size: 15px;">Map</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/jvm/" style="font-size: 15px;">jvm</a> <a href="/tags/Set/" style="font-size: 15px;">Set</a> <a href="/tags/Stack/" style="font-size: 15px;">Stack</a> <a href="/tags/遍历/" style="font-size: 15px;">遍历</a> <a href="/tags/动态规划/" style="font-size: 15px;">动态规划</a> <a href="/tags/bfs/" style="font-size: 15px;">bfs</a> <a href="/tags/dp/" style="font-size: 15px;">dp</a> <a href="/tags/web/" style="font-size: 15px;">web</a> <a href="/tags/http/" style="font-size: 15px;">http</a> <a href="/tags/单例模式/" style="font-size: 15px;">单例模式</a> <a href="/tags/排序/" style="font-size: 15px;">排序</a> <a href="/tags/网络/" style="font-size: 15px;">网络</a> <a href="/tags/MySQL/" style="font-size: 15px;">MySQL</a> <a href="/tags/操作系统/" style="font-size: 15px;">操作系统</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="https://github.com/yxxyyx1314" title="github" target="_blank">github</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">网站地图</a> |  <a href="/atom.xml">订阅本站</a> |  <a href="/about/">联系博主</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次，本站总访客数:<i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>人</p><p><span> Copyright &copy;<a href="/." rel="nofollow">Yang Peng.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?1ec291f029f752ac2c73c4f283e80301";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();
+</script><script type="text/javascript" src="/js/search.json.js?v=2.0.3"></script><script type="text/javascript" src="/js/toctotop.js?v=2.0.3" async></script><link rel="stylesheet" type="text/css" href="/share/css/share.css"><script type="text/javascript" src="/share/js/social-share.js" charset="utf-8"></script><script type="text/javascript" src="/share/js/qrcode.js" charset="utf-8"></script><script>(function(d, s) {
+  var j, e = d.getElementsByTagName('body')[0];
+  if (typeof LivereTower === 'function') { return; }
+  j = d.createElement(s);
+  j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+  j.async = true;
+  e.appendChild(j);
+})(document, 'script');
+</script></body></html>
